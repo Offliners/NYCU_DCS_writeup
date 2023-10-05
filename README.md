@@ -12,7 +12,7 @@ This repository is used to practice the homeworks and labs from Prof. Tien-Hsuan
 ### Labs
 * Lab01 - Binary-Coded Decimal : [spce](./Lab01/DCS_Lab01.pdf)
 * Lab02 - Merge Sort : [spce](./Lab02/DCS_Lab02.pdf)
-* Lab03 - Frequency Divider : [spce](./Lab03/DCS_Lab03.pdf) [design](./Lab03/Counter.sv)
+* Lab03 - Frequency Divider : [[spce](./Lab03/DCS_Lab03.pdf)] [[design](./Lab03/Counter.sv)]
 * Lab04 - Sequential Circuit : [spce](./Lab04/DCS_Lab04.pdf)
 * Lab05 - AHB Interconnect : [spce](./Lab05/DCS_Lab05.pdf)
 * Lab06 - Pattern : [spce](./Lab06/DCS_Lab06.pdf)
