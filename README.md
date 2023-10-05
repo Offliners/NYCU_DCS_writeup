@@ -1,5 +1,5 @@
 # NYCU Digital Circuit System (2023) - writeup
-This repository is used to practice the homeworks and labs from Prof. Tien-Hsuan Chang's Digital Circuit System (DCS) course (2023) at NYCU. Due to the absence of NC-Verilog tools, Icarus Verilog is used for synthesis, and GTKWave is used to display waveforms.
+This repository is used to practice the homeworks and labs from Prof. Tien-Hsuan Chang's Digital Circuit System (DCS) course (2023) at NYCU.
 
 ## Outline
 ### Homeworks
@@ -12,7 +12,7 @@ This repository is used to practice the homeworks and labs from Prof. Tien-Hsuan
 ### Labs
 * Lab01 - Binary-Coded Decimal : [spce](./Lab01/DCS_Lab01.pdf)
 * Lab02 - Merge Sort : [spce](./Lab02/DCS_Lab02.pdf)
-* Lab03 - Frequency Divider : [spce](./Lab03/DCS_Lab03.pdf)
+* Lab03 - Frequency Divider : [spce](./Lab03/DCS_Lab03.pdf) [design](./Lab03/Counter.sv)
 * Lab04 - Sequential Circuit : [spce](./Lab04/DCS_Lab04.pdf)
 * Lab05 - AHB Interconnect : [spce](./Lab05/DCS_Lab05.pdf)
 * Lab06 - Pattern : [spce](./Lab06/DCS_Lab06.pdf)
