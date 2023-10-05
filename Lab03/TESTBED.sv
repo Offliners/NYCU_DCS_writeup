@@ -13,8 +13,10 @@ logic clk2;
 
 initial begin
   `ifdef RTL
-	$fsdbDumpfile("Counter.fsdb");	
-	$fsdbDumpvars;
+	// $fsdbDumpfile("Counter.fsdb");	
+	// $fsdbDumpvars(0, "+mda");
+  $dumpfile("Counter.vcd");	
+	$dumpvars(1, I_Counter);
   `elsif GATE
     $fsdbDumpfile("Counter_SYN.fsdb");
 	$sdf_annotate("Counter_SYN.sdf",I_Counter);
@@ -34,4 +36,3 @@ PATTERN I_PATTERN(
   .rst_n(rst_n)
 );
 endmodule
-
