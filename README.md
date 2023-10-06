@@ -10,7 +10,7 @@ This repository is used to practice the homeworks and labs from Prof. Tien-Hsuan
 * HW05 - MIPS CPU : [[spec](./HW05/DCS_HW05.pdf)]
 
 ### Labs
-* Lab01 - Binary-Coded Decimal : [[spec](./Lab01/DCS_Lab01.pdf)]
+* Lab01 - Binary-Coded Decimal : [[spec](./Lab01/DCS_Lab01.pdf)] [[design](./Lab01/BCD.sv)]
 * Lab02 - Merge Sort : [[spec](./Lab02/DCS_Lab02.pdf)]
 * Lab03 - Frequency Divider : [[spec](./Lab03/DCS_Lab03.pdf)] [[design](./Lab03/Counter.sv)]
 * Lab04 - Sequential Circuit : [[spec](./Lab04/DCS_Lab04.pdf)]
