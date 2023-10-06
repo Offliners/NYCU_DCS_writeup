@@ -21,9 +21,8 @@ This repository is used to practice the homeworks and labs from Prof. Tien-Hsuan
 * Lab09 - Pipeline : [[spec](./Lab09/DCS_Lab09.pdf)]
 * Lab10 - Clock Domain Crossing : [[spec](./Lab10/DCS_Lab10.pdf)]
 
-## Tools
-* Icarus Verilog : [Link](https://github.com/steveicarus/iverilog)
-* GTKWave : [Link](https://gtkwave.sourceforge.net/)
+### Final Project
+* Simple CNN : [[spec](./Final/DCS_Final_Project.pdf)]
 
 ## References
 * Course video playlist (2022): [Link](https://www.youtube.com/playlist?list=PLCUEmRsKEgZ4QK-hLOC1HSwr_SjO2HSyG)
