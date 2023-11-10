@@ -13,7 +13,7 @@ This repository is used to practice the homeworks and labs from Prof. Tien-Hsuan
 * Lab01 - Binary-Coded Decimal : [[spec](./Lab01/DCS_Lab01.pdf)] [[design](./Lab01/BCD.sv)]
 * Lab02 - Merge Sort : [[spec](./Lab02/DCS_Lab02.pdf)] [[design](./Lab02/Sort.sv)]
 * Lab03 - Frequency Divider : [[spec](./Lab03/DCS_Lab03.pdf)] [[design](./Lab03/Counter.sv)]
-* Lab04 - Sequential Circuit : [[spec](./Lab04/DCS_Lab04.pdf)]
+* Lab04 - Sequential Circuit : [[spec](./Lab04/DCS_Lab04.pdf)] [[design](./Lab04/Seq.sv)]
 * Lab05 - AHB Interconnect : [[spec](./Lab05/DCS_Lab05.pdf)]
 * Lab06 - Pattern : [[spec](./Lab06/DCS_Lab06.pdf)]
 * Lab07 - Matrix Multiplication : [[spec](./Lab07/DCS_Lab07.pdf)]
