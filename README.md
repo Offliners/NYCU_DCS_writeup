@@ -4,7 +4,7 @@ This repository is used to practice the homeworks and labs from Prof. Tien-Hsuan
 ## Outline
 ### Homeworks
 * HW01 - Simplified Mahjong Judgment : [[spec](./HW01/DCS_HW01.pdf)] [[design](./HW01/SMJ.sv)]
-* HW02 - Simplified I2C : [[spec](./HW02/DCS_HW02.pdf)]
+* HW02 - Simplified I2C : [[spec](./HW02/DCS_HW02.pdf)] [[design](./HW02/I2S.sv)]
 * HW03 - Traffic Light Controller : [[spec](./HW03/DCS_HW03.pdf)]
 * HW04 - Histogram Equalizer : [[spec](./HW04/DCS_HW04.pdf)]
 * HW05 - MIPS CPU : [[spec](./HW05/DCS_HW05.pdf)]
