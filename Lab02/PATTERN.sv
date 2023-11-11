@@ -1,567 +1,233 @@
-//pragma protect begin_protected
-//pragma protect key_keyowner=Cadence Design Systems.
-//pragma protect key_keyname=CDS_KEY
-//pragma protect key_method=RC5
-//pragma protect key_block
-4G5g/zSR6j/0p/NcyV3L0ebal5r5Y+5jvmTXMouBAWFeVJEASvoXMTxRcNSf8mVt
-z/lM2RDtKxO0VpLlv7rEx6TDipObN3WtyqpMOd1su6pAuon93Zlr+Y3/IgslTIVk
-xeViM5yMPV9FwNFgNazQQ+TPXLzohVG3kCv5Up/aQzql/cGlv4E5hQ==
-//pragma protect end_key_block
-//pragma protect digest_block
-1TYE8QlTyxYHfIVwSOh6xJ4BjiM=
-//pragma protect end_digest_block
-//pragma protect data_block
-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
+`define CYCLE_TIME 10.0
 
-//pragma protect end_data_block
-//pragma protect digest_block
-V94jaDbHgFfedA7xhsHFR3aIetw=
-//pragma protect end_digest_block
-//pragma protect end_protected
+module PATTERN(
+    // Output signals
+	in_num0,
+	in_num1,
+	in_num2,
+	in_num3,
+	in_num4,
+    // Input signals
+	out_num,
+);
+
+//---------------------------------------------------------------------
+//   PORT DECLARATION
+//---------------------------------------------------------------------
+output reg [5:0] in_num0, in_num1, in_num2, in_num3, in_num4;
+input  [5:0] out_num;
+
+//pragma protect
+//pragma protect begin
+//================================================================
+// clock
+//================================================================
+logic clk;
+real	CYCLE = `CYCLE_TIME;
+always	#(CYCLE/2.0) clk = ~clk;
+//================================================================
+// parameters & integer
+//================================================================
+integer PATNUM = 500;
+integer seed = 333;
+integer i,j,k;
+integer patcount;
+logic [5:0] number [0:4];
+logic [5:0] temp;
+
+//================================================================
+// initial
+//================================================================
+initial begin
+	clk = 0;
+	in_num0 = 6'dx;
+	in_num1 = 6'dx;
+	in_num2 = 6'dx;
+	in_num3 = 6'dx;
+	in_num4 = 6'dx;
+	
+	for(patcount=0; patcount<PATNUM; patcount=patcount+1)
+	begin		
+		input_task;
+		gen_ans;
+        repeat(1) @(negedge clk);
+		check_ans;
+		//$display("\033[0;32mPASS PATTERN NO.%3d \033[m", patcount);
+        //repeat(1) @(negedge clk);
+	end
+
+	YOU_PASS_task;
+	$finish;
+end
+//================================================================
+// task
+//================================================================
+
+task input_task; begin
+	in_num0 = $urandom_range(63,0);
+	in_num1 = $urandom_range(63,0);
+	in_num2 = $urandom_range(63,0);
+	in_num3 = $urandom_range(63,0);
+	in_num4 = $urandom_range(63,0);
+end endtask
+
+task gen_ans; begin
+
+	number[0] = in_num0;
+	number[1] = in_num1;
+	number[2] = in_num2;
+	number[3] = in_num3;
+	number[4] = in_num4;
+	//$display ("\033[0;34mInput: in_num0=%2d, in_num1=%2d, in_num2=%2d, in_num3=%2d\033[m",number[0], number[1], number[2], number[3]);
+	
+	//sorting
+	for (i=0; i<4; i=i+1) begin
+		for (j=0; j<4-i; j=j+1) begin
+			if (number[j] >= number[j+1]) begin
+				temp        = number[j];
+				number[j]   = number[j+1];
+				number[j+1] = temp;
+			end
+		end
+	end
+	//$display ("\033[0;34mOutput: out_num0=%2d, out_num1=%2d, out_num2=%2d, out_num3=%2d\033[m",number[0], number[1], number[2], number[3]);
+
+end endtask
+
+task check_ans; begin
+	if(out_num !== number[2]) begin
+		fail;
+		$display ("--------------------------------------------------------------------------------------------------------------------------------------------");
+		$display ("                                                                ANSWER FAIL!                                                            ");
+		$display ("--------------------------------------------------------------------------------------------------------------------------------------------");
+		$display ("                                                              Pattern No. %3d                                                       ",patcount);
+		$display ("                                                                  out_num                                                                     ");
+		$display ("                                         Correct answer:            %3d                                                             ",number[2]);
+		$display ("                                         Your answer:               %3d                                                             ",out_num);
+		$display ("                                         at %8t ns                                                                                  ",$time);
+		$display ("--------------------------------------------------------------------------------------------------------------------------------------------");
+		#(100)
+		$finish;
+	end
+	//@(negedge clk);	
+end endtask
+
+task YOU_PASS_task;begin
+$display("\033[37m                                                                                                                                          ");        
+$display("\033[37m                                                                                \033[32m      :BBQvi.                                              ");        
+$display("\033[37m                                                              .i7ssrvs7         \033[32m     BBBBBBBBQi                                           ");        
+$display("\033[37m                        .:r7rrrr:::.        .::::::...   .i7vr:.      .B:       \033[32m    :BBBP :7BBBB.                                         ");        
+$display("\033[37m                      .Kv.........:rrvYr7v7rr:.....:rrirJr.   .rgBBBBg  Bi      \033[32m    BBBB     BBBB                                         ");        
+$display("\033[37m                     7Q  :rubEPUri:.       ..:irrii:..    :bBBBBBBBBBBB  B      \033[32m   iBBBv     BBBB       vBr                               ");        
+$display("\033[37m                    7B  BBBBBBBBBBBBBBB::BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB :R     \033[32m   BBBBBKrirBBBB.     :BBBBBB:                            ");        
+$display("\033[37m                   Jd .BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB: Bi    \033[32m  rBBBBBBBBBBBR.    .BBBM:BBB                             ");        
+$display("\033[37m                  uZ .BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB .B    \033[32m  BBBB   .::.      EBBBi :BBU                             ");        
+$display("\033[37m                 7B .BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB  B    \033[32m MBBBr           vBBBu   BBB.                             ");        
+$display("\033[37m                .B  BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB: JJ   \033[32m i7PB          iBBBBB.  iBBB                              ");        
+$display("\033[37m                B. BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB  Lu             \033[32m  vBBBBPBBBBPBBB7       .7QBB5i                ");        
+$display("\033[37m               Y1 KBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBi XBBBBBBBi :B            \033[32m :RBBB.  .rBBBBB.      rBBBBBBBB7              ");        
+$display("\033[37m              :B .BBBBBBBBBBBBBsRBBBBBBBBBBBrQBBBBB. UBBBRrBBBBBBr 1BBBBBBBBB  B.          \033[32m    .       BBBB       BBBB  :BBBB             ");        
+$display("\033[37m              Bi BBBBBBBBBBBBBi :BBBBBBBBBBE .BBK.  .  .   QBBBBBBBBBBBBBBBBBB  Bi         \033[32m           rBBBr       BBBB    BBBU            ");        
+$display("\033[37m             .B .BBBBBBBBBBBBBBQBBBBBBBBBBBB       \033[38;2;242;172;172mBBv \033[37m.LBBBBBBBBBBBBBBBBBBBBBB. B7.:ii:   \033[32m           vBBB        .BBBB   :7i.            ");        
+$display("\033[37m            .B  PBBBBBBBBBBBBBBBBBBBBBBBBBBBBbYQB. \033[38;2;242;172;172mBB: \033[37mBBBBBBBBBBBBBBBBBBBBBBBBB  Jr:::rK7 \033[32m             .7  BBB7   iBBBg                  ");        
+$display("\033[37m           7M  PBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB  \033[38;2;242;172;172mBB. \033[37mBBBBBBBBBBBBBBBBBBBBBBB..i   .   v1                  \033[32mdBBB.   5BBBr                 ");        
+$display("\033[37m          sZ .BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB  \033[38;2;242;172;172mBB. \033[37mBBBBBBBBBBBBBBBBBBBBBBBBBBB iD2BBQL.                 \033[32m ZBBBr  EBBBv     YBBBBQi     ");        
+$display("\033[37m  .7YYUSIX5 .BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB  \033[38;2;242;172;172mBB. \033[37mBBBBBBBBBBBBBBBBBBBBBBBBY.:.      :B                 \033[32m  iBBBBBBBBD     BBBBBBBBB.   ");        
+$display("\033[37m LB.        ..BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB. \033[38;2;242;172;172mBB: \033[37mBBBBBBBBBBBBBBBBBBBBBBBBMBBB. BP17si                 \033[32m    :LBBBr      vBBBi  5BBB   ");        
+$display("\033[37m  KvJPBBB :BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB: \033[38;2;242;172;172mZB: \033[37mBBBBBBBBBBBBBBBBBBBBBBBBBsiJr .i7ssr:                \033[32m          ...   :BBB:   BBBu  ");        
+$display("\033[37m i7ii:.   ::BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBj \033[38;2;242;172;172muBi \033[37mQBBBBBBBBBBBBBBBBBBBBBBBBi.ir      iB                \033[32m         .BBBi   BBBB   iMBu  ");        
+$display("\033[37mDB    .  vBdBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBg \033[38;2;242;172;172m7Bi \033[37mBBBBBBBBBBBBBBBBBBBBBBBBBBBBB rBrXPv.                \033[32m          BBBX   :BBBr        ");        
+$display("\033[37m :vQBBB. BQBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBQ \033[38;2;242;172;172miB: \033[37mBBBBBBBBBBBBBBBBBBBBBBBBBBBBB .L:ii::irrrrrrrr7jIr   \033[32m          .BBBv  :BBBQ        ");        
+$display("\033[37m :7:.   .. 5BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB  \033[38;2;242;172;172mBr \033[37mBBBBBBBBBBBBBBBBBBBBBBBBBBBB:            ..... ..YB. \033[32m           .BBBBBBBBB:        ");        
+$display("\033[37mBU  .:. BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB  \033[38;2;242;172;172mB7 \033[37mgBBBBBBBBBBBBBBBBBBBBBBBBBB. gBBBBBBBBBBBBBBBBBB. BL \033[32m             rBBBBB1.         ");        
+$display("\033[37m rY7iB: BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB: \033[38;2;242;172;172mB7 \033[37mBBBBBBBBBBBBBBBBBBBBBBBBBB. QBBBBBBBBBBBBBBBBBi  v5                                ");        
+$display("\033[37m     us EBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB \033[38;2;242;172;172mIr \033[37mBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBgu7i.:BBBBBBBr Bu                                 ");        
+$display("\033[37m      B  7BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB.\033[38;2;242;172;172m:i \033[37mBBBBBBBBBBBBBBBBBBBBBBBBBBBv:.  .. :::  .rr    rB                                  ");        
+$display("\033[37m      us  .BBBBBBBBBBBBBQLXBBBBBBBBBBBBBBBBBBBBBBBBq  .BBBBBBBBBBBBBBBBBBBBBBBBBv  :iJ7vri:::1Jr..isJYr                                   ");        
+$display("\033[37m      B  BBBBBBB  MBBBM      qBBBBBBBBBBBBBBBBBBBBBB: BBBBBBBBBBBBBBBBBBBBBBBBBB  B:           iir:                                       ");        
+$display("\033[37m     iB iBBBBBBBL       BBBP. :BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB  B.                                                       ");        
+$display("\033[37m     P: BBBBBBBBBBB5v7gBBBBBB  BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB: Br                                                        ");        
+$display("\033[37m     B  BBBs 7BBBBBBBBBBBBBB7 :BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB .B                                                         ");        
+$display("\033[37m    .B :BBBB.  EBBBBBQBBBBBJ .BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB. B.                                                         ");        
+$display("\033[37m    ij qBBBBBg          ..  .BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB .B                                                          ");        
+$display("\033[37m    UY QBBBBBBBBSUSPDQL...iBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBK EL                                                          ");        
+$display("\033[37m    B7 BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB: B:                                                          ");        
+$display("\033[37m    B  BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBYrBB vBBBBBBBBBBBBBBBBBBBBBBBB. Ls                                                          ");        
+$display("\033[37m    B  BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBi_  /UBBBBBBBBBBBBBBBBBBBBBBBBB. :B:                                                        ");        
+$display("\033[37m   rM .BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB  ..IBBBBBBBBBBBBBBBBQBBBBBBBBBB  B                                                        ");        
+$display("\033[37m   B  BBBBBBBBBdZBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBPBBBBBBBBBBBBEji:..     sBBBBBBBr Br                                                       ");        
+$display("\033[37m  7B 7BBBBBBBr     .:vXQBBBBBBBBBBBBBBBBBBBBBBBBBQqui::..  ...i:i7777vi  BBBBBBr Bi                                                       ");        
+$display("\033[37m  Ki BBBBBBB  rY7vr:i....  .............:.....  ...:rii7vrr7r:..      7B  BBBBB  Bi                                                       ");        
+$display("\033[37m  B. BBBBBB  B:    .::ir77rrYLvvriiiiiiirvvY7rr77ri:..                 bU  iQBB:..rI                                                      ");        
+$display("\033[37m.S: 7BBBBP  B.                                                          vI7.  .:.  B.                                                     ");        
+$display("\033[37mB: ir:.   :B.                                                             :rvsUjUgU.                                                      ");        
+$display("\033[37mrMvrrirJKur                                                                                                                               \033[m");
+$display ("--------------------------------------------------------------------------------------------------------------------------------------------");
+$display ("                                                               Congratulations!                						             ");
+$display ("                                                        You have passed all patterns!          						             ");
+$display ("                                                               time: %8t ns                                                        ",$time);
+$display ("--------------------------------------------------------------------------------------------------------------------------------------------");
+
+
+
+$finish;	
+end endtask
+
+
+task fail; begin
+$display("\033[38;2;252;238;238m                                                                                                                                           ");      
+$display("\033[38;2;252;238;238m                                                                                                :L777777v7.                                ");
+$display("\033[31m  i:..::::::i.      :::::         ::::    .:::.       \033[38;2;252;238;238m                                       .vYr::::::::i7Lvi                             ");
+$display("\033[31m  BBBBBBBBBBBi     iBBBBBL       .BBBB    7BBB7       \033[38;2;252;238;238m                                      JL..\033[38;2;252;172;172m:r777v777i::\033[38;2;252;238;238m.ijL                           ");
+$display("\033[31m  BBBB.::::ir.     BBB:BBB.      .BBBv    iBBB:       \033[38;2;252;238;238m                                    :K: \033[38;2;252;172;172miv777rrrrr777v7:.\033[38;2;252;238;238m:J7                         ");
+$display("\033[31m  BBBQ            :BBY iBB7       BBB7    :BBB:       \033[38;2;252;238;238m                                   :d \033[38;2;252;172;172m.L7rrrrrrrrrrrrr77v: \033[38;2;252;238;238miI.                       ");
+$display("\033[31m  BBBB            BBB. .BBB.      BBB7    :BBB:       \033[38;2;252;238;238m                                  .B \033[38;2;252;172;172m.L7rrrrrrrrrrrrrrrrr7v..\033[38;2;252;238;238mBr                      ");
+$display("\033[31m  BBBB:r7vvj:    :BBB   gBBs      BBB7    :BBB:       \033[38;2;252;238;238m                                  S:\033[38;2;252;172;172m v7rrrrrrrrrrrrrrrrrrr7v. \033[38;2;252;238;238mB:                     ");
+$display("\033[31m  BBBBBBBBBB7    BBB:   .BBB.     BBB7    :BBB:       \033[38;2;252;238;238m                                 .D \033[38;2;252;172;172mi7rrrrrrr777rrrrrrrrrrr7v. \033[38;2;252;238;238mB.                    ");
+$display("\033[31m  BBBB    ..    iBBBBBBBBBBBP     BBB7    :BBB:       \033[38;2;252;238;238m                                 rv\033[38;2;252;172;172m v7rrrrrr7rirv7rrrrrrrrrr7v \033[38;2;252;238;238m:I                    ");
+$display("\033[31m  BBBB          BBBBi7vviQBBB.    BBB7    :BBB.       \033[38;2;252;238;238m                                 2i\033[38;2;252;172;172m.v7rrrrrr7i  :v7rrrrrrrrrrvi \033[38;2;252;238;238mB:                   ");
+$display("\033[31m  BBBB         rBBB.      BBBQ   .BBBv    iBBB2ir777L7\033[38;2;252;238;238m                                 2i.\033[38;2;252;172;172mv7rrrrrr7v \033[38;2;252;238;238m:..\033[38;2;252;172;172mv7rrrrrrrrr77 \033[38;2;252;238;238mrX                   ");
+$display("\033[31m .BBBB        :BBBB       BBBB7  .BBBB    7BBBBBBBBBBB\033[38;2;252;238;238m                                 Yv \033[38;2;252;172;172mv7rrrrrrrv.\033[38;2;252;238;238m.B \033[38;2;252;172;172m.vrrrrrrrrrrL.\033[38;2;252;238;238m:5                   ");
+$display("\033[31m  . ..        ....         ...:   ....    ..   .......\033[38;2;252;238;238m                                 .q \033[38;2;252;172;172mr7rrrrrrr7i \033[38;2;252;238;238mPv \033[38;2;252;172;172mi7rrrrrrrrrv.\033[38;2;252;238;238m:S                   ");
+$display("\033[38;2;252;238;238m                                                                                        Lr \033[38;2;252;172;172m77rrrrrr77 \033[38;2;252;238;238m:B. \033[38;2;252;172;172mv7rrrrrrrrv.\033[38;2;252;238;238m:S                   ");
+$display("\033[38;2;252;238;238m                                                                                         B: \033[38;2;252;172;172m7v7rrrrrv. \033[38;2;252;238;238mBY \033[38;2;252;172;172mi7rrrrrrr7v \033[38;2;252;238;238miK                   ");
+$display("\033[38;2;252;238;238m                                                                              .::rriii7rir7. \033[38;2;252;172;172m.r77777vi \033[38;2;252;238;238m7B  \033[38;2;252;172;172mvrrrrrrr7r \033[38;2;252;238;238m2r                   ");
+$display("\033[38;2;252;238;238m                                                                       .:rr7rri::......    .     \033[38;2;252;172;172m.:i7s \033[38;2;252;238;238m.B. \033[38;2;252;172;172mv7rrrrr7L..\033[38;2;252;238;238mB                    ");
+$display("\033[38;2;252;238;238m                                                        .::7L7rriiiirr77rrrrrrrr72BBBBBBBBBBBBvi:..  \033[38;2;252;172;172m.  \033[38;2;252;238;238mBr \033[38;2;252;172;172m77rrrrrvi \033[38;2;252;238;238mKi                    ");
+$display("\033[38;2;252;238;238m                                                    :rv7i::...........    .:i7BBBBQbPPPqPPPdEZQBBBBBr:.\033[38;2;252;238;238m ii \033[38;2;252;172;172mvvrrrrvr \033[38;2;252;238;238mvs                     ");
+$display("\033[38;2;252;238;238m                    .S77L.                      .rvi:. ..:r7QBBBBBBBBBBBgri.    .:BBBPqqKKqqqqPPPPPEQBBBZi  \033[38;2;252;172;172m:777vi \033[38;2;252;238;238mvI                      ");
+$display("\033[38;2;252;238;238m                    B: ..Jv                   isi. .:rBBBBBQZPPPPqqqPPdERBBBBBi.    :BBRKqqqqqqqqqqqqPKDDBB:  \033[38;2;252;172;172m:7. \033[38;2;252;238;238mJr                       ");
+$display("\033[38;2;252;238;238m                   vv SB: iu                rL: .iBBBQEPqqPPqqqqqqqqqqqqqPPPPbQBBB:   .EBQKqqqqqqPPPqqKqPPgBB:  .B:                        ");
+$display("\033[38;2;252;238;238m                  :R  BgBL..s7            rU: .qBBEKPqqqqqqqqqqqqqqqqqqqqqqqqqPPPEBBB:   EBEPPPEgQBBQEPqqqqKEBB: .s                        ");
+$display("\033[38;2;252;238;238m               .U7.  iBZBBBi :ji         5r .MBQqPqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqPKgBB:  .BBBBBdJrrSBBQKqqqqKZB7  I:                      ");
+$display("\033[38;2;252;238;238m              v2. :rBBBB: .BB:.ru7:    :5. rBQqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqPPBB:  :.        .5BKqqqqqqBB. Kr                     ");
+$display("\033[38;2;252;238;238m             .B .BBQBB.   .RBBr  :L77ri2  BBqPqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqPbBB   \033[38;2;252;172;172m.irrrrri  \033[38;2;252;238;238mQQqqqqqqKRB. 2i                    ");
+$display("\033[38;2;252;238;238m              27 :BBU  rBBBdB \033[38;2;252;172;172m iri::::: \033[38;2;252;238;238m.BQKqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqKRBs\033[38;2;252;172;172mirrr7777L: \033[38;2;252;238;238m7BqqqqqqqXZB. BLv772i              ");
+$display("\033[38;2;252;238;238m               rY  PK  .:dPMB \033[38;2;252;172;172m.Y77777r.\033[38;2;252;238;238m:BEqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqPPBqi\033[38;2;252;172;172mirrrrrv: \033[38;2;252;238;238muBqqqqqqqqqgB  :.:. B:             ");
+$display("\033[38;2;252;238;238m                iu 7BBi  rMgB \033[38;2;252;172;172m.vrrrrri\033[38;2;252;238;238mrBEqKqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqPQgi\033[38;2;252;172;172mirrrrv. \033[38;2;252;238;238mQQqqqqqqqqqXBb .BBB .s:.           ");
+$display("\033[38;2;252;238;238m                i7 BBdBBBPqbB \033[38;2;252;172;172m.vrrrri\033[38;2;252;238;238miDgPPbPqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqPQDi\033[38;2;252;172;172mirr77 \033[38;2;252;238;238m:BdqqqqqqqqqqPB. rBB. .:iu7         ");
+$display("\033[38;2;252;238;238m                iX.:iBRKPqKXB.\033[38;2;252;172;172m 77rrr\033[38;2;252;238;238mi7QPBBBBPqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqPB7i\033[38;2;252;172;172mrr7r \033[38;2;252;238;238m.vBBPPqqqqqqKqBZ  BPBgri: 1B        ");
+$display("\033[38;2;252;238;238m                 ivr .BBqqKXBi \033[38;2;252;172;172mr7rri\033[38;2;252;238;238miQgQi   QZKqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqPEQi\033[38;2;252;172;172mirr7r.  \033[38;2;252;238;238miBBqPqqqqqqPB:.QPPRBBB LK        ");
+$display("\033[38;2;252;238;238m                   :I. iBgqgBZ \033[38;2;252;172;172m:7rr\033[38;2;252;238;238miJQPB.   gRqqqqqqqqPPPPPPPPqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqPQ7\033[38;2;252;172;172mirrr7vr.  \033[38;2;252;238;238mUBqqPPgBBQPBBKqqqKB  B         ");
+$display("\033[38;2;252;238;238m                     v7 .BBR: \033[38;2;252;172;172m.r7ri\033[38;2;252;238;238miggqPBrrBBBBBBBBBBBBBBBBBBQEPPqqPPPqqqqqqqqqqqqqqqqqqqqqqqqqPgPi\033[38;2;252;172;172mirrrr7v7  \033[38;2;252;238;238mrBPBBP:.LBbPqqqqqB. u.        ");
+$display("\033[38;2;252;238;238m                      .j. . \033[38;2;252;172;172m :77rr\033[38;2;252;238;238miiBPqPbBB::::::.....:::iirrSBBBBBBBQZPPPPPqqqqqqqqqqqqqqqqqqqqEQi\033[38;2;252;172;172mirrrrrr7v \033[38;2;252;238;238m.BB:     :BPqqqqqDB .B        ");
+$display("\033[38;2;252;238;238m                       YL \033[38;2;252;172;172m.i77rrrr\033[38;2;252;238;238miLQPqqKQJ. \033[38;2;252;172;172m ............       \033[38;2;252;238;238m..:irBBBBBBZPPPqqqqqqqPPBBEPqqqdRr\033[38;2;252;172;172mirrrrrr7v \033[38;2;252;238;238m.B  .iBB  dQPqqqqPBi Y:       ");
+$display("\033[38;2;252;238;238m                     :U:.\033[38;2;252;172;172mrv7rrrrri\033[38;2;252;238;238miPgqqqqKZB.\033[38;2;252;172;172m.v77777777777777ri::..   \033[38;2;252;238;238m  ..:rBBBBQPPqqqqPBUvBEqqqPRr\033[38;2;252;172;172mirrrrrrvi\033[38;2;252;238;238m iB:RBBbB7 :BQqPqKqBR r7       ");
+$display("\033[38;2;252;238;238m                    iI.\033[38;2;252;172;172m.v7rrrrrrri\033[38;2;252;238;238midgqqqqqKB:\033[38;2;252;172;172m 77rrrrrrrrrrrrr77777777ri:..   \033[38;2;252;238;238m .:1BBBEPPB:   BbqqPQr\033[38;2;252;172;172mirrrr7vr\033[38;2;252;238;238m .BBBZPqqDB  .JBbqKPBi vi       ");
+$display("\033[38;2;252;238;238m                   :B \033[38;2;252;172;172miL7rrrrrrrri\033[38;2;252;238;238mibgqqqqqqBr\033[38;2;252;172;172m r7rrrrrrrrrrrrrrrrrrrrr777777ri:.  \033[38;2;252;238;238m .iBBBBi  .BbqqdRr\033[38;2;252;172;172mirr7v7: \033[38;2;252;238;238m.Bi.dBBPqqgB:  :BPqgB  B        ");
+$display("\033[38;2;252;238;238m                   .K.i\033[38;2;252;172;172mv7rrrrrrrri\033[38;2;252;238;238miZgqqqqqqEB \033[38;2;252;172;172m.vrrrrrrrrrrrrrrrrrrrrrrrrrrr777vv7i.  \033[38;2;252;238;238m :PBBBBPqqqEQ\033[38;2;252;172;172miir77:  \033[38;2;252;238;238m:BB:  .rBPqqEBB. iBZB. Rr        ");
+$display("\033[38;2;252;238;238m                    iM.:\033[38;2;252;172;172mv7rrrrrrrri\033[38;2;252;238;238mUQPqqqqqPBi\033[38;2;252;172;172m i7rrrrrrrrrrrrrrrrrrrrrrrrr77777i.   \033[38;2;252;238;238m.  :BddPqqqqEg\033[38;2;252;172;172miir7. \033[38;2;252;238;238mrBBPqBBP. :BXKqgB  BBB. 2r         ");
+$display("\033[38;2;252;238;238m                     :U:.\033[38;2;252;172;172miv77rrrrri\033[38;2;252;238;238mrBPqqqqqqPB: \033[38;2;252;172;172m:7777rrrrrrrrrrrrrrr777777ri.   \033[38;2;252;238;238m.:uBBBBZPqqqqqqPQL\033[38;2;252;172;172mirr77 \033[38;2;252;238;238m.BZqqPB:  qMqqPB. Yv:  Ur          ");
+$display("\033[38;2;252;238;238m                       1L:.\033[38;2;252;172;172m:77v77rii\033[38;2;252;238;238mqQPqqqqqPbBi \033[38;2;252;172;172m .ir777777777777777ri:..   \033[38;2;252;238;238m.:rBBBRPPPPPqqqqqqqgQ\033[38;2;252;172;172miirr7vr \033[38;2;252;238;238m:BqXQ: .BQPZBBq ...:vv.           ");
+$display("\033[38;2;252;238;238m                         LJi..\033[38;2;252;172;172m::r7rii\033[38;2;252;238;238mRgKPPPPqPqBB:.  \033[38;2;252;172;172m ............     \033[38;2;252;238;238m..:rBBBBPPqqKKKKqqqPPqPbB1\033[38;2;252;172;172mrvvvvvr  \033[38;2;252;238;238mBEEDQBBBBBRri. 7JLi              ");
+$display("\033[38;2;252;238;238m                           .jL\033[38;2;252;172;172m  777rrr\033[38;2;252;238;238mBBBBBBgEPPEBBBvri:::::::::irrrbBBBBBBDPPPPqqqqqqXPPZQBBBBr\033[38;2;252;172;172m.......\033[38;2;252;238;238m.:BBBBg1ri:....:rIr                 ");
+$display("\033[38;2;252;238;238m                            vI \033[38;2;252;172;172m:irrr:....\033[38;2;252;238;238m:rrEBBBBBBBBBBBBBBBBBBBBBBBBBBBBBQQBBBBBBBBBBBBBQr\033[38;2;252;172;172mi:...:.   \033[38;2;252;238;238m.:ii:.. .:.:irri::                    ");
+$display("\033[38;2;252;238;238m                             71vi\033[38;2;252;172;172m:::irrr::....\033[38;2;252;238;238m    ...:..::::irrr7777777777777rrii::....  ..::irvrr7sUJYv7777v7ii..                         ");
+$display("\033[38;2;252;238;238m                               .i777i. ..:rrri77rriiiiiii:::::::...............:::iiirr7vrrr:.                                             ");
+$display("\033[38;2;252;238;238m                                                      .::::::::::::::::::::::::::::::                                                      \033[m");
+end endtask
+
+//pragma protect end
+
+endmodule
+
