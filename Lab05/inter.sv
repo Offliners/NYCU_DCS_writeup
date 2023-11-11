@@ -34,10 +34,27 @@ parameter S_idle = 2'b00,
           S_master2 = 2'b10,
           S_handshake = 2'b11;
 
-logic in_1, in_2;
-logic [6:0] data_1, data_2;
+logic in_1, in_2, in_bef_1, in_bef_2;
+logic [6:0] data_1, data_2, data_bef_1, data_bef_2;
 logic [1:0] cur_state, next_state;
 logic [2:0] value_out_temp, addr_out_temp;
+
+always_ff @ (posedge clk or negedge rst_n) begin
+  if(!rst_n) begin
+    cur_state <= S_idle;
+    in_bef_1 <= 0;
+    in_bef_2 <= 0;
+    data_bef_1 <= 0;
+    data_bef_2 <= 0;
+  end
+  else begin
+    cur_state <= next_state;
+    in_bef_1 <= in_valid_1;
+    in_bef_2 <= in_valid_2;
+    data_bef_1 <= data_1;
+    data_bef_2 <= data_2;
+  end
+end
 
 always_comb begin
   in_1 = (in_valid_1) ? 1 : in_bef_1;
@@ -101,7 +118,7 @@ always_comb begin
   end
 end
 
-always_ff @(posedge clk or negedge rst_n) begin
+always_ff @ (posedge clk or negedge rst_n) begin
   if(!rst_n) begin
     value_out <= 0;
     addr_out <= 0;
