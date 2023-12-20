@@ -25,5 +25,4 @@ This repository is used to practice the homeworks and labs from Prof. Tien-Hsuan
 * Simple CNN : [[spec](./Final/DCS_Final_Project.pdf)]
 
 ## References
-* Course video playlist (2022): [Link](https://www.youtube.com/playlist?list=PLCUEmRsKEgZ4QK-hLOC1HSwr_SjO2HSyG)
 * Course video playlist (2023): [Link](https://www.youtube.com/playlist?list=PLCUEmRsKEgZ4p8HK5IXMrohliNuRttqpt)
