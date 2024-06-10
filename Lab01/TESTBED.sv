@@ -1,5 +1,6 @@
 `timescale 1ns/1ps
 `include "PATTERN.sv"
+// `include "PATTERN_GEN.sv"
 `ifdef RTL
 `include "BCD.sv"
 `elsif GATE
@@ -41,5 +42,13 @@ PATTERN I_PATTERN
   .out_ten(out_ten),
   .out_unit(out_unit)
 );
+
+// PATTERN_GEN I_PATTERN
+// (
+//   .in_bin(in_bin),
+//   .out_hundred(out_hundred),
+//   .out_ten(out_ten),
+//   .out_unit(out_unit)
+// );
 
 endmodule
