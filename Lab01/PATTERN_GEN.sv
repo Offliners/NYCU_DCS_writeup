@@ -32,6 +32,29 @@ always	#(CYCLE/2.0) clk = ~clk;
 //================================================================
 // initial
 //================================================================
+initial begin
+  force clk = 0;
+  #(3) release clk;
+	repeat(5)@(negedge clk);
+	
+	for(patcount=0; patcount<PATNUM; patcount=patcount+1)
+	begin		
+		input_and_check_task;
+		repeat(1) @(negedge clk);
+		ans_check;
+		$display("\033[0;32mPASS PATTERN NO.%3d \033[m", patcount);
+	end
+
+  YOU_PASS_task;
+  $finish;
+end
+
+task input_and_check_task; begin
+  in_bin = $urandom_range(511, 0);
+  golden_out_hundred = (in_bin / 100) % 10;
+  golden_out_ten = (in_bin / 10) % 10;
+  golden_unit = in_bin % 10;
+end endtask
 
 
 task ans_check; begin
@@ -44,8 +67,8 @@ task ans_check; begin
         $display ("                                                            GOLDEN: golden_decimal  =  %d %d %d", golden_out_hundred, golden_out_ten, golden_unit);
         $display ("--------------------------------------------------------------------------------------------------------------------------------------------");
         repeat(3)@(negedge clk);
-		$finish;
-      end
+		    $finish;
+    end
 end endtask
 
 

@@ -48,7 +48,7 @@ def gen_test_data(input_file_path: str, output_file_path: str) -> None:
         pIFile.write(f"{num_bin}\n")
         num_decimal = sol(num)
         out = [str(e) for e in num_decimal]
-        pOFile.write(f"{" ".join(out)}\n")
+        pOFile.write(f'{" ".join(out)}\n')
     
     pIFile.close()
     pOFile.close()
