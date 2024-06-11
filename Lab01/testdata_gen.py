@@ -23,10 +23,6 @@ def parse_args() -> Namespace:
     return args
 
 
-def int2bin(n: int) -> str:
-    return format(n, 'b').zfill(3)
-
-
 def sol(num: int) -> List[int]:
     num_decimal = []
     num_decimal.append(int((num / 100) % 10))
@@ -41,11 +37,10 @@ def gen_test_data(input_file_path: str, output_file_path: str) -> None:
     pOFile = open(output_file_path, 'w')
 
     PATTERN_NUM = config['PATTERN_NUM']
-    pIFile.write(f"{PATTERN_NUM}\n\n")
+    pIFile.write(f"{PATTERN_NUM}\n")
     for _ in range(PATTERN_NUM):
         num = random.randint(config['num_lower'], config['num_upper'])
-        num_bin = int2bin(num)
-        pIFile.write(f"{num_bin}\n")
+        pIFile.write(f"{num}\n")
         num_decimal = sol(num)
         out = [str(e) for e in num_decimal]
         pOFile.write(f'{" ".join(out)}\n')

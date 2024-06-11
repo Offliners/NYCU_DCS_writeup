@@ -18,14 +18,17 @@ input logic [3:0] out_ten;
 input logic [3:0] out_unit;
 
 logic clk;
+reg [4:0] output_reg [2:0];
 
 //================================================================
 // parameters & integer
 //================================================================
-integer PATNUM=1000;
+integer PATNUM;
+integer input_file, output_file;
 integer patcount;
 integer CYCLE = 5;
 integer golden_out_hundred, golden_out_ten, golden_unit;
+integer i, k;
 
 always	#(CYCLE/2.0) clk = ~clk;
 
@@ -37,7 +40,11 @@ initial begin
   #(3) release clk;
 	repeat(5)@(negedge clk);
 	
-	for(patcount=0; patcount<PATNUM; patcount=patcount+1)
+  input_file  = $fopen("input.txt", "r");
+  output_file = $fopen("output.txt", "r");
+
+  k = $fscanf(input_file, "%d", PATNUM);
+	for(patcount = 0; patcount < PATNUM; patcount = patcount + 1)
 	begin		
 		input_and_check_task;
 		repeat(1) @(negedge clk);
@@ -50,10 +57,17 @@ initial begin
 end
 
 task input_and_check_task; begin
-  in_bin = $urandom_range(511, 0);
-  golden_out_hundred = (in_bin / 100) % 10;
-  golden_out_ten = (in_bin / 10) % 10;
-  golden_unit = in_bin % 10;
+  in_bin = 'bx;
+  golden_out_hundred = 'bx; golden_out_ten = 'bx; golden_unit = 'bx;
+
+  k = $fscanf(input_file, "%d", in_bin);
+  for(i = 0; i < 3; i = i + 1)
+	  k = $fscanf(output_file, "%d", output_reg[i]);
+  
+  golden_out_hundred = output_reg[0];
+  golden_out_ten     = output_reg[1];
+  golden_unit        = output_reg[2];
+
 end endtask
 
 
@@ -63,8 +77,8 @@ task ans_check; begin
         $display ("--------------------------------------------------------------------------------------------------------------------------------------------");
         $display ("                                                            patcount:%d          FAIL!", patcount);
         $display ("                                                            in_bin = %d", in_bin);
-        $display ("                                                            YOUR:   out_decimal     =  %d %d %d", out_hundred, out_ten, out_unit);
-        $display ("                                                            GOLDEN: golden_decimal  =  %d %d %d", golden_out_hundred, golden_out_ten, golden_unit);
+        $display ("                                                            YOUR:   out_number     =  %d %d %d", out_hundred, out_ten, out_unit);
+        $display ("                                                            GOLDEN: golden_number  =  %d %d %d", golden_out_hundred, golden_out_ten, golden_unit);
         $display ("--------------------------------------------------------------------------------------------------------------------------------------------");
         repeat(3)@(negedge clk);
 		    $finish;
