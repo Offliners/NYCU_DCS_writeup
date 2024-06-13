@@ -10,8 +10,8 @@ This repository contained my designs and patterns is used to practice the homewo
 * HW05 - MIPS CPU : [[spec](./HW05/DCS_HW05.pdf)]
 
 ### Labs
-* Lab01 - Binary-Coded Decimal : [[spec](./Lab01/DCS_Lab01.pdf)] [[design](./Lab01/BCD.sv)] [[pattern](./Lab01/PATTERN_GEN.sv)]
-* Lab02 - Merge Sort : [[spec](./Lab02/DCS_Lab02.pdf)] [[design](./Lab02/Sort.sv)] [[pattern](./Lab02/PATTERN_GEN.sv)]
+* Lab01 - Binary-Coded Decimal : [[spec](./Lab01/DCS_Lab01.pdf)] [[design](./Lab01/BCD.sv)] [[pattern (systemverilog)](./Lab01/PATTERN.sv)] [[pattern (python)](./Lab01/testdata_gen.py)]
+* Lab02 - Merge Sort : [[spec](./Lab02/DCS_Lab02.pdf)] [[design](./Lab02/Sort.sv)] [[pattern (systemverilog)](./Lab02/PATTERN.sv)] [[pattern (python)](./Lab02/testdata_gen.py)]
 * Lab03 - Frequency Divider : [[spec](./Lab03/DCS_Lab03.pdf)] [[design](./Lab03/Counter.sv)]
 * Lab04 - Sequential Circuit : [[spec](./Lab04/DCS_Lab04.pdf)] [[design](./Lab04/Seq.sv)]
 * Lab05 - AHB Interconnect : [[spec](./Lab05/DCS_Lab05.pdf)] [[design](./Lab05/inter.sv)]
