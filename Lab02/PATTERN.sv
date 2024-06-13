@@ -29,7 +29,7 @@ always	#(CYCLE/2.0) clk = ~clk;
 // parameters & integer
 //================================================================
 integer PATNUM = 500;
-integer seed = 333;
+integer seed = 0;
 integer i,j,k;
 integer patcount;
 logic [5:0] number [0:4];
@@ -39,6 +39,7 @@ logic [5:0] temp;
 // initial
 //================================================================
 initial begin
+	$random(seed);
 	clk = 0;
 	in_num0 = 6'dx;
 	in_num1 = 6'dx;
