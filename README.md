@@ -10,16 +10,18 @@ This repository contained my designs and patterns is used to practice the homewo
 * HW05 - MIPS CPU : [[spec](./HW05/DCS_HW05.pdf)] [[pattern (systemverilog)](./HW05/PATTERN.sv)]
 
 ### Labs
-* Lab01 - Binary-Coded Decimal : [[spec](./Lab01/DCS_Lab01.pdf)] [[design](./Lab01/BCD.sv)] [[pattern (systemverilog)](./Lab01/PATTERN.sv)] [[pattern (python)](./Lab01/testdata_gen.py)]
-* Lab02 - Merge Sort : [[spec](./Lab02/DCS_Lab02.pdf)] [[design](./Lab02/Sort.sv)] [[pattern (systemverilog)](./Lab02/PATTERN.sv)] [[pattern (python)](./Lab02/testdata_gen.py)]
-* Lab03 - Frequency Divider : [[spec](./Lab03/DCS_Lab03.pdf)] [[design](./Lab03/Counter.sv)] [[pattern (systemverilog)](./Lab03/PATTERN.sv)]
-* Lab04 - Sequential Circuit : [[spec](./Lab04/DCS_Lab04.pdf)] [[design](./Lab04/Seq.sv)] [[pattern (systemverilog)](./Lab04/PATTERN.sv)]
-* Lab05 - AHB Interconnect : [[spec](./Lab05/DCS_Lab05.pdf)] [[design](./Lab05/inter.sv)] [[pattern (systemverilog)](./Lab05/PATTERN.sv)]
-* Lab06 - Pattern : [[spec](./Lab06/DCS_Lab06.pdf)] [[pattern (systemverilog)](./Lab06/PATTERN.sv)]
-* Lab07 - Matrix Multiplication : [[spec](./Lab07/DCS_Lab07.pdf)] [[pattern (systemverilog)](./Lab07/PATTERN.sv)]
-* Lab08 - Floating Point Computation : [[spec](./Lab08/DCS_Lab08.pdf)] [[pattern (systemverilog)](./Lab08/PATTERN.sv)]
-* Lab09 - Pipeline : [[spec](./Lab09/DCS_Lab09.pdf)] [[pattern (systemverilog)](./Lab09/PATTERN.sv)]
-* Lab10 - Clock Domain Crossing : [[spec](./Lab10/DCS_Lab10.pdf)] [[pattern (systemverilog)](./Lab10/PATTERN.sv)]
+| Lab#  | Topic | Spec                       | Design                        | Pattern (Systemverilog)      | Pattern (Python)              |
+| ----- | ----- | -------------------------- | ----------------------------- | ---------------------------- | ----------------------------- |
+| Lab01 | Binary-Coded Decimal       | [spec](./Lab01/DCS_Lab01.pdf) | [design](./Lab01/BCD.sv)     | [pattern](./Lab01/PATTERN.sv) | [pattern](./Lab01/testdata_gen.py) |
+| Lab02 | Merge Sort                 | [spec](./Lab02/DCS_Lab02.pdf) | [design](./Lab02/Sort.sv)    | [pattern](./Lab02/PATTERN.sv) | [pattern](./Lab02/testdata_gen.py) |
+| Lab03 | Frequency Divider          | [spec](./Lab03/DCS_Lab03.pdf) | [design](./Lab03/Counter.sv) | [pattern](./Lab03/PATTERN.sv) | [pattern](./Lab03/testdata_gen.py) |
+| Lab04 | Sequential Circuit         | [spec](./Lab04/DCS_Lab04.pdf) | [design](./Lab04/Seq.sv)     | [pattern](./Lab04/PATTERN.sv) |  |
+| Lab05 | AHB Interconnect           | [spec](./Lab05/DCS_Lab05.pdf) | [design](./Lab05/inter.sv)   | [pattern](./Lab05/PATTERN.sv) |  |
+| Lab06 | Pattern                    | [spec](./Lab06/DCS_Lab06.pdf) | [design](./Lab06/lab06.sv)   | [pattern](./Lab06/PATTERN.sv) |  |
+| Lab07 | Matrix Multiplication      | [spec](./Lab07/DCS_Lab07.pdf) | [design](./Lab07/DCT.sv)     | [pattern](./Lab07/PATTERN.sv) |  |
+| Lab08 | Floating Point Computation | [spec](./Lab08/DCS_Lab08.pdf) | [design](./Lab08/Fpc.sv)     | [pattern](./Lab08/PATTERN.sv) |  |
+| Lab09 | Pipeline                   | [spec](./Lab09/DCS_Lab09.pdf) | [design](./Lab09/P_MUL.sv)   | [pattern](./Lab09/PATTERN.sv) |  |
+| Lab10 | Clock Domain Crossing      | [spec](./Lab10/DCS_Lab10.pdf) | [design](./Lab10/CDC.sv)     | [pattern](./Lab10/PATTERN.sv) |  |
 
 ### Final Project
 * Simple CNN : [[spec](./Final/DCS_Final_Project.pdf)]

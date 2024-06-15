@@ -1,114 +1,92 @@
-`define CYCLE_TIME 10.0
+`timescale 1ns/10ps
 
-module PATTERN(
-    // Output signals
+module PATTERN_GEN(
+  // output signals
 	clk,
 	rst_n,
-    // Input signals
-	clk2
+  // input signals
+    clk2
 );
 
-//---------------------------------------------------------------------
-//   PORT DECLARATION
-//---------------------------------------------------------------------
-output logic clk, rst_n;
-input  clk2;
+//================================================================
+// wire & registers 
+//================================================================
+output      clk, rst_n;
+input logic clk2;
 
-//pragma protect
-//pragma protect begin
-//================================================================
-// clock
-//================================================================
-real	CYCLE = `CYCLE_TIME;
-always	#(CYCLE/2.0) clk = ~clk;
+logic clk_real;
+
 //================================================================
 // parameters & integer
 //================================================================
-integer PATNUM = 500;
-integer seed = 0;
-integer i;
+integer PATNUM;
+integer input_file, output_file;
 integer patcount;
-integer count;
-integer freq = 4;
-logic golden_clk2;
+integer CYCLE = 10;
+integer golden_clk2;
+integer i, k;
+
+always	#(CYCLE/2.0) clk_real = ~clk_real;
 
 //================================================================
 // initial
 //================================================================
 initial begin
-	i = $random(seed);
-	golden_clk2 = 0;
-	count = 0;
+  force clk = 0;
+  #(3) release clk;
+	repeat(5)@(negedge clk);
 	
-	force clk = 0;
-	reset_task;
-	for(patcount=0; patcount<PATNUM; patcount=patcount+1)
+  input_file  = $fopen("input.txt", "r");
+  output_file = $fopen("output.txt", "r");
+
+  k = $fscanf(input_file, "%d", PATNUM);
+	for(patcount = 0; patcount < PATNUM; patcount = patcount + 1)
 	begin		
-		gen_ans;
-        repeat(1) @(negedge clk);
-		check_ans;
-		//$display("\033[0;32mPASS PATTERN NO.%3d \033[m", patcount);
-        //repeat(1) @(negedge clk);
+		input_and_check_task;
+		repeat(1) @(negedge clk);
+		ans_check;
+		$display("\033[0;32mPASS PATTERN NO.%3d \033[m", patcount);
 	end
 
-	YOU_PASS_task;
-	$finish;
+  YOU_PASS_task;
+  $finish;
 end
-//================================================================
-// task
-//================================================================
 
-task reset_task; begin
-	rst_n = 1;
-	#(0.5); rst_n = 0;
-	#(2.0);
-	if(clk2 !== 0 || count !== 0) begin
-		fail;
-		$display ("-------------------------------------------------------------------------------");
-		$display ("                                 RESET  FAIL!                                  ");
-		$display ( "                      all output signals should be reset                      ");
-		$display ( "------------------------------------------------------------------------------");
-		#(100);
-	    $finish ;
-	end
+task input_and_check_task; begin
+  in_num0 = 6'bx; in_num1 = 6'bx; in_num2 = 6'bx; in_num3 = 6'bx; in_num4 = 6'bx;
 
-	release clk;
-	#(3.0); rst_n = 1;
-end endtask
+  for(i = 0; i < 5; i = i + 1)
+	  k = $fscanf(input_file, "%d", input_reg[i]);
+  
+  in_num0 = input_reg[0];
+  in_num1 = input_reg[1];
+  in_num2 = input_reg[2];
+  in_num3 = input_reg[3];
+  in_num4 = input_reg[4];
 
-task gen_ans; begin
-    if(!rst_n) begin
-        golden_clk2 = 0;
-		count = 0;
-	end
-	else begin
-		if(count == freq / 2 - 1) begin
-			count = 0;
-			golden_clk2 = ~golden_clk2;
-		end
-		else
-			count += 1;
-	end
+  k = $fscanf(output_file, "%d", golden_out_num);
 
 end endtask
 
-task check_ans; begin
-	if(clk2 !== golden_clk2) begin
+
+task ans_check; begin
+	if(out_num !== golden_out_num) begin
 		fail;
 		$display ("--------------------------------------------------------------------------------------------------------------------------------------------");
 		$display ("                                                                ANSWER FAIL!                                                            ");
 		$display ("--------------------------------------------------------------------------------------------------------------------------------------------");
-		$display ("                                                                 Count: %3d                                                       ", count);
+		$display ("                                                              Pattern No. %3d                                                       ", patcount);
 		$display ("                                                                  out_num                                                                     ");
-		$display ("                                         Correct answer:            %3d                                                             ",golden_clk2);
-		$display ("                                         Your answer:               %3d                                                             ",clk2);
-		$display ("                                         at %8t ns                                                                                  ",$time);
+		$display ("                                         Correct answer:            %3d                                                             ", golden_out_num);
+		$display ("                                         Your answer:               %3d                                                             ", out_num);
+		$display ("                                         at %8t ns                                                                                  ", $time);
 		$display ("--------------------------------------------------------------------------------------------------------------------------------------------");
-		#(100);
+		#(100)
 		$finish;
 	end
 	//@(negedge clk);	
 end endtask
+
 
 task YOU_PASS_task;begin
 $display("\033[37m                                                                                                                                          ");        
@@ -160,13 +138,10 @@ $display("\033[37m  B. BBBBBB  B:    .::ir77rrYLvvriiiiiiirvvY7rr77ri:..        
 $display("\033[37m.S: 7BBBBP  B.                                                          vI7.  .:.  B.                                                     ");        
 $display("\033[37mB: ir:.   :B.                                                             :rvsUjUgU.                                                      ");        
 $display("\033[37mrMvrrirJKur                                                                                                                               \033[m");
-$display ("--------------------------------------------------------------------------------------------------------------------------------------------");
-$display ("                                                               Congratulations!                						             ");
-$display ("                                                        You have passed all patterns!          						             ");
-$display ("                                                               time: %8t ns                                                        ",$time);
-$display ("--------------------------------------------------------------------------------------------------------------------------------------------");
-
-
+$display ("----------------------------------------------------------------------------------------------------------------------");
+$display ("                                                  Congratulations!                						             ");
+$display ("                                           You have passed all patterns!          						             ");
+$display ("----------------------------------------------------------------------------------------------------------------------");
 
 $finish;	
 end endtask
@@ -223,8 +198,7 @@ $display("\033[38;2;252;238;238m                            vI \033[38;2;252;172
 $display("\033[38;2;252;238;238m                             71vi\033[38;2;252;172;172m:::irrr::....\033[38;2;252;238;238m    ...:..::::irrr7777777777777rrii::....  ..::irvrr7sUJYv7777v7ii..                         ");
 $display("\033[38;2;252;238;238m                               .i777i. ..:rrri77rriiiiiii:::::::...............:::iiirr7vrrr:.                                             ");
 $display("\033[38;2;252;238;238m                                                      .::::::::::::::::::::::::::::::                                                      \033[m");
-end endtask
 
-//pragma protect end
+end endtask
 
 endmodule
