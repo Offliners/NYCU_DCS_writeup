@@ -3,11 +3,13 @@ This repository contained my designs and patterns is used to practice the homewo
 
 ## Outline
 ### Homeworks
-* HW01 - Simplified Mahjong Judgment : [[spec](./HW01/DCS_HW01.pdf)] [[design](./HW01/SMJ.sv)] [[pattern (systemverilog)](./HW01/PATTERN.sv)]
-* HW02 - Simplified I2C : [[spec](./HW02/DCS_HW02.pdf)] [[design](./HW02/I2S.sv)] [[pattern (systemverilog)](./HW02/PATTERN.sv)]
-* HW03 - Traffic Light Controller : [[spec](./HW03/DCS_HW03.pdf)] [[pattern (systemverilog)](./HW03/PATTERN.sv)]
-* HW04 - Histogram Equalizer : [[spec](./HW04/DCS_HW04.pdf)] [[pattern (systemverilog)](./HW04/PATTERN.sv)]
-* HW05 - MIPS CPU : [[spec](./HW05/DCS_HW05.pdf)] [[pattern (systemverilog)](./HW05/PATTERN.sv)]
+| HW#  | Topic                       | Spec                        | Pattern (Systemverilog)                      | Pattern (Python)                  |
+| ---- | --------------------------- | --------------------------- | -------------------------------------------- | --------------------------------- |
+| HW01 | Simplified Mahjong Judgment | [spec](./HW01/DCS_HW01.pdf) | [pattern (systemverilog)](./HW01/PATTERN.sv) | [pattern](./HW01/testdata_gen.py) |
+| HW02 | Simplified I2C              | [spec](./HW02/DCS_HW02.pdf) | [pattern (systemverilog)](./HW02/PATTERN.sv) |                                   |
+| HW03 | Traffic Light Controller    | [spec](./HW03/DCS_HW03.pdf) | [pattern (systemverilog)](./HW03/PATTERN.sv) |                                   |
+| HW04 | Histogram Equalizer         | [spec](./HW04/DCS_HW04.pdf) | [pattern (systemverilog)](./HW04/PATTERN.sv) |                                   |
+| HW05 | MIPS CPU                    | [spec](./HW05/DCS_HW05.pdf) | [pattern (systemverilog)](./HW05/PATTERN.sv) |                                   |
 
 ### Labs
 | Lab#  | Topic | Spec                       | Design                        | Pattern (Systemverilog)      | Pattern (Python)              |
