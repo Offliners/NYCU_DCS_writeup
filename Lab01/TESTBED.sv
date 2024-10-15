@@ -1,10 +1,10 @@
 `timescale 1ns/1ps
 `include "PATTERN.sv"
-// `include "PATTERN_GEN.sv"
+
 `ifdef RTL
 `include "BCD.sv"
 `elsif GATE
-`include "BCD_SYN.v"
+`include "./Netlist/BCD_SYN.v"
 `endif
 
 module TESTBED();
@@ -17,12 +17,12 @@ logic [3:0] out_unit;
 
 initial begin
   `ifdef RTL
-    $fsdbDumpfile("BCD.fsdb");
-	  $fsdbDumpvars;
+    $dumpfile("BCD.vcd");
+	  $dumpvars;
   `elsif GATE
-    $fsdbDumpfile("BCD_SYN.fsdb");
+    $dumpfile("BCD_SYN.vcd");
 	  $sdf_annotate("BCD_SYN.sdf",I_BCD);
-	  $fsdbDumpvars();
+	  $dumpvars();
   `endif
 end
 
@@ -34,7 +34,6 @@ BCD I_BCD
   .out_unit(out_unit)
 );
 
-
 PATTERN I_PATTERN
 (
   .in_bin(in_bin),
@@ -42,13 +41,5 @@ PATTERN I_PATTERN
   .out_ten(out_ten),
   .out_unit(out_unit)
 );
-
-// PATTERN_GEN I_PATTERN
-// (
-//   .in_bin(in_bin),
-//   .out_hundred(out_hundred),
-//   .out_ten(out_ten),
-//   .out_unit(out_unit)
-// );
 
 endmodule

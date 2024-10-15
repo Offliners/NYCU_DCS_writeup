@@ -3,10 +3,11 @@
 module PATTERN(
   // output signals
 	in_bin,
+
   // input signals
-    out_hundred, 
-    out_ten,
-    out_unit
+  out_hundred, 
+  out_ten,
+  out_unit
 );
 
 //================================================================
@@ -31,21 +32,33 @@ integer CYCLE = 5;
 integer golden_out_hundred, golden_out_ten, golden_unit;
 integer i, k;
 
+`ifdef RTL
+  integer delay_cnt = 1;
+`elsif GATE 
+  integer delay_cnt = 5;
+`endif
+
 always	#(CYCLE/2.0) clk = ~clk;
 
 //================================================================
 // initial
 //================================================================
 initial begin
-    $random(seed);
-    force clk = 0;
-    #(3) release clk;
-	repeat(5)@(negedge clk);
+  i = $random(seed);
+  force clk = 0;
+  #(3) release clk;
+	repeat(1)@(negedge clk);
+
+  `ifdef CUSTOM
+    input_file  = $fopen("input.txt", "r");
+    output_file = $fopen("output.txt", "r");
+    k = $fscanf(input_file, "%d", PATNUM);
+  `endif
 
 	for(patcount = 0; patcount < PATNUM; patcount = patcount + 1)
 	begin		
 		input_and_check_task;
-		repeat(1) @(negedge clk);
+		repeat(delay_cnt) @(negedge clk);
 		ans_check;
 		$display("\033[0;32mPASS PATTERN NO.%3d \033[m", patcount);
 	end
@@ -55,12 +68,24 @@ initial begin
 end
 
 task input_and_check_task; begin
-  in_bin = $urandom_range(511, 0);
-  
-  golden_out_hundred = (in_bin / 100) % 10;
-  golden_out_ten     = (in_bin / 10) % 10;
-  golden_unit        = in_bin % 10;
+  `ifdef CUSTOM 
+    in_bin = 'bx;
+    golden_out_hundred = 'bx; golden_out_ten = 'bx; golden_unit = 'bx;
 
+    k = $fscanf(input_file, "%d", in_bin);
+    for(i = 0; i < 3; i = i + 1)
+      k = $fscanf(output_file, "%d", output_reg[i]);
+    
+    golden_out_hundred = output_reg[0];
+    golden_out_ten     = output_reg[1];
+    golden_unit        = output_reg[2];
+  `else
+    in_bin = $urandom_range(511, 0);
+  
+    golden_out_hundred = (in_bin / 100) % 10;
+    golden_out_ten     = (in_bin / 10) % 10;
+    golden_unit        = in_bin % 10;
+  `endif
 end endtask
 
 
