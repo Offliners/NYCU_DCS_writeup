@@ -29,6 +29,55 @@ This repository contained my designs and patterns is used to practice the homewo
 ### Final Project
 * Simple CNN : [[spec](./Final/DCS_Final_Project.pdf)]
 
+## Design Flow
+```mermaid
+%%{
+  init: {
+    'theme': 'neutral',
+    'themeVariables': {
+      'textColor': '#000000',
+      'noteTextColor' : '#000000',
+      'fontSize': '20px'
+    }
+  }
+}%%
+
+flowchart LR
+    b0[                  ] --- b2[ ] --- b4[ ] --- DesignFlow --- b1[ ] --- b3[ ] --- b5[                  ]
+    style b0 stroke-width:0px, fill: #FFFFFF00, color:#FFFFFF00
+    style b1 stroke-width:0px, fill: #FFFFFF00
+    style b2 stroke-width:0px, fill: #FFFFFF00
+    style b3 stroke-width:0px, fill: #FFFFFF00
+    style b4 stroke-width:0px, fill: #FFFFFF00
+    style b5 stroke-width:0px, fill: #FFFFFF00, color:#FFFFFF00
+
+    linkStyle 0 stroke-width:0px
+    linkStyle 1 stroke-width:0px
+    linkStyle 2 stroke-width:0px
+    linkStyle 3 stroke-width:0px
+    linkStyle 4 stroke-width:0px
+    linkStyle 5 stroke-width:0px
+    
+    subgraph DesignFlow
+    direction TB
+    style DesignFlow fill:#ffffff00, stroke-width:0px
+
+    direction TB
+        A[Spec Development System models]
+        A --> B[RTL and Verification]
+        B --> C[Synthesis]
+        C --> D[Timing Verificaiton]
+        D --> E[Gate Level Simulation]
+        E --> F[Finish]
+        style A fill:#74c2b5,stroke:#000000,stroke-width:4px
+        style B fill:#f8cecc,stroke:#000000,stroke-width:4px
+        style C fill:#fff2cc,stroke:#000000,stroke-width:4px
+        style D fill:#cce5ff,stroke:#000000,stroke-width:4px
+        style E fill:#fa6800,stroke:#000000,stroke-width:4px
+        style F fill:#ff6666,stroke:#000000,stroke-width:4px
+    end
+```
+
 ## Usage
 ```shell
 # RTL & Verification
@@ -40,7 +89,7 @@ $ python3 testdata_gen.py
 # RTL & Verification with custom testcase
 $ make irun_rtl_cust
 
-# Synthesis & STA
+# Synthesis & STA report
 $ make syn
 
 # Gate level simulation
