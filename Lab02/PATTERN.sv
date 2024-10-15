@@ -7,6 +7,7 @@ module PATTERN(
 	in_num2,
 	in_num3,
 	in_num4,
+
     // Input signals
 	out_num,
 );
@@ -17,8 +18,6 @@ module PATTERN(
 output reg [5:0] in_num0, in_num1, in_num2, in_num3, in_num4;
 input  [5:0] out_num;
 
-//pragma protect
-//pragma protect begin
 //================================================================
 // clock
 //================================================================
@@ -31,21 +30,30 @@ always	#(CYCLE/2.0) clk = ~clk;
 integer PATNUM = 500;
 integer seed = 0;
 integer i,j,k;
+integer input_file, output_file;
 integer patcount;
+integer golden_out_num;
 logic [5:0] number [0:4];
 logic [5:0] temp;
+logic [5:0] input_reg [4:0];
 
 //================================================================
 // initial
 //================================================================
 initial begin
-	$random(seed);
+	i = $random(seed);
 	clk = 0;
 	in_num0 = 6'dx;
 	in_num1 = 6'dx;
 	in_num2 = 6'dx;
 	in_num3 = 6'dx;
 	in_num4 = 6'dx;
+
+	`ifdef CUSTOM
+		input_file  = $fopen("input.txt", "r");
+  		output_file = $fopen("output.txt", "r");
+		k = $fscanf(input_file, "%d", PATNUM);
+	`endif
 	
 	for(patcount=0; patcount<PATNUM; patcount=patcount+1)
 	begin		
@@ -53,35 +61,46 @@ initial begin
 		gen_ans;
         repeat(1) @(negedge clk);
 		check_ans;
-		//$display("\033[0;32mPASS PATTERN NO.%3d \033[m", patcount);
-        //repeat(1) @(negedge clk);
 	end
 
 	YOU_PASS_task;
 	$finish;
 end
+
 //================================================================
 // task
 //================================================================
-
 task input_task; begin
-	in_num0 = $urandom_range(63,0);
-	in_num1 = $urandom_range(63,0);
-	in_num2 = $urandom_range(63,0);
-	in_num3 = $urandom_range(63,0);
-	in_num4 = $urandom_range(63,0);
+	`ifdef CUSTOM
+		in_num0 = 6'bx; in_num1 = 6'bx; in_num2 = 6'bx; in_num3 = 6'bx; in_num4 = 6'bx;
+
+		for(i = 0; i < 5; i = i + 1)
+			k = $fscanf(input_file, "%d", input_reg[i]);
+		
+		in_num0 = input_reg[0];
+		in_num1 = input_reg[1];
+		in_num2 = input_reg[2];
+		in_num3 = input_reg[3];
+		in_num4 = input_reg[4];
+
+		k = $fscanf(output_file, "%d", golden_out_num);
+	`else
+		in_num0 = $urandom_range(63,0);
+		in_num1 = $urandom_range(63,0);
+		in_num2 = $urandom_range(63,0);
+		in_num3 = $urandom_range(63,0);
+		in_num4 = $urandom_range(63,0);
+	`endif
 end endtask
 
 task gen_ans; begin
-
 	number[0] = in_num0;
 	number[1] = in_num1;
 	number[2] = in_num2;
 	number[3] = in_num3;
 	number[4] = in_num4;
-	//$display ("\033[0;34mInput: in_num0=%2d, in_num1=%2d, in_num2=%2d, in_num3=%2d\033[m",number[0], number[1], number[2], number[3]);
 	
-	//sorting
+	// Bubble sort
 	for (i=0; i<4; i=i+1) begin
 		for (j=0; j<4-i; j=j+1) begin
 			if (number[j] >= number[j+1]) begin
@@ -91,26 +110,25 @@ task gen_ans; begin
 			end
 		end
 	end
-	//$display ("\033[0;34mOutput: out_num0=%2d, out_num1=%2d, out_num2=%2d, out_num3=%2d\033[m",number[0], number[1], number[2], number[3]);
 
+	golden_out_num = number[2];
 end endtask
 
 task check_ans; begin
-	if(out_num !== number[2]) begin
+	if(out_num !== golden_out_num) begin
 		fail;
 		$display ("--------------------------------------------------------------------------------------------------------------------------------------------");
 		$display ("                                                                ANSWER FAIL!                                                            ");
 		$display ("--------------------------------------------------------------------------------------------------------------------------------------------");
 		$display ("                                                              Pattern No. %3d                                                       ",patcount);
 		$display ("                                                                  out_num                                                                     ");
-		$display ("                                         Correct answer:            %3d                                                             ",number[2]);
+		$display ("                                         Correct answer:            %3d                                                             ",golden_out_num);
 		$display ("                                         Your answer:               %3d                                                             ",out_num);
 		$display ("                                         at %8t ns                                                                                  ",$time);
 		$display ("--------------------------------------------------------------------------------------------------------------------------------------------");
 		#(100)
 		$finish;
 	end
-	//@(negedge clk);	
 end endtask
 
 task YOU_PASS_task;begin
@@ -169,8 +187,6 @@ $display ("                                                        You have pass
 $display ("                                                               time: %8t ns                                                        ",$time);
 $display ("--------------------------------------------------------------------------------------------------------------------------------------------");
 
-
-
 $finish;	
 end endtask
 
@@ -226,9 +242,8 @@ $display("\033[38;2;252;238;238m                            vI \033[38;2;252;172
 $display("\033[38;2;252;238;238m                             71vi\033[38;2;252;172;172m:::irrr::....\033[38;2;252;238;238m    ...:..::::irrr7777777777777rrii::....  ..::irvrr7sUJYv7777v7ii..                         ");
 $display("\033[38;2;252;238;238m                               .i777i. ..:rrri77rriiiiiii:::::::...............:::iiirr7vrrr:.                                             ");
 $display("\033[38;2;252;238;238m                                                      .::::::::::::::::::::::::::::::                                                      \033[m");
-end endtask
 
-//pragma protect end
+end endtask
 
 endmodule
 

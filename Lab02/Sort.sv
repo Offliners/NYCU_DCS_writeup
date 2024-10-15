@@ -5,7 +5,8 @@ module Sort(
 	in_num2,
 	in_num3,
 	in_num4,
-    // Output signals
+    
+	// Output signals
 	out_num
 );
 
@@ -52,8 +53,11 @@ assign out_num = lv4_n2;
 endmodule
 
 module comparator(
+	// Input signals
 	in_0,
 	in_1,
+
+	// Output signals
 	out_0,
 	out_1
 );
