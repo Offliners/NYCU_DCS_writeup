@@ -4,6 +4,7 @@ module PATTERN(
     // Output signals
 	clk,
 	rst_n,
+
     // Input signals
 	clk2
 );
@@ -24,11 +25,11 @@ always	#(CYCLE/2.0) clk = ~clk;
 //================================================================
 integer PATNUM = 500;
 integer seed = 0;
-integer i;
+integer i, k;
+integer input_file, output_file;
 integer patcount;
 integer count;
 integer freq = 4;
-logic delay_cnt;
 logic golden_clk2;
 
 //================================================================
@@ -38,7 +39,13 @@ initial begin
 	i = $random(seed);
 	golden_clk2 = 0;
 	count = 0;
-	
+
+	`ifdef CUSTOM
+		input_file  = $fopen("input.txt", "r");
+  		output_file = $fopen("output.txt", "r");
+		k = $fscanf(input_file, "%d", PATNUM);
+	`endif
+
 	force clk = 0;
 	reset_task;
 	for(patcount=0; patcount<PATNUM; patcount=patcount+1)
@@ -51,10 +58,10 @@ initial begin
 	YOU_PASS_task;
 	$finish;
 end
+
 //================================================================
 // task
 //================================================================
-
 task reset_task; begin
 	rst_n = 1;
 	#(0.5); rst_n = 0;
@@ -66,7 +73,7 @@ task reset_task; begin
 		$display ( "                      all output signals should be reset                      ");
 		$display ( "------------------------------------------------------------------------------");
 		#(100);
-	    $finish ;
+	    $finish;
 	end
 
 	release clk;
@@ -74,18 +81,22 @@ task reset_task; begin
 end endtask
 
 task gen_ans; begin
-    if(!rst_n) begin
-        golden_clk2 = 0;
-		count = 0;
-	end
-	else begin
-		if(count == freq / 2 - 1) begin
+	`ifdef CUSTOM
+		k = $fscanf(output_file, "%d", golden_clk2);
+	`else
+		if(!rst_n) begin
+			golden_clk2 = 0;
 			count = 0;
-			golden_clk2 = ~golden_clk2;
 		end
-		else
-			count += 1;
-	end
+		else begin
+			if(count == freq / 2 - 1) begin
+				count = 0;
+				golden_clk2 = ~golden_clk2;
+			end
+			else
+				count += 1;
+		end
+	`endif
 end endtask
 
 task check_ans; begin
