@@ -14,8 +14,6 @@ module PATTERN(
 output logic clk, rst_n;
 input  clk2;
 
-//pragma protect
-//pragma protect begin
 //================================================================
 // clock
 //================================================================
@@ -30,6 +28,7 @@ integer i;
 integer patcount;
 integer count;
 integer freq = 4;
+logic delay_cnt;
 logic golden_clk2;
 
 //================================================================
@@ -47,8 +46,6 @@ initial begin
 		gen_ans;
         repeat(1) @(negedge clk);
 		check_ans;
-		//$display("\033[0;32mPASS PATTERN NO.%3d \033[m", patcount);
-        //repeat(1) @(negedge clk);
 	end
 
 	YOU_PASS_task;
@@ -89,7 +86,6 @@ task gen_ans; begin
 		else
 			count += 1;
 	end
-
 end endtask
 
 task check_ans; begin
@@ -107,7 +103,6 @@ task check_ans; begin
 		#(100);
 		$finish;
 	end
-	//@(negedge clk);	
 end endtask
 
 task YOU_PASS_task;begin
@@ -166,8 +161,6 @@ $display ("                                                        You have pass
 $display ("                                                               time: %8t ns                                                        ",$time);
 $display ("--------------------------------------------------------------------------------------------------------------------------------------------");
 
-
-
 $finish;	
 end endtask
 
@@ -224,7 +217,5 @@ $display("\033[38;2;252;238;238m                             71vi\033[38;2;252;1
 $display("\033[38;2;252;238;238m                               .i777i. ..:rrri77rriiiiiii:::::::...............:::iiirr7vrrr:.                                             ");
 $display("\033[38;2;252;238;238m                                                      .::::::::::::::::::::::::::::::                                                      \033[m");
 end endtask
-
-//pragma protect end
 
 endmodule
