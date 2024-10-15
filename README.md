@@ -12,17 +12,18 @@ This repository contained my designs and patterns is used to practice the homewo
 | HW05 | MIPS CPU                    |      |        |
 
 ### Labs
-Lab#	Topic	Design	Area	Slack
-Lab01	[Binary-Coded Decimal](./Lab01/DCS_Lab01.pdf)	[BCD.sv](./Lab01/BCD.sv)	560.142001	7.39
-Lab02	Merge Sort			
-Lab03	Frequency Divider			
-Lab04	Sequential Circuit			
-Lab05	AHB Interconnect			
-Lab06	Pattern			
-Lab07	Matrix Multiplication			
-Lab08	Floating Point Computation			
-Lab09	Pipeline			
-Lab10	Clock Domain Crossing			
+| Lab#  | Topic                                         | Design                   | Area       | Slack |
+| ----- | --------------------------------------------- | ------------------------ | ---------- | ----- |
+| Lab01 | [Binary-Coded Decimal](./Lab01/DCS_Lab01.pdf) | [BCD.sv](./Lab01/BCD.sv) | 560.142001 | 7.39  |
+| Lab02 | Merge Sort                                    |                          |            |       |
+| Lab03 | Frequency Divider                             |                          |            |       |
+| Lab04 | Sequential Circuit                            |                          |            |       |
+| Lab05 | AHB Interconnect                              |                          |            |       |
+| Lab06 | Pattern                                       |                          |            |       |
+| Lab07 | Matrix Multiplication                         |                          |            |       |
+| Lab08 | Floating Point Computation                    |                          |            |       |
+| Lab09 | Pipeline                                      |                          |            |       |
+| Lab10 | Clock Domain Crossing                         |                          |            |       |		
 
 
 ### Final Project
