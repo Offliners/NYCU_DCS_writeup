@@ -80,24 +80,26 @@ task reset_task; begin
 	#(3.0); rst_n = 1;
 end endtask
 
+`ifdef CUSTOM
 task gen_ans; begin
-	`ifdef CUSTOM
-		k = $fscanf(output_file, "%d", golden_clk2);
-	`else
-		if(!rst_n) begin
-			golden_clk2 = 0;
-			count = 0;
-		end
-		else begin
-			if(count == freq / 2 - 1) begin
-				count = 0;
-				golden_clk2 = ~golden_clk2;
-			end
-			else
-				count += 1;
-		end
-	`endif
+	k = $fscanf(output_file, "%d", golden_clk2);
 end endtask
+`else
+task gen_ans; begin
+	if(!rst_n) begin
+		golden_clk2 = 0;
+		count = 0;
+	end
+	else begin
+		if(count == freq / 2 - 1) begin
+			count = 0;
+			golden_clk2 = ~golden_clk2;
+		end
+		else
+			count += 1;
+	end
+end endtask
+`endif
 
 task check_ans; begin
 	if(clk2 !== golden_clk2) begin

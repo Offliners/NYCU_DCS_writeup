@@ -70,28 +70,30 @@ end
 //================================================================
 // task
 //================================================================
+`ifdef CUSTOM
 task input_task; begin
-	`ifdef CUSTOM
-		in_num0 = 6'bx; in_num1 = 6'bx; in_num2 = 6'bx; in_num3 = 6'bx; in_num4 = 6'bx;
+	in_num0 = 6'bx; in_num1 = 6'bx; in_num2 = 6'bx; in_num3 = 6'bx; in_num4 = 6'bx;
 
-		for(i = 0; i < 5; i = i + 1)
-			k = $fscanf(input_file, "%d", input_reg[i]);
-		
-		in_num0 = input_reg[0];
-		in_num1 = input_reg[1];
-		in_num2 = input_reg[2];
-		in_num3 = input_reg[3];
-		in_num4 = input_reg[4];
+	for(i = 0; i < 5; i = i + 1)
+		k = $fscanf(input_file, "%d", input_reg[i]);
+	
+	in_num0 = input_reg[0];
+	in_num1 = input_reg[1];
+	in_num2 = input_reg[2];
+	in_num3 = input_reg[3];
+	in_num4 = input_reg[4];
 
-		k = $fscanf(output_file, "%d", golden_out_num);
-	`else
-		in_num0 = $urandom_range(63,0);
-		in_num1 = $urandom_range(63,0);
-		in_num2 = $urandom_range(63,0);
-		in_num3 = $urandom_range(63,0);
-		in_num4 = $urandom_range(63,0);
-	`endif
+	k = $fscanf(output_file, "%d", golden_out_num);
 end endtask
+`else
+task input_task; begin
+	in_num0 = $urandom_range(63,0);
+	in_num1 = $urandom_range(63,0);
+	in_num2 = $urandom_range(63,0);
+	in_num3 = $urandom_range(63,0);
+	in_num4 = $urandom_range(63,0);
+end endtask
+`endif
 
 task gen_ans; begin
 	number[0] = in_num0;

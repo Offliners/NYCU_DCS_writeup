@@ -67,8 +67,8 @@ initial begin
   $finish;
 end
 
+`ifdef CUSTOM 
 task input_and_check_task; begin
-  `ifdef CUSTOM 
     in_bin = 'bx;
     golden_out_hundred = 'bx; golden_out_ten = 'bx; golden_unit = 'bx;
 
@@ -79,14 +79,16 @@ task input_and_check_task; begin
     golden_out_hundred = output_reg[0];
     golden_out_ten     = output_reg[1];
     golden_unit        = output_reg[2];
-  `else
-    in_bin = $urandom_range(511, 0);
-  
-    golden_out_hundred = (in_bin / 100) % 10;
-    golden_out_ten     = (in_bin / 10) % 10;
-    golden_unit        = in_bin % 10;
-  `endif
 end endtask
+`else
+task input_and_check_task; begin
+  in_bin = $urandom_range(511, 0);
+  
+  golden_out_hundred = (in_bin / 100) % 10;
+  golden_out_ten     = (in_bin / 10) % 10;
+  golden_unit        = in_bin % 10;
+end endtask
+`endif
 
 
 task ans_check; begin
