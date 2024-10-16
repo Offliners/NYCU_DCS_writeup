@@ -28,15 +28,15 @@ integer seed = 0;
 integer PATNUM = 1000;
 integer input_file, output_file;
 integer patcount;
-integer CYCLE = 5;
-integer golden_out_hundred, golden_out_ten, golden_unit;
-integer i, k;
 
 `ifdef RTL
-  integer delay_cnt = 1;
+  integer CYCLE = 5;
 `elsif GATE 
-  integer delay_cnt = 5;
+  integer CYCLE = 25;
 `endif
+
+integer golden_out_hundred, golden_out_ten, golden_unit;
+integer i, k;
 
 always	#(CYCLE/2.0) clk = ~clk;
 
@@ -58,7 +58,7 @@ initial begin
 	for(patcount = 0; patcount < PATNUM; patcount = patcount + 1)
 	begin		
 		input_and_check_task;
-		repeat(delay_cnt) @(negedge clk);
+		repeat(1) @(negedge clk);
 		ans_check;
 		$display("\033[0;32mPASS PATTERN NO.%3d \033[m", patcount);
 	end
