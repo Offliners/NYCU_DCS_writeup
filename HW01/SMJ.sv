@@ -5,9 +5,11 @@ module SMJ(
     hand_n2,
     hand_n3,
     hand_n4,
+
     // Output signals
     out_data
 );
+
 //---------------------------------------------------------------------
 //   INPUT AND OUTPUT DECLARATION                         
 //---------------------------------------------------------------------
@@ -33,6 +35,7 @@ logic front_pair, end_pair;
 logic front_seq, end_seq;
 logic front_tri, end_tri;
 logic pair_2_3, pair_3_2, pair_1_3_1;
+
 //---------------------------------------------------------------------
 //   Your design                        
 //---------------------------------------------------------------------
@@ -100,8 +103,11 @@ end
 endmodule
 
 module comparator(
+    // Input signals
 	in_0,
 	in_1,
+
+    // Output signals
 	out_0,
 	out_1
 );

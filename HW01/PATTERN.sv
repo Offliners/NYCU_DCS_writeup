@@ -1,4 +1,8 @@
+`ifdef RTL
 `define CYCLE_TIME 30.0
+`elsif GATE
+`define CYCLE_TIME 40.0
+`endif
 
 module PATTERN(
     // Input signals
@@ -7,6 +11,7 @@ module PATTERN(
     hand_n2,
     hand_n3,
     hand_n4,
+
     // Output signals
     out_data
 );
@@ -28,6 +33,7 @@ input [1:0] out_data;
 logic clk;
 real	CYCLE = `CYCLE_TIME;
 always	#(CYCLE/2.0) clk = ~clk;
+
 //================================================================
 // parameters & integer
 //================================================================
@@ -36,6 +42,7 @@ integer patcount;
 
 logic [29:0] input_hand[499:0];
 logic [1:0] output_file[499:0];
+
 //================================================================
 // initial
 //================================================================
@@ -47,8 +54,8 @@ initial begin
 	hand_n3 = 6'dx;
 	hand_n4 = 6'dx;
 	
-	$readmemb("../00_TESTBED/input_hand.txt",input_hand);
-	$readmemb("../00_TESTBED/output.txt",output_file);
+	$readmemb("./input_hand.txt", input_hand);
+	$readmemb("./output.txt", output_file);
 	
 	for(patcount=0; patcount<PATNUM; patcount=patcount+1)
 	begin		
@@ -56,16 +63,15 @@ initial begin
         repeat(1) @(negedge clk);
 		check_ans;
 		$display("\033[0;32mPASS PATTERN NO.%3d \033[m", patcount);
-        //repeat(1) @(negedge clk);
 	end
 
 	YOU_PASS_task;
 	$finish;
 end
+
 //================================================================
 // task
 //================================================================
-
 task input_task; begin
 	hand_n0 = input_hand[patcount][5:0];
 	hand_n1 = input_hand[patcount][11:6];
@@ -87,8 +93,7 @@ task check_ans; begin
 		$display ("--------------------------------------------------------------------------------------------------------------------------------------------");
 		#(100)
 		$finish;
-	end
-	//@(negedge clk);	
+	end	
 end endtask
 
 task YOU_PASS_task;begin

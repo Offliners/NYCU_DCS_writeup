@@ -1,10 +1,10 @@
-//`timescale 1us/100ns
 `timescale 1ns/1ps
+
 `include "PATTERN.sv"
 `ifdef RTL
 	`include "SMJ.sv"
 `elsif GATE
-	`include "SMJ_SYN.v"
+	`include "./Netlist/SMJ_SYN.v"
 `endif
 
 module TESTBENCH();
@@ -14,12 +14,12 @@ logic [1:0] out_data;
 
 initial begin
 	`ifdef RTL
-		$fsdbDumpfile("SMJ.fsdb");
-		$fsdbDumpvars(0,"+mda");
+		$dumpfile("SMJ.fsdb");
+		$dumpvars(1, I_SMJ);
 	`elsif GATE
-		$fsdbDumpfile("SMJ_SYN.fsdb");
+		$dumpfile("SMJ_SYN.fsdb");
 		$sdf_annotate("SMJ_SYN.sdf", I_SMJ);
-		$fsdbDumpvars(0,"+mda");
+		$dumpvars(1, I_SMJ);
 	`endif
 end
 
