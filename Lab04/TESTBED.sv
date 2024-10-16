@@ -1,9 +1,10 @@
 `timescale 1ns/1ps
+
 `include "PATTERN.sv"
 `ifdef RTL
 `include "Seq.sv"
 `elsif GATE
-`include "Seq_SYN.v"
+`include "./Netlist/Seq_SYN.v"
 `endif
 
 module TESTBED();
@@ -13,18 +14,18 @@ logic [3:0]in_data;
 
 initial begin
   `ifdef RTL
-	$fsdbDumpfile("Seq.fsdb");		
-	$fsdbDumpvars(0,"+mda");
+	$dumpfile("Seq.vcd");		
+	$dumpvars(1, I_Seq);
   `elsif GATE
-    $fsdbDumpfile("Seq_SYN.fsdb");
-	$sdf_annotate("Seq_SYN.sdf",I_Seq);	
-	$fsdbDumpvars(0,"+mda");
+    $dumpfile("Seq_SYN.vcd");
+	$sdf_annotate("Seq_SYN.sdf", I_Seq);	
+	$dumpvars(1, I_Seq);
   `endif
 end
 
 Seq I_Seq(
-  .clk(clk),
-  .rst_n(rst_n),
+	.clk(clk),
+	.rst_n(rst_n),
 	.in_valid(in_valid),
 	.in_data(in_data),
 	.out_valid(out_valid),
@@ -32,12 +33,12 @@ Seq I_Seq(
 );
 
 PATTERN I_PATTERN(
-  .clk(clk),
-  .rst_n(rst_n),
+	.clk(clk),
+	.rst_n(rst_n),
 	.in_valid(in_valid),
 	.in_data(in_data),
 	.out_valid(out_valid),
 	.out_data(out_data)
 );
-endmodule
 
+endmodule

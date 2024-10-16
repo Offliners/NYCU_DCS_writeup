@@ -17,7 +17,7 @@ This repository contained my designs and patterns is used to practice the homewo
 | Lab01 | [Binary-Coded Decimal](./Lab01/DCS_Lab01.pdf) | [BCD.sv](./Lab01/BCD.sv)         | 560.142001  | 7.39  |
 | Lab02 | [Merge Sort](./Lab02/DCS_Lab02.pdf)           | [Sort.sv](./Lab02/Sort.sv)       | 1568.397579 | 0.12  |
 | Lab03 | [Frequency Divider](./Lab03/DCS_Lab03.pdf)    | [Counter.sv](./Lab03/Counter.sv) | 74.685597   | 4.17  |
-| Lab04 | Sequential Circuit                            |                                  |             |       |
+| Lab04 | Sequential Circuit                            | [Seq.sv](./Lab04/Seq.sv)         | 565.234189  | 3.63  |
 | Lab05 | AHB Interconnect                              |                                  |             |       |
 | Lab06 | Pattern                                       |                                  |             |       |
 | Lab07 | Matrix Multiplication                         |                                  |             |       |

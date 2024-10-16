@@ -1,11 +1,12 @@
 `timescale 1ns/10ps
 module PATTERN(
-  // output signals
+	// output signals
 	clk,
 	rst_n,
 	in_valid,
   	in_data,
-  // input signals
+
+	// input signals
   	out_valid,
   	out_data
 );
@@ -13,14 +14,10 @@ module PATTERN(
 //================================================================
 // wire & registers 
 //================================================================
-
 output logic clk,rst_n,in_valid;
 output logic [3:0]in_data;
 input out_valid;
 input out_data;
-
-//pragma protect
-//pragma protect begin
 
 //================================================================
 // parameters & integer
@@ -29,7 +26,13 @@ integer PATNUM=1000;
 integer patcount;
 integer cycle_time;
 integer lat, i, err;
-integer CYCLE = 5;
+
+`ifdef RTL
+	integer CYCLE = 5;
+`elsif GATE 
+	integer CYCLE = 15;
+`endif
+
 integer length;
 integer golden_in1, golden_in2, golden_in3, golden_out;
 
@@ -51,35 +54,35 @@ initial begin
 	begin		
 		input_and_check_task;
 		repeat(1) @(negedge clk);
-		if(out_valid)out_valid_fail;
+		if(out_valid) out_valid_fail;
 		$display("\033[0;32mPASS PATTERN NO.%3d \033[m", patcount);
 	end
 
 	YOU_PASS_task;
 	$finish;
 end
+
 //================================================================
 // task
 //================================================================ 
-
 task reset_task ; begin
-  #( 0.5 ); rst_n = 0;
+	#( 0.5 ); rst_n = 0;
 
 	#(2.0);
-	  if( out_valid !== 0 || ( out_data !== 0 )) begin
-      $display("----------------------------" );
-      $display("            FAIL            " );
-      $display(" output signal should be 0 after rst  " );
-      $display("----------------------------" );
-      $finish ;
-	  end 
-	
+	if( out_valid !== 0 || ( out_data !== 0 )) begin
+		$display("----------------------------" );
+		$display("            FAIL            " );
+		$display(" output signal should be 0 after rst  " );
+		$display("----------------------------" );
+		$finish;
+	end 
+
 	#(3) rst_n = 1 ;
-    #(3) release clk;
+	#(3) release clk;
 end endtask
 
 
-task input_and_check_task; begin  // input clk
+task input_and_check_task; begin
 	length = $urandom_range(10,1);
 	repeat(length)@(negedge clk)
 
@@ -120,13 +123,12 @@ task input_and_check_task; begin  // input clk
 		@(negedge clk);
 		if(i>=2)begin
 			ans_check;
-			if(out_valid==0)out_valid_fail;
+			if(out_valid==0) out_valid_fail;
 		end
 	end
 	in_valid = 0;
 	in_data = 'bx;
 end endtask
-
 
 
 task ans_check; begin
@@ -144,17 +146,14 @@ task ans_check; begin
 end endtask
 
 
-
 task out_valid_fail;begin
 	err = 1;
-	// $display ("%d",i);
 	$display ("--------------------------------------------------------------------------------------------------------------------------------------------");
     $display ("                                                    out_valid should be %d !!!                                          ", !out_valid);
     $display ("--------------------------------------------------------------------------------------------------------------------------------------------");
     repeat(3)@(negedge clk);
 	$finish;
 end endtask
-
 
 
 task YOU_PASS_task;begin
@@ -270,8 +269,4 @@ $display("\033[38;2;252;238;238m                                                
 
 end endtask
 
-//pragma protect end
-
 endmodule
-
-
