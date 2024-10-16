@@ -3,13 +3,13 @@ This repository contained my designs and patterns is used to practice the homewo
 
 ## Outline
 ### Homeworks
-| HW#  | Topic                       | Area | Slack |
-| ---- | --------------------------- | ---- | ------ |
-| HW01 | Simplified Mahjong Judgment |      |        |
-| HW02 | Simplified I2C              |      |        |
-| HW03 | Traffic Light Controller    |      |        |
-| HW04 | Histogram Equalizer         |      |        |
-| HW05 | MIPS CPU                    |      |        |
+| HW#  | Topic                       | Design | Area | Data Required Time | Slack |
+| ---- | --------------------------- | ------ | ---- | ------------------ | ----- |
+| HW01 | Simplified Mahjong Judgment |        |      |                    |       |
+| HW02 | Simplified I2C              |        |      |                    |       |
+| HW03 | Traffic Light Controller    |        |      |                    |       |
+| HW04 | Histogram Equalizer         |        |      |                    |       |
+| HW05 | MIPS CPU                    |        |      |                    |       |
 
 ### Labs
 | Lab#  | Topic                                         | Design                           | Area        | Data Required Time | Slack |
