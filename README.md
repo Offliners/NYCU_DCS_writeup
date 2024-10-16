@@ -1,5 +1,5 @@
 # NYCU Digital Circuit System (2023) - writeup
-This repository contained my designs and patterns is used to practice the homeworks and labs from Prof. Tien-Hsuan Chang's Digital Circuit System (DCS) course (2023) at NYCU.
+This repository contained my designs (System Verilog) and patterns (System Verilog & Python3) is used to practice the homeworks and labs from Prof. Tien-Hsuan Chang's Digital Circuit System (DCS) course (2023) at NYCU.
 
 ## Outline
 ### Homeworks
