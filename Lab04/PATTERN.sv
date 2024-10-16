@@ -23,9 +23,11 @@ input out_data;
 // parameters & integer
 //================================================================
 integer PATNUM=1000;
+integer seed = 0;
 integer patcount;
 integer cycle_time;
-integer lat, i, err;
+integer input_file, output_file;
+integer lat, i, err, k;
 
 `ifdef RTL
 	integer CYCLE = 5;
@@ -34,7 +36,7 @@ integer lat, i, err;
 `endif
 
 integer length;
-integer golden_in1, golden_in2, golden_in3, golden_out;
+integer golden_in1, golden_in2, golden_in3, golden_out, golden_out_valid;
 
 always	#(CYCLE/2.0) clk = ~clk;
 
@@ -42,9 +44,16 @@ always	#(CYCLE/2.0) clk = ~clk;
 // initial
 //================================================================
 initial begin
+	i = $random(seed);
 	rst_n = 1'b1;
 	in_valid = 1'b0;
 	in_data = 'dx;
+
+	`ifdef CUSTOM
+		input_file  = $fopen("input.txt", "r");
+		output_file = $fopen("output.txt", "r");
+		k = $fscanf(input_file, "%d", PATNUM);
+	`endif
 
   	force clk = 0;
   	reset_task;
@@ -66,10 +75,10 @@ end
 // task
 //================================================================ 
 task reset_task ; begin
-	#( 0.5 ); rst_n = 0;
+	#(0.5); rst_n = 0;
 
 	#(2.0);
-	if( out_valid !== 0 || ( out_data !== 0 )) begin
+	if(out_valid !== 0 || (out_data !== 0)) begin
 		$display("----------------------------" );
 		$display("            FAIL            " );
 		$display(" output signal should be 0 after rst  " );
@@ -81,7 +90,25 @@ task reset_task ; begin
 	#(3) release clk;
 end endtask
 
+`ifdef CUSTOM
+task input_and_check_task; begin
+	k = $fscanf(input_file, "%d", length);
+	for(i=0;i<length;i=i+1) begin
+		k = $fscanf(input_file, "%d %d", in_valid, in_data);
+		k = $fscanf(output_file, "%d %d", golden_out_valid, golden_out);
+		@(negedge clk);
+		ans_check;
+	end
 
+	k = $fscanf(input_file, "%d", length);
+	for(i=0;i<length;i=i+1) begin	
+		k = $fscanf(input_file, "%d %d", in_valid, in_data);
+		k = $fscanf(output_file, "%d %d", golden_out_valid, golden_out);
+		@(negedge clk);
+		ans_check;
+	end
+end endtask
+`else
 task input_and_check_task; begin
 	length = $urandom_range(10,1);
 	repeat(length)@(negedge clk)
@@ -129,6 +156,7 @@ task input_and_check_task; begin
 	in_valid = 0;
 	in_data = 'bx;
 end endtask
+`endif
 
 
 task ans_check; begin
