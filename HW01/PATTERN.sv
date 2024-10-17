@@ -37,11 +37,17 @@ always	#(CYCLE/2.0) clk = ~clk;
 //================================================================
 // parameters & integer
 //================================================================
+`ifdef CUSTOM
+integer PATNUM = 1000;
+logic [29:0] input_hand[999:0];
+logic [1:0] output_file[999:0];
+`else
 integer PATNUM = 500;
-integer patcount;
-
 logic [29:0] input_hand[499:0];
 logic [1:0] output_file[499:0];
+`endif
+
+integer patcount;
 
 //================================================================
 // initial
@@ -54,8 +60,13 @@ initial begin
 	hand_n3 = 6'dx;
 	hand_n4 = 6'dx;
 	
-	$readmemb("./input_hand.txt", input_hand);
-	$readmemb("./output.txt", output_file);
+	`ifdef CUSTOM
+		$readmemb("./input.txt", input_hand);
+		$readmemb("./output.txt", output_file);
+	`else
+		$readmemb("./input_hand.txt", input_hand);
+		$readmemb("./output_hand.txt", output_file);
+	`endif
 	
 	for(patcount=0; patcount<PATNUM; patcount=patcount+1)
 	begin		
