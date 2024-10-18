@@ -90,7 +90,7 @@ always_comb begin
         out_data = 2'b10;
     else if(pair_3_2 && front_seq && lv4_n0[5:4] != 2'b00 && (lv4_n3[3:0] == lv4_n4[3:0]))
         out_data = 2'b10;
-    else if(pair_1_3_1)
+    else if(pair_1_3_1 && lv4_n1[5:4] != 2'b00)
         out_data = 2'b10;
     else if(pair_2_3 && end_tri && (lv4_n0[3:0] == lv4_n1[3:0]))
         out_data = 2'b11;
