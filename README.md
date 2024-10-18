@@ -25,6 +25,11 @@ This repository contained my designs (System Verilog) and patterns (System Veril
 | Lab09 | [Pipeline](./Lab09/DCS_Lab09.pdf)                   |                                  |             |                    |       |
 | Lab10 | [Clock Domain Crossing](./Lab10/DCS_Lab10.pdf)      |                                  |             |                    |       |
 
+### Online Test
+| Topic                         | Design | Area | Data Required Time | Slack |
+| ----------------------------- | ------ | ---- | ------------------ | ----- |
+| [Systolic Array](./OT/OT.pdf) |        |      |                    |       |
+
 ### Final Project
 | Topic                                       | Design | Area | Data Required Time | Slack |
 | ------------------------------------------- | ------ | ---- | ------------------ | ----- |
