@@ -72,8 +72,8 @@ assign end_pair = (lv4_n3[5:4] == lv4_n4[5:4]);
 
 assign same_5_err = (front_pair && end_pair && (lv4_n1 == lv4_n2) && (lv4_n2 == lv4_n3) && (lv4_n0[3:0] == lv4_n1[3:0]) && (lv4_n3[3:0] == lv4_n4[3:0]));
 
-assign pair_2_3 = (end_pair && (lv4_n2[5:4] == lv4_n3[5:4]));
-assign pair_3_2 = (front_pair && (lv4_n1[5:4] == lv4_n2[5:4]));
+assign pair_2_3 = (end_pair && (lv4_n2[5:4] == lv4_n3[5:4]) && front_pair);
+assign pair_3_2 = (front_pair && (lv4_n1[5:4] == lv4_n2[5:4]) && end_pair);
 
 assign front_seq = (lv4_n0[3:0] + 1 == lv4_n1[3:0]) && (lv4_n1[3:0] + 1 == lv4_n2[3:0]);
 assign end_seq = (lv4_n2[3:0] + 1 == lv4_n3[3:0]) && (lv4_n3[3:0] + 1 == lv4_n4[3:0]);
