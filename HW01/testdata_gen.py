@@ -1,5 +1,5 @@
 import random
-from typing import List
+from typing import List, Tuple
 from collections import Counter
 from argparse import ArgumentParser, Namespace
 
@@ -13,9 +13,6 @@ config = {
     # Number of hands
     'num_hand': 5,
 
-    # Tile type
-    'tile_type' : 4,
-
     # Tile length
     'tile_len' : 6,
 
@@ -28,6 +25,10 @@ config = {
     'prob_bamboo'    : 0.3,
     'prob_dot'       : 0.3,
     'prob_unknown'   : 0.1,
+
+    # Probability of sequence and triplet
+    'prob_seq' : 0.5,
+    'prob_tri' : 0.5,
 
     # Boundary of honor tiles (0d ~ 6d)
     'honor_lower': 0,
@@ -71,24 +72,30 @@ def check_five_same(num: List[int]) -> bool:
     if len(num) != 5:
         return False
     
-    if num[0] == num[1] and num[1] == num[2] and num[2] == num[3] and num[3] == num[4]:
+    if len(set(num)) == 1:
         return True
     
     return False
 
 
 def check_sequence(num: List[int]) -> bool:
-    data = []
-    for k, v in Counter(num).items():
-        if v == 1:
-            data.append(k)
-
-    if len(data) != 3:
+    data = list(set(num))
+    if len(data) < 3:
         return False 
     
     data = sorted(data)
-    if data[0] + 1 == data[1] and data[1] + 1 == data[2]:
-        return True
+    if len(data) == 3:
+        if data[0] + 1 == data[1] and data[1] + 1 == data[2]:
+            return True
+    elif len(data) == 4:
+        if (data[0] + 1 == data[1] and data[1] + 1 == data[2]) or \
+           (data[1] + 1 == data[2] and data[2] + 1 == data[3]) :
+            return True
+    else:
+        if (data[0] + 1 == data[1] and data[1] + 1 == data[2]) or \
+           (data[1] + 1 == data[2] and data[2] + 1 == data[3]) or \
+           (data[2] + 1 == data[3] and data[3] + 1 == data[4]) :
+            return True
 
     return False 
 
@@ -160,41 +167,47 @@ def sol(hand_tiles: str) -> str:
         return unmentioned_tiles
 
     pair_tile_type = None
-    triplet_tile_type = None
+    triplet_sequence_tile_type = None
     for key, val in tiles_num_dict.items():
         if val == 2:
             pair_tile_type = key
         
         if val == 3:
-            triplet_tile_type = key
+            triplet_sequence_tile_type = key
 
         if val == 5:
             pair_tile_type = key
-            triplet_tile_type = key
+            triplet_sequence_tile_type = key
 
-    if pair_tile_type and triplet_tile_type:
-        if check_sequence(tiles_dict[triplet_tile_type]) and check_pair(tiles_dict[pair_tile_type]):
-            return sequence_win
+    if pair_tile_type and triplet_sequence_tile_type:
+        if pair_tile_type != triplet_sequence_tile_type:
+            if triplet_sequence_tile_type != honor_tiles and check_sequence(tiles_dict[triplet_sequence_tile_type]) and check_pair(tiles_dict[pair_tile_type]):
+                return sequence_win
 
-        if check_triplet(tiles_dict[triplet_tile_type]) and check_pair(tiles_dict[pair_tile_type]):
-            return triplet_win
+            if check_triplet(tiles_dict[triplet_sequence_tile_type]) and check_pair(tiles_dict[pair_tile_type]):
+                return triplet_win
+        else:
+            data = list(set(tiles_dict[pair_tile_type]))
+
+            if len(data) == 4:
+                if check_sequence(data) and triplet_sequence_tile_type != honor_tiles:
+                    return sequence_win
+            
+            if len(data) == 3:
+                if check_sequence(data) and triplet_sequence_tile_type != honor_tiles:
+                    return sequence_win
+            
+            if len(data) == 2:
+                return triplet_win
 
     return no_win 
-
+    
 
 def gen_test_data(input_file_path: str, output_file_path: str) -> None:    
     pIFile = open(input_file_path, 'w')
     pOFile = open(output_file_path, 'w')
 
     PATTERN_NUM = config['PATTERN_NUM']
-
-    tile_weight = [
-        config['prob_honor'],
-        config['prob_character'],
-        config['prob_bamboo'],
-        config['prob_dot'],
-        config['prob_unknown']
-    ]
 
     stat_dict = {
         no_win     : 0,
@@ -203,10 +216,19 @@ def gen_test_data(input_file_path: str, output_file_path: str) -> None:
         triplet_win       : 0
     }
 
-    for _ in range(PATTERN_NUM):
+    # Random generate
+    tile_weight = [
+        config['prob_honor'],
+        config['prob_character'],
+        config['prob_bamboo'],
+        config['prob_dot'],
+        config['prob_unknown']
+    ]
+    
+    for _ in range(PATTERN_NUM // 2):
         hand_tiles = ""
         for _ in range(config['num_hand']):
-            tile_type = random.choices(list(range(config['tile_type'] + 1)), weights=tile_weight)[0]
+            tile_type = random.choices(list(range(len(tile_weight))), weights=tile_weight)[0]
             
             if tile_type == 0:
                 tile = random.randint(config['honor_lower'], config['honor_upper'])
@@ -239,7 +261,50 @@ def gen_test_data(input_file_path: str, output_file_path: str) -> None:
         stat_dict[result] += 1
         pOFile.write(f'{result}\n')
 
-    print(stat_dict)
+    # Generate sequence or triplet
+    win_type_weight = [
+        config['prob_seq'],
+        config['prob_tri']
+    ]
+
+    tile_weight.remove(config['prob_unknown'])
+    for _ in range(PATTERN_NUM // 2):
+        win_type = random.choices(list(range(len(win_type_weight))), weights=win_type_weight)[0]
+        tri_seq_tile = random.randint(config['honor_lower'], config['honor_upper'])
+        pair_tile = random.randint(config['honor_lower'], config['honor_upper'])
+        tri_seq_tile_type = random.choices(list(range(len(tile_weight))), weights=tile_weight)[0]
+        pair_tile_type = random.choices(list(range(len(tile_weight))), weights=tile_weight)[0]
+        if win_type == 0:
+            tiles = [
+                [tri_seq_tile_type, tri_seq_tile],
+                [tri_seq_tile_type, tri_seq_tile + 1],
+                [tri_seq_tile_type, tri_seq_tile + 2],
+                [pair_tile_type, pair_tile],
+                [pair_tile_type, pair_tile]
+            ]
+        else:
+            tiles = [
+                [tri_seq_tile_type, tri_seq_tile],
+                [tri_seq_tile_type, tri_seq_tile],
+                [tri_seq_tile_type, tri_seq_tile],
+                [pair_tile_type, pair_tile],
+                [pair_tile_type, pair_tile]
+            ]
+
+        random.shuffle(tiles)
+        hand_tiles = ""
+        for tile in tiles:
+            tile_str = int2bin(tile[0], 2) + int2bin(tile[1])
+
+            if len(tile_str) != config['tile_len']:
+                print("Tile length error!")
+                
+            hand_tiles += tile_str
+        
+        pIFile.write(f"{hand_tiles}\n")
+        result = sol(hand_tiles)
+        stat_dict[result] += 1
+        pOFile.write(f'{result}\n')
 
     pIFile.close()
     pOFile.close()
