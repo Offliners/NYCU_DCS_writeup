@@ -20,20 +20,10 @@ This repository contained my designs (System Verilog) and patterns (System Veril
 | Lab04 | [Sequential Circuit](./Lab04/DCS_Lab04.pdf)         | [Seq.sv](./Lab04/Seq.sv)         | 565.234189  | 9.79               | 3.63  |
 | Lab05 | [AHB Interconnect](./Lab05/DCS_Lab05.pdf)           |                                  |             |                    |       |
 | Lab06 | [Pattern](./Lab06/DCS_Lab06.pdf)                    |                                  |             |                    |       |
-| Lab07 | [Matrix Multiplication](./Lab07/DCS_Lab07.pdf)      |                                  |             |                    |       |
+| Lab07 | [Matrix Multiplication](./Lab07/DCS_Lab07.pdf)      | [DCT.sv](./Lab07/DCT.sv)         | 37570.25095 | 7.78               | 2.68  |
 | Lab08 | [Floating Point Computation](./Lab08/DCS_Lab08.pdf) |                                  |             |                    |       |
 | Lab09 | [Pipeline](./Lab09/DCS_Lab09.pdf)                   |                                  |             |                    |       |
 | Lab10 | [Clock Domain Crossing](./Lab10/DCS_Lab10.pdf)      |                                  |             |                    |       |
-
-### Online Test
-| Topic                         | Design | Area | Data Required Time | Slack |
-| ----------------------------- | ------ | ---- | ------------------ | ----- |
-| [Systolic Array](./OT/OT.pdf) |        |      |                    |       |
-
-### Final Project
-| Topic                                       | Design | Area | Data Required Time | Slack |
-| ------------------------------------------- | ------ | ---- | ------------------ | ----- |
-| [Simple CNN](./Final/DCS_Final_Project.pdf) |        |      |                    |       |
 
 ## Design Flow
 ```mermaid

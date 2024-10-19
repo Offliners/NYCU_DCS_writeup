@@ -24,8 +24,8 @@ output logic signed[9:0]out_data;
 //---------------------------------------------------------------------
 //finish your declaration
 integer i, j, m, n;
-integer mat_row = 4;
-integer mat_col = 4;
+parameter mat_row = 4;
+parameter mat_col = 4;
 parameter [2:0] IDLE   = 3'd0, 
 				INPUT  = 3'd1, 
 				MUL1   = 3'd2, 
@@ -41,7 +41,6 @@ logic signed [15:0] mac1[0:3];
 logic signed [15:0] mac2[0:3];
 logic [3:0] input_cnt, output_cnt, mul_cnt;
 logic [2:0] state, next_state;
-
 
 
 //---------------------------------------------------------------------
@@ -170,7 +169,7 @@ always_ff @(posedge clk or negedge rst_n) begin
 	end
 end
 
-always_ff @(posedge clk or rst_n) begin
+always_ff @(posedge clk or negedge rst_n) begin
 	if(!rst_n)
 		mul_cnt <= 4'd0;
 	else if(state == MUL1 || state == MUL2)
@@ -187,19 +186,13 @@ always_comb begin
 		mac1[3] = dctmtx[mul_cnt[3:2]][3] * inbuffer[3][mul_cnt[1:0]];
 		tmpbuffer_next = (mac1[0] + mac1[1] + mac1[2] + mac1[3]) / $signed(128);
 	end
-		tmpbuffer_next = 10'd0;
-end
-
-always_comb begin
-	if(state == MUL2) begin
+	else if(state == MUL2) begin
 		mac2[0] = tmpbuffer[mul_cnt[3:2]][0] * dctmtx[mul_cnt[1:0]][0];
 		mac2[1] = tmpbuffer[mul_cnt[3:2]][1] * dctmtx[mul_cnt[1:0]][1];
 		mac2[2] = tmpbuffer[mul_cnt[3:2]][2] * dctmtx[mul_cnt[1:0]][2];
 		mac2[3] = tmpbuffer[mul_cnt[3:2]][3] * dctmtx[mul_cnt[1:0]][3];
 		outbuffer_next = (mac2[0] + mac2[1] + mac2[2] + mac2[3]) / $signed(128);
 	end
-		outbuffer_next = 10'd0;
 end
-
 
 endmodule
