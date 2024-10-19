@@ -96,7 +96,7 @@ DC_shell = dcnxt_shell -f ${syn_tcl} \
 # =====================================	
 # ============= clean =================
 # =====================================
-clean_irun = rm -rf *.vcd *.sdf.X ./INCA_libs *.history *.log
+clean_irun = rm -rf *.vcd *.fsdb *.sdf.X ./INCA_libs *.history *.log
 clean_verdi = rm -rf ./nWaveLog ./verdiLog *.conf *.rc *.log
 clean_syn = rm -rf ./Netlist/*.* ./Report/*.* *.log alib* *.svf dwsvf* *.ddc *.pvl *.syn *.mr
 # =====================================
