@@ -1,11 +1,13 @@
 `timescale 1ns/10ps
+
 module PATTERN(
-  // output signals
+	// output signals
 	clk,
 	rst_n,
 	in_valid,
   	in_data,
-  // input signals
+
+	// input signals
   	out_valid,
   	out_data
 );
@@ -22,11 +24,22 @@ input signed [9:0]out_data;
 //================================================================
 // parameters & integer
 //================================================================
+`ifdef RTL
+integer CYCLE = 8;
+`elsif GATE
+integer CYCLE = 30;
+`endif
+
+`ifdef CUSTOM 
+integer PATNUM=1000;
+`else
 integer PATNUM=500;
+`endif
+
 integer patcount;
 integer cycle_time;
-integer lat, i,j,k, error;
-integer CYCLE = 8;
+integer lat, i, j, k, error;
+integer input_file, output_file;
 integer length;
 integer golden_in[0:3][0:3];
 integer golden_out[0:3][0:3];
@@ -60,6 +73,13 @@ initial begin
 	rst_n = 1'b1;
 	in_valid = 1'b0;
 	in_data = 'dx;
+
+	`ifdef CUSTOM
+		input_file  = $fopen("input.txt", "r");
+		output_file = $fopen("output.txt", "r");
+		k = $fscanf(input_file, "%d", PATNUM);
+	`endif
+
   	force clk = 1;
   	reset_task;
 	repeat(5)@(negedge clk);
@@ -99,8 +119,26 @@ task reset_task ; begin
     #(3) release clk;
 end endtask
 
+`ifdef CUSTOM
+task input_task; begin
+	for(i = 0; i < 4; i = i + 1) begin
+		for(j = 0; j < 4; j = j + 1) begin
+			in_valid = 1;
+			k = $fscanf(input_file, "%b", in_data);
+			@(negedge clk);
+		end
+	end
 
-task input_task; begin  // input clk
+	for(i = 0; i < 4; i = i + 1) begin
+		for(j = 0; j < 4; j = j + 1) begin
+			k = $fscanf(output_file, "%b", golden_out[i][j]);
+		end
+	end
+
+	in_valid = 0;
+end endtask
+`else
+task input_task; begin
 	
 	for(i=0;i<4;i=i+1)begin
 		for(j=0;j<4;j=j+1)begin
@@ -134,6 +172,7 @@ task input_task; begin  // input clk
 	in_valid = 0;
 	in_data = 'bx;
 end endtask
+`endif
 
 task check_task; begin  
 	
@@ -167,7 +206,6 @@ task wait_outvalid;begin
 end endtask
 
 task wrong_ans; begin
-
 	fail;
 	$display ("--------------------------------------------------------------------------------------------------------------------------------------------");
 	$display ("                                                            patcount:%d          FAIL!                                                    ",patcount);
@@ -177,14 +215,12 @@ task wrong_ans; begin
 	$display ("--------------------------------------------------------------------------------------------------------------------------------------------");
 	repeat(3)@(negedge clk);
 	$finish;
-
 end endtask
 
 
 
 task out_valid_fail;begin
 	error = 1;
-	// $display ("%d",i);
 	$display ("--------------------------------------------------------------------------------------------------------------------------------------------");
     $display ("                                                    out_valid should be %d !!!                                          ", !out_valid);
     $display ("--------------------------------------------------------------------------------------------------------------------------------------------");

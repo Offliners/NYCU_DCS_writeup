@@ -1,9 +1,10 @@
 `timescale 1ns/1ps
+
 `include "PATTERN.sv"
 `ifdef RTL
 `include "DCT.sv"
 `elsif GATE
-`include "DCT_SYN.v"
+`include "./Netlist/DCT_SYN.v"
 `endif
 
 module TESTBED();
@@ -14,18 +15,18 @@ logic [9:0]out_data;
 
 initial begin
   `ifdef RTL
-	$fsdbDumpfile("DCT.fsdb");	
-	$fsdbDumpvars(0,"+mda");
+	$dumpfile("DCT.vcd");	
+	$dumpvars(1, I_DCT);
   `elsif GATE
-    $fsdbDumpfile("DCT_SYN.fsdb");
-	$sdf_annotate("DCT_SYN.sdf",I_DCT);
-	$fsdbDumpvars(0,"+mda");
+    $dumpfile("DCT_SYN.vcd");
+	$sdf_annotate("DCT_SYN.sdf", I_DCT);
+	$dumpvars(1, I_DCT);
   `endif
 end
 
 DCT I_DCT(
-  .clk(clk),
-  .rst_n(rst_n),
+	.clk(clk),
+	.rst_n(rst_n),
 	.in_valid(in_valid),
 	.in_data(in_data),
 	.out_valid(out_valid),
@@ -33,12 +34,13 @@ DCT I_DCT(
 );
 
 PATTERN I_PATTERN(
-  .clk(clk),
-  .rst_n(rst_n),
+	.clk(clk),
+	.rst_n(rst_n),
 	.in_valid(in_valid),
 	.in_data(in_data),
 	.out_valid(out_valid),
 	.out_data(out_data)
 );
+
 endmodule
 

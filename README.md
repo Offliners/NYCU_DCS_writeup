@@ -89,6 +89,9 @@ flowchart LR
 # RTL & Verification
 $ make irun_rtl
 
+# Install Python3 thirdparty library (Optional)
+$ pip3 install -r requirements.txt
+
 # Use Python3 to generate custom testcase (Optional)
 $ python3 testdata_gen.py
 
@@ -107,7 +110,7 @@ $ make irun_gate_cust
 # View waveform
 $ make nWave
 
-# Debug design and critical path
+# Debug design and check critical path
 $ make verdi_rtl
 $ make verdi_gate
 
