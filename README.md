@@ -12,7 +12,7 @@ This repository contained my designs (System Verilog) and patterns (System Veril
 | HW05 | [MIPS CPU](./HW05/DCS_HW05.pdf)                    |                         |             |                    |             |
 
 ### Labs
-| Lab#  | Topic                                               |                                  | Area        | Data Required Time | Slack (MET) |
+| Lab#  | Topic                                               | Design                           | Area        | Data Required Time | Slack (MET) |
 | ----- | --------------------------------------------------- | -------------------------------- | ----------- | ------------------ | ----------- |
 | Lab01 | [Binary-Coded Decimal](./Lab01/DCS_Lab01.pdf)       | [BCD.sv](./Lab01/BCD.sv)         | 483.758996  | 12                 | 8.23        |
 | Lab02 | [Merge Sort](./Lab02/DCS_Lab02.pdf)                 | [Sort.sv](./Lab02/Sort.sv)       | 1568.397579 | 10                 | 0.12        |
