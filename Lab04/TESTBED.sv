@@ -15,11 +15,11 @@ logic [3:0]in_data;
 initial begin
   `ifdef RTL
 	$dumpfile("Seq.vcd");		
-	$dumpvars(1, I_Seq);
+	$dumpvars;
   `elsif GATE
     $dumpfile("Seq_SYN.vcd");
 	$sdf_annotate("Seq_SYN.sdf", I_Seq);	
-	$dumpvars(1, I_Seq);
+	$dumpvars;
   `endif
 end
 

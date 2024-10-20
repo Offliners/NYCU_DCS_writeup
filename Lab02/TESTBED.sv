@@ -17,11 +17,11 @@ logic [5:0] out_num;
 initial begin
   `ifdef RTL
     $dumpfile("Sort.vcd");
-	$dumpvars(1, I_Sort);
+	$dumpvars;
   `elsif GATE
 	$dumpfile("Sort_SYN.vcd");
 	$sdf_annotate("Sort_SYN.sdf", I_Sort);
-	$dumpvars();
+	$dumpvars;
   `endif
 end
 

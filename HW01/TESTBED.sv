@@ -15,11 +15,11 @@ logic [1:0] out_data;
 initial begin
 	`ifdef RTL
 		$dumpfile("SMJ.fsdb");
-		$dumpvars(1, I_SMJ);
+		$dumpvars;
 	`elsif GATE
 		$dumpfile("SMJ_SYN.fsdb");
 		$sdf_annotate("SMJ_SYN.sdf", I_SMJ);
-		$dumpvars(1, I_SMJ);
+		$dumpvars;
 	`endif
 end
 

@@ -15,11 +15,11 @@ logic clk2;
 initial begin
   `ifdef RTL
     $dumpfile("Counter.vcd");	
-	  $dumpvars(1, I_Counter);
+	  $dumpvars;
   `elsif GATE
     $dumpfile("Counter_SYN.vcd");
 	  $sdf_annotate("Counter_SYN.sdf", I_Counter);
-	  $dumpvars();
+	  $dumpvars;
   `endif
 end
 

@@ -16,11 +16,11 @@ logic [9:0]out_data;
 initial begin
   `ifdef RTL
 	$dumpfile("DCT.vcd");	
-	$dumpvars(1, I_DCT);
+	$dumpvars;
   `elsif GATE
     $dumpfile("DCT_SYN.vcd");
 	$sdf_annotate("DCT_SYN.sdf", I_DCT);
-	$dumpvars(1, I_DCT);
+	$dumpvars;
   `endif
 end
 

@@ -22,7 +22,7 @@ initial begin
   `elsif GATE
     $dumpfile("BCD_SYN.vcd");
 	  $sdf_annotate("BCD_SYN.sdf",I_BCD);
-	  $dumpvars();
+	  $dumpvars;
   `endif
 end
 
