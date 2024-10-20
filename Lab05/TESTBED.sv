@@ -1,19 +1,20 @@
 `timescale 1ns/1ps
+
 `include "PATTERN.sv"
+
 `ifdef RTL
 `include "inter.sv"
 `include "mem_slave.sv"
 `elsif GATE
-`include "inter_SYN.v"
+`include "./Netlist/inter_SYN.v"
 `include "mem_slave.sv"
 `endif
 
-
-
 module TESTBENCH();
 
-
-
+//================================================================
+// parameters & integer
+//================================================================
 logic clk,rst_n,in_valid_1,in_valid_2;
 logic [6:0] data_1, data_2;
 logic valid_master2slave1, valid_master2slave2, ready_slave1, ready_slave2;
@@ -24,19 +25,14 @@ logic interconnect2master_ready1, interconnect2master_ready2;
 
 initial begin 
   `ifdef RTL
-      $fsdbDumpfile("inter.fsdb");
-	  $fsdbDumpvars;
+    $dumpfile("inter.vcb");
+	  $dumpvars;
   `elsif GATE
-      $fsdbDumpfile("inter_SYN.fsdb");
-	  $sdf_annotate("inter_SYN.sdf",I_interconnect);
-	  $fsdbDumpvars();
+    $dumpfile("inter_SYN.vcb");
+	  $sdf_annotate("inter_SYN.sdf", I_interconnect);
+    $dumpvars();
   `endif 
 end
-//================================================================
-// parameters & integer
-//================================================================
-
-
 
 inter I_interconnect
 (
@@ -55,8 +51,6 @@ inter I_interconnect
   .handshake_slave1(interconnect2master_ready1),
   .handshake_slave2(interconnect2master_ready2)
 );
-
-
 
 PATTERN I_PATTERN
 (
