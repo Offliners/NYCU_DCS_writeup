@@ -25,10 +25,10 @@ logic interconnect2master_ready1, interconnect2master_ready2;
 
 initial begin 
   `ifdef RTL
-    $dumpfile("inter.vcb");
+    $dumpfile("inter.vcd");
 	  $dumpvars;
   `elsif GATE
-    $dumpfile("inter_SYN.vcb");
+    $dumpfile("inter_SYN.vcd");
 	  $sdf_annotate("inter_SYN.sdf", I_interconnect);
     $dumpvars();
   `endif 
