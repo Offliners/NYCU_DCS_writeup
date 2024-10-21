@@ -41,7 +41,12 @@ integer i,a,b;
 integer patcount;
 integer cycle_time;
 integer lat,total_latency;
+
+`ifdef RTL
 integer CYCLE = 5;
+`elsif GATE
+integer CYCLE = 50;
+`endif
 
 always	#(CYCLE/2.0) clk = ~clk;
 

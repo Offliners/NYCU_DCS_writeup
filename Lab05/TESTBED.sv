@@ -1,4 +1,4 @@
-`timescale 1ns/1ps
+`timescale 1ns/10ps
 
 `include "PATTERN.sv"
 
@@ -29,8 +29,8 @@ initial begin
 	  $dumpvars;
   `elsif GATE
     $dumpfile("inter_SYN.vcd");
-	  $sdf_annotate("inter_SYN.sdf", I_interconnect);
-    $dumpvars();
+	  $sdf_annotate("./Netlist/inter_SYN.sdf", I_interconnect);
+    $dumpvars;
   `endif 
 end
 
