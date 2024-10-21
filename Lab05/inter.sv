@@ -124,22 +124,26 @@ always_ff @(posedge clk or negedge rst_n) begin
   end
 end
 
-always_comb begin
-  if(in_valid_1)
-    in1 = 1'b1;
+always_ff @(posedge clk or negedge rst_n) begin
+  if(!rst_n)
+    in1 <= 1'b0;
+  else if(in_valid_1)
+    in1 <= 1'b1;
   else if(state == S_MASTER1 && next_state == S_HANDSHAKE)
-    in1 = 1'b0;
+    in1 <= 1'b0;
   else
-    in1 = in1;
+    in1 <= in1;
 end
 
-always_comb begin
-  if(in_valid_2)
-    in2 = 1'b1;
+always_ff @(posedge clk or negedge rst_n) begin
+  if(!rst_n)
+    in2 <= 1'b0;
+  else if(in_valid_2)
+    in2 <= 1'b1;
   else if(state == S_MASTER2 && next_state == S_HANDSHAKE)
-    in2 = 1'b0;
+    in2 <= 1'b0;
   else
-    in2 = in2;
+    in2 <= in2;
 end
 
 always_ff @(posedge clk or negedge rst_n) begin

@@ -18,7 +18,7 @@ This repository contained my designs (System Verilog) and patterns (System Veril
 | Lab02 | [Merge Sort](./Lab02/DCS_Lab02.pdf)                 | [Sort.sv](./Lab02/Sort.sv)       | 1568.397579 | 10                 | 0.12        |
 | Lab03 | [Frequency Divider](./Lab03/DCS_Lab03.pdf)          | [Counter.sv](./Lab03/Counter.sv) | 74.685597   | 5                  | 4.17        |
 | Lab04 | [Sequential Circuit](./Lab04/DCS_Lab04.pdf)         | [Seq.sv](./Lab04/Seq.sv)         | 565.234189  | 9.79               | 3.63        |
-| Lab05 | [AHB Interconnect](./Lab05/DCS_Lab05.pdf)           | [inter.sv](./Lab05/inter.sv)     | 1320.577166 | 4.75               | 1.47        |
+| Lab05 | [AHB Interconnect](./Lab05/DCS_Lab05.pdf)           | [inter.sv](./Lab05/inter.sv)     | 1346.038162 | 4.79               | 1.51        |
 | Lab06 | [Pattern](./Lab06/DCS_Lab06.pdf)                    |                                  |             |                    |             |
 | Lab07 | [Matrix Multiplication](./Lab07/DCS_Lab07.pdf)      | [DCT.sv](./Lab07/DCT.sv)         | 37570.25095 | 7.78               | 2.68        |
 | Lab08 | [Floating Point Computation](./Lab08/DCS_Lab08.pdf) |                                  |             |                    |             |
