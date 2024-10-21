@@ -42,11 +42,7 @@ integer patcount;
 integer cycle_time;
 integer lat,total_latency;
 
-`ifdef RTL
 integer CYCLE = 5;
-`elsif GATE
-integer CYCLE = 50;
-`endif
 
 always	#(CYCLE/2.0) clk = ~clk;
 
@@ -131,12 +127,7 @@ task input_task ; begin
 		end
 
     @(negedge clk);
-    /* if(!data[6]) begin
-        golden0[data[5:3]] = data[2:0];
-    end
-    else begin
-        golden1[data[5:3]] = data[2:0];
-    end */
+
 	data1 = data_in_1;
 	data2 = data_in_2;
 	in_valid_1 = 0;
