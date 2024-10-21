@@ -18,7 +18,7 @@ initial begin
 	$dumpvars;
   `elsif GATE
     $dumpfile("Seq_SYN.vcd");
-	$sdf_annotate("Seq_SYN.sdf", I_Seq);	
+	$sdf_annotate("./Netlist/Seq_SYN.sdf", I_Seq);	
 	$dumpvars;
   `endif
 end

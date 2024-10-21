@@ -20,7 +20,7 @@ initial begin
 	$dumpvars;
   `elsif GATE
 	$dumpfile("Sort_SYN.vcd");
-	$sdf_annotate("Sort_SYN.sdf", I_Sort);
+	$sdf_annotate("./Netlist/Sort_SYN.sdf", I_Sort);
 	$dumpvars;
   `endif
 end

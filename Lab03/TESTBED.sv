@@ -18,7 +18,7 @@ initial begin
 	  $dumpvars;
   `elsif GATE
     $dumpfile("Counter_SYN.vcd");
-	  $sdf_annotate("Counter_SYN.sdf", I_Counter);
+	  $sdf_annotate("./Netlist/Counter_SYN.sdf", I_Counter);
 	  $dumpvars;
   `endif
 end

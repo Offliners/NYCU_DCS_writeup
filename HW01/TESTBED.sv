@@ -14,11 +14,11 @@ logic [1:0] out_data;
 
 initial begin
 	`ifdef RTL
-		$dumpfile("SMJ.fsdb");
+		$dumpfile("SMJ.vcd");
 		$dumpvars;
 	`elsif GATE
-		$dumpfile("SMJ_SYN.fsdb");
-		$sdf_annotate("SMJ_SYN.sdf", I_SMJ);
+		$dumpfile("SMJ_SYN.vcd");
+		$sdf_annotate("./Netlist/SMJ_SYN.sdf", I_SMJ);
 		$dumpvars;
 	`endif
 end
