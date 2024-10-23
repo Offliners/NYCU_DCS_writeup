@@ -27,7 +27,7 @@ input signed [9:0]out_data;
 `ifdef RTL
 integer CYCLE = 8;
 `elsif GATE
-integer CYCLE = 30;
+integer CYCLE = 50;
 `endif
 
 `ifdef CUSTOM 

@@ -1,8 +1,4 @@
-`ifdef RTL
 `define CYCLE_TIME 30.0
-`elsif GATE
-`define CYCLE_TIME 50.0
-`endif
 
 module PATTERN(
     // Input signals

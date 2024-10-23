@@ -21,8 +21,7 @@ TIMESCALE=-timescale=1ns/1fs
 TIMESCALE1=-timescale 1ns/1fs
 VERDI=/usr/cad/synopsys/verdi/2022.06/
 DW_SIM=/usr/cad/synopsys/synthesis/cur/dw/sim_ver/
-TSMC13_SIM=./TSMC_013/Verilog/tsmc13_neg.v
-TSMC13_IO_SIM=./TSMC_013/Verilog/tpz013g3.v
+UMC018_SIM=~/iclabTA01/umc018/Verilog/umc18_neg.v
 
 
 # =====================================
@@ -47,7 +46,7 @@ IRUN_GATE_SIM = irun -f ${source_file} \
 	-override_precision \
 	${TIMESCALE1} \
 	-sdf_precision 1fs \
-	-v ${TSMC13_SIM} \
+	-v ${UMC018_SIM} \
 	-loadpli1 debpli:novas_pli_boot \
 	-debug \
 	-define GATE
@@ -56,7 +55,7 @@ IRUN_GATE_SIM_CUST = irun -f ${source_file} \
 	-override_precision \
 	${TIMESCALE1} \
 	-sdf_precision 1fs \
-	-v ${TSMC13_SIM} \
+	-v ${UMC018_SIM} \
 	-loadpli1 debpli:novas_pli_boot \
 	-debug \
 	-define GATE \

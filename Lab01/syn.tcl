@@ -7,12 +7,10 @@
 #======================================================
 #  Set Libraries
 #======================================================
-
-set search_path {	./ \
-					./TSMC_013/ \
-					/usr/synthesis/libraries/syn/ \
+set search_path {	./								 \
+					~/iclabTA01/umc018/Synthesis/ 	 \
+					/usr/synthesis/libraries/syn/    \
 					/usr/synthesis/dw/ }
-
 
 set synthetic_library {dw_foundation.sldb}
 set link_library {* dw_foundation.sldb standard.sldb slow.db}

@@ -28,13 +28,7 @@ integer seed = 0;
 integer PATNUM = 1000;
 integer input_file, output_file;
 integer patcount;
-
-`ifdef RTL
-  integer CYCLE = 5;
-`elsif GATE 
-  integer CYCLE = 25;
-`endif
-
+integer CYCLE = 5;
 integer golden_out_hundred, golden_out_ten, golden_unit;
 integer i, k;
 

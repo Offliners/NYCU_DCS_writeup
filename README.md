@@ -5,7 +5,7 @@ This repository contained my designs (System Verilog) and patterns (System Veril
 ### Homeworks
 | HW#  | Topic                                              | Design                  | Area        | Data Required Time | Slack (MET) |
 | ---- | -------------------------------------------------- | ----------------------- | ----------- | ------------------ | ----------- |
-| HW01 | [Simplified Mahjong Judgment](./HW01/DCS_HW01.pdf) | [SMJ.sv](./HW01/SMJ.sv) | 2498.572793 | 30                 | 16.62       |
+| HW01 | [Simplified Mahjong Judgment](./HW01/DCS_HW01.pdf) | [SMJ.sv](./HW01/SMJ.sv) | 6180.451257 | 30                 | 13.76       |
 | HW02 | [Simplified I2C](./HW02/DCS_HW02.pdf)              |                         |             |                    |             |
 | HW03 | [Traffic Light Controller](./HW03/DCS_HW03.pdf)    |                         |             |                    |             |
 | HW04 | [Histogram Equalizer](./HW04/DCS_HW04.pdf)         |                         |             |                    |             |
@@ -14,13 +14,13 @@ This repository contained my designs (System Verilog) and patterns (System Veril
 ### Labs
 | Lab#  | Topic                                               | Design                           | Area        | Data Required Time | Slack (MET) |
 | ----- | --------------------------------------------------- | -------------------------------- | ----------- | ------------------ | ----------- |
-| Lab01 | [Binary-Coded Decimal](./Lab01/DCS_Lab01.pdf)       | [BCD.sv](./Lab01/BCD.sv)         | 483.758996  | 12                 | 8.23        |
-| Lab02 | [Merge Sort](./Lab02/DCS_Lab02.pdf)                 | [Sort.sv](./Lab02/Sort.sv)       | 1568.397579 | 10                 | 0.12        |
-| Lab03 | [Frequency Divider](./Lab03/DCS_Lab03.pdf)          | [Counter.sv](./Lab03/Counter.sv) | 74.685597   | 5                  | 4.17        |
-| Lab04 | [Sequential Circuit](./Lab04/DCS_Lab04.pdf)         | [Seq.sv](./Lab04/Seq.sv)         | 565.234189  | 9.79               | 3.63        |
-| Lab05 | [AHB Interconnect](./Lab05/DCS_Lab05.pdf)           | [inter.sv](./Lab05/inter.sv)     | 1346.038162 | 4.79               | 1.51        |
+| Lab01 | [Binary-Coded Decimal](./Lab01/DCS_Lab01.pdf)       | [BCD.sv](./Lab01/BCD.sv)         | 1114.344017 | 12                 | 6.77        |
+| Lab02 | [Merge Sort](./Lab02/DCS_Lab02.pdf)                 | [Sort.sv](./Lab02/Sort.sv)       | 4420.785636 | 10                 | 0.22        |
+| Lab03 | [Frequency Divider](./Lab03/DCS_Lab03.pdf)          | [Counter.sv](./Lab03/Counter.sv) | 172.972801  | 5                  | 3.75        |
+| Lab04 | [Sequential Circuit](./Lab04/DCS_Lab04.pdf)         | [Seq.sv](./Lab04/Seq.sv)         | 1237.420825 | 9.83               | 3.42        |
+| Lab05 | [AHB Interconnect](./Lab05/DCS_Lab05.pdf)           | [inter.sv](./Lab05/inter.sv)     | 3073.593637 | 2.5                | 1.14        |
 | Lab06 | [Pattern](./Lab06/DCS_Lab06.pdf)                    |                                  |             |                    |             |
-| Lab07 | [Matrix Multiplication](./Lab07/DCS_Lab07.pdf)      | [DCT.sv](./Lab07/DCT.sv)         | 37570.25095 | 7.78               | 2.68        |
+| Lab07 | [Matrix Multiplication](./Lab07/DCS_Lab07.pdf)      | [DCT.sv](./Lab07/DCT.sv)         | 81200.75156 | 7.68               | 2.19        |
 | Lab08 | [Floating Point Computation](./Lab08/DCS_Lab08.pdf) |                                  |             |                    |             |
 | Lab09 | [Pipeline](./Lab09/DCS_Lab09.pdf)                   |                                  |             |                    |             |
 | Lab10 | [Clock Domain Crossing](./Lab10/DCS_Lab10.pdf)      |                                  |             |                    |             |
@@ -122,7 +122,7 @@ $ make clean
 * Python3
 * Cadence irun
 * Synopsys Design Compiler
-    * cell : `TSMC 0.13um`
+    * cell : `UMC 0.18µm`
 * Synopsys Verdi
 
 ## References

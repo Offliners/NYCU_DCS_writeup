@@ -28,13 +28,7 @@ integer patcount;
 integer cycle_time;
 integer input_file, output_file;
 integer lat, i, err, k;
-
-`ifdef RTL
-	integer CYCLE = 5;
-`elsif GATE 
-	integer CYCLE = 15;
-`endif
-
+integer CYCLE = 5;
 integer length;
 integer golden_in1, golden_in2, golden_in3, golden_out, golden_out_valid;
 
