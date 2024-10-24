@@ -1,6 +1,6 @@
 `timescale 1ns/10ps
 module PATTERN(
-//output
+  //output
   clk,
   rst_n,
   in_valid_1,
@@ -9,6 +9,7 @@ module PATTERN(
   data_in_2,
   ready_slave1,
   ready_slave2,
+  
   //input
   valid_slave1,
   valid_slave2,
@@ -37,7 +38,7 @@ integer PATNUM=1000;
 integer input_file,output_file;
 integer count;
 integer check_count;
-integer i,a,b;
+integer i, a, b, k;
 integer patcount;
 integer cycle_time;
 integer lat,total_latency;
@@ -84,6 +85,10 @@ initial begin
 	reset_task;
 	total_latency = 0; 
 	@(negedge clk);
+	`ifdef CUSTOM
+		input_file = $fopen("input.txt", "r");
+		k = $fscanf(input_file, "%d", PATNUM);
+	`endif
 	for(patcount = 0 ; patcount < PATNUM ; patcount = patcount + 1) begin
 		input_task;
 		check_ans;
@@ -116,15 +121,19 @@ task reset_task ; begin
 end endtask
 
 task input_task ; begin
-	mas_sel = $urandom_range(3,1);
-	if(mas_sel[1]==1'b1)begin
-		in_valid_1 = 1;
-		data_in_1 = $urandom_range(127,0);
+	`ifdef CUSTOM
+		k = $fscanf(input_file, "%b %b %b %b %b", mas_sel, in_valid_1, data_in_1, in_valid_2, data_in_2);
+	`else
+		mas_sel = $urandom_range(3,1);
+		if(mas_sel[1]==1'b1)begin
+			in_valid_1 = 1;
+			data_in_1 = $urandom_range(127,0);
 		end
-	if(mas_sel[0]==1'b1)begin
-		in_valid_2 = 1;
-		data_in_2 = $urandom_range(127,0);
+		if(mas_sel[0]==1'b1)begin
+			in_valid_2 = 1;
+			data_in_2 = $urandom_range(127,0);
 		end
+	`endif
 
     @(negedge clk);
 
