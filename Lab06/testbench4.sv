@@ -11,7 +11,7 @@ logic [3:0] in_number;
 logic [1:0] mode;
 
 logic out_valid;
-logic signed [6:0] out_result;
+logic signed [5:0] out_result;
 
 initial begin
   $dumpfile("lab06_4.vcd");
