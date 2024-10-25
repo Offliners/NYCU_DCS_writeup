@@ -18,7 +18,7 @@ initial begin
 	$dumpvars;
 end
 
-lab08 I_lab06
+lab06 I_lab06
 (
   .clk(clk),
   .rst_n(rst_n),
