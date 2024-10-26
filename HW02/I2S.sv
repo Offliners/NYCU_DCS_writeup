@@ -21,114 +21,103 @@ input SD, WS;
 output logic        out_valid;
 output logic [31:0] out_left, out_right;
 
-logic [31:0] in_data, in_data_next;
-logic        cur_WS, cur_WS_next;
-logic        cur_val, cur_val_next;
-logic        flag_WS, flag_val;
-logic        out_valid_next;
-logic [31:0] out_left_next, out_right_next;
 
-always_comb begin
-  if(in_valid) begin
-    if(WS != cur_WS)
-      in_data_next = {30'd0, SD};
-    else
-      in_data_next = {in_data[30:0], SD};
-  end
-  else
-    in_data_next = 0;
-end
+//---------------------------------------------------------------------
+//   REG AND WIRE DECLARATION                         
+//---------------------------------------------------------------------
+parameter [1:0] IDLE       = 2'd0,
+                LEFT_READ  = 2'd1,
+                RIGHT_READ = 2'd2;
 
-always_ff @ (posedge clk or negedge rst_n) begin
+logic [1:0] state, next_state;
+logic [32:0] buffer, next_buffer;
+logic [1:0] sel, next_sel;
+
+//---------------------------------------------------------------------
+//   YOUR DESIGN                         
+//---------------------------------------------------------------------
+always_ff @(posedge clk or negedge rst_n) begin
   if(!rst_n)
-    in_data <= 0;
+    state <= IDLE;
   else
-    in_data <= in_data_next;
+    state <= next_state;
 end
 
 always_comb begin
-  if(in_valid) begin
-    cur_WS_next = WS;
-    cur_val_next = in_valid;
-  end
-  else begin
-    cur_WS_next = 0;
-    cur_val_next = 0;
-  end
+  next_buffer = out_valid ? {buffer[0], SD & in_valid} : {buffer[31:0], SD & in_valid};
+
+  case(state)
+    default : begin
+      next_sel = sel;
+      next_state = state;
+    end
+    IDLE : begin
+      next_sel = 2'b00;
+      if(in_valid)
+        next_state = WS ? RIGHT_READ : LEFT_READ;
+      else
+        next_state = IDLE;
+    end
+    LEFT_READ : begin
+      if(in_valid) begin
+        if(WS) begin
+          next_sel = 2'b10;
+          next_state = RIGHT_READ;
+        end 
+        else begin
+          next_sel = 2'b00;
+          next_state = LEFT_READ;
+        end
+      end
+      else begin
+        next_sel = 2'b10;
+        next_state = IDLE;
+      end
+    end
+    RIGHT_READ : begin
+      if(in_valid) begin
+        if(WS) begin
+          next_sel = 2'b00;
+          next_state = RIGHT_READ;
+        end
+        else begin
+          next_sel = 2'b01;
+          next_state = LEFT_READ;
+        end
+      end
+      else begin
+        next_sel = 2'b01;
+        next_state = IDLE;
+      end
+    end
+  endcase
 end
 
-always_ff @ (posedge clk or negedge rst_n) begin
+always_ff @(posedge clk or negedge rst_n) begin
   if(!rst_n) begin
-    cur_WS <= 0;
-    cur_val <= 0;
+    buffer <= 33'd0;
+    sel    <= 2'd0;
   end
   else begin
-    cur_WS <= cur_WS_next;
-    cur_val <= cur_val_next;
+    buffer <= next_buffer;
+    sel    <= next_sel;
   end
 end
-
-assign flag_WS = (cur_WS == WS) ? 0 : 1;
-assign flag_val = (cur_val == in_valid) ? 0 : 1;
 
 always_comb begin
-  if(in_valid) begin
-    if(flag_val) begin
-      out_valid_next = 0;
-      out_left_next = 0;
-      out_right_next = 0;
-    end
-    else begin
-      if(flag_WS) begin
-        out_valid_next = 1;
+  out_valid = sel[0] | sel[1];
 
-        if(!cur_WS) begin
-          out_left_next = in_data;
-          out_right_next = 0;
-        end
-        else begin
-          out_left_next = 0;
-          out_right_next = in_data;
-        end
-      end
-      else begin
-        out_valid_next = 0;
-        out_left_next = 0;
-        out_right_next = 0;
-      end
-    end
+  if(sel[0]) begin
+    out_left  = 32'd0;
+    out_right = buffer[32:1];
+  end
+  else if(sel[1]) begin
+    out_left  = buffer[32:1];
+	  out_right = 32'd0;
   end
   else begin
-    if(flag_val) begin
-        out_valid_next = 1;
-
-        if(!cur_WS) begin
-          out_left_next = in_data;
-          out_right_next = 0;
-        end
-        else begin
-          out_left_next = 0;
-          out_right_next = in_data;
-        end
-      end
-      else begin
-        out_valid_next = 0;
-        out_left_next = 0;
-        out_right_next = 0;
-      end
-  end
-end
-
-always_ff @ (posedge clk or negedge rst_n) begin
-  if(!rst_n) begin
-    out_valid <= 0;
-    out_left <= 0;
-    out_right <= 0;
-  end
-  else begin
-    out_valid <= out_valid_next;
-    out_left <= out_left_next;
-    out_right <= out_right_next;
+    out_left  = 32'd0;
+	  out_right = 32'd0;
   end
 end
 

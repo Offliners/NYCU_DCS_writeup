@@ -6,7 +6,7 @@ This repository contained my designs (System Verilog) and patterns (System Veril
 | HW#  | Topic                                              | Design                  | Area        | Data Required Time | Slack (MET) |
 | ---- | -------------------------------------------------- | ----------------------- | ----------- | ------------------ | ----------- |
 | HW01 | [Simplified Mahjong Judgment](./HW01/DCS_HW01.pdf) | [SMJ.sv](./HW01/SMJ.sv) | 6180.451257 | 30                 | 13.76       |
-| HW02 | [Simplified I2C](./HW02/DCS_HW02.pdf)              |                         |             |                    |             |
+| HW02 | [Simplified I2C](./HW02/DCS_HW02.pdf)              | [I2S.sv](./HW02/I2S.sv) | 4081.49287  | 2                  | 0.05        |
 | HW03 | [Traffic Light Controller](./HW03/DCS_HW03.pdf)    |                         |             |                    |             |
 | HW04 | [Histogram Equalizer](./HW04/DCS_HW04.pdf)         |                         |             |                    |             |
 | HW05 | [MIPS CPU](./HW05/DCS_HW05.pdf)                    |                         |             |                    |             |
