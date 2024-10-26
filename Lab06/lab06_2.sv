@@ -14,21 +14,20 @@ module lab06_2(
 //   INPUT AND OUTPUT DECLARATION                         
 //---------------------------------------------------------------------
 input clk,rst_n,in_valid;
-input signed[3:0] in_number;
+input [3:0] in_number;
 input [1:0] mode;
 output logic signed [5:0] out_result;
 output logic out_valid;
 //---------------------------------------------------------------------
 //   LOGIC DECLARATION                         
 //---------------------------------------------------------------------
-logic signed[3:0] in_1, in_2, in_3, in_4;
-logic signed[3:0] sort_1, sort_2, sort_3, sort_4;
+logic signed [3:0] in_1, in_2, in_3, in_4;
+logic signed [3:0] sort_1, sort_2, sort_3, sort_4;
 logic [1:0] mode_ff;
 logic signed [6:0] cal_result;
 logic go_cal,go_cal1,go_cal2,go_cal3,go_idle,go_out;
 logic [2:0]current_state,next_state;
-logic  test;
-assign test=1;
+logic [2:0] count;
 //---------------------------------------------------------------------
 //   State DECLARATION                         
 //---------------------------------------------------------------------
@@ -38,6 +37,15 @@ parameter IDLE = 3'd0,
 //---------------------------------------------------------------------
 //   Finite State Machine                        
 //---------------------------------------------------------------------
+//cnt
+always_ff @(posedge clk or negedge rst_n) begin
+    if(!rst_n)
+        count <= 0;
+    else if(next_state == OUT)
+        count <= count + 1;
+    else 
+        count <= 0;
+end
 //State Register
 always_ff @(posedge clk or negedge rst_n) begin
     if(!rst_n)
@@ -52,7 +60,8 @@ always_comb begin
             else next_state = IDLE;
         CAL: if (go_out) next_state = OUT;
             else next_state = CAL;
-        OUT:   next_state = IDLE;
+        OUT: if(count == 4)  next_state = IDLE;
+        else next_state = current_state;
              
     endcase
 end
@@ -98,7 +107,7 @@ always_ff@(posedge clk or negedge rst_n) begin
         out_result<=0;
     end
     else begin
-        if (current_state==OUT)begin
+        if (next_state==OUT)begin
             out_valid<=1;
             out_result<=cal_result;
 
@@ -136,10 +145,36 @@ Sort sort(.in_num0(in_1),.in_num1(in_2),.in_num2(in_3),.in_num3(in_4),.out_num0(
 always_comb begin
     
     case(mode_ff)
-        'd0: cal_result = sort_1 + sort_2;
-        'd1: cal_result = sort_2 - sort_1;
-        'd2: cal_result = (sort_4-sort_3) ;
-        'd3: cal_result = sort_1 - sort_4;
+        'd0: 
+        case (count)
+            0: cal_result = sort_1;
+            1: cal_result = sort_2;
+            2: cal_result = sort_3;
+            3: cal_result = sort_4;
+            default: cal_result = sort_1;
+        endcase 
+        'd1: 
+        case (count)
+            0: cal_result = sort_4;
+            1: cal_result = sort_3;
+            2: cal_result = sort_2;
+            3: cal_result = sort_1;
+            default: cal_result = sort_1;
+        endcase
+        'd2: case (count)
+            0: cal_result = sort_1 + sort_2;
+            1: cal_result = sort_2 + sort_3;
+            2: cal_result = sort_3 + sort_4;
+            3: cal_result = sort_4 + sort_1;
+            default: cal_result = sort_1;
+        endcase
+        'd3: case (count)
+            0: cal_result = sort_1 - sort_2;
+            1: cal_result = sort_2 - sort_3;
+            2: cal_result = sort_4 - sort_3;
+            3: cal_result = sort_4 - sort_1;
+            default: cal_result = sort_1;
+        endcase
        
     endcase
 
@@ -171,7 +206,7 @@ module Sort(
 //---------------------------------------------------------------------
 //   INPUT AND OUTPUT DECLARATION                         
 //---------------------------------------------------------------------
-input  signed[3:0] in_num0, in_num1, in_num2, in_num3;
+input signed [3:0] in_num0, in_num1, in_num2, in_num3;
 output logic signed[3:0] out_num0, out_num1, out_num2, out_num3;
 
 //---------------------------------------------------------------------
@@ -199,11 +234,10 @@ module comparator(
 	out_1
 );
 
-input  signed [3:0] in_0, in_1;
+input  signed[3:0] in_0, in_1;
 output logic signed[3:0] out_0, out_1;
 
 assign out_0 = (in_0 <= in_1) ? in_0 : in_1;
 assign out_1 = (in_0 <= in_1) ? in_1 : in_0;
 
 endmodule
-

@@ -3,9 +3,10 @@ module pattern(
   // output signals
 	clk,
 	rst_n,
-    in_number,
-    mode,
-    in_valid,
+  in_number,
+  mode,
+  in_valid,
+  
   // input signals
 	out_valid,
 	out_result
@@ -21,53 +22,178 @@ input signed [5:0] out_result;
 //================================================================
 // parameters & integer
 //================================================================
+integer patcount;
+integer PATNUM = 1000;
+integer delay_cnt;
+logic signed [3:0] sort_data [3:0];
+logic [3:0] golden_mode;
+logic signed [3:0] temp;
+logic signed [5:0] golden;
+integer latency, count;
+integer i, j;
 
-
+integer CYCLE = 5;
+always	#(CYCLE/2.0) clk = ~clk;
 
 //================================================================
 // initial
 //================================================================
+initial begin
+  rst_n     = 1'b1;
+  in_number = 4'dx;
+	mode      = 2'dx;
+	in_valid  = 1'dx;
+  force clk = 0;
 
+  reset_task;
+  @(negedge clk);
+  for(patcount = 0 ; patcount < PATNUM; patcount = patcount + 1) begin
+		delay_cnt = $urandom_range(5, 10);
+    repeat(delay_cnt) @(negedge clk);
+    input_task;
+		check_ans;
+	end
+
+	YOU_PASS_task;
+	$finish;
+end
 
 
 //================================================================
 // task
 //================================================================
+task reset_task; begin
+  #(0.5); rst_n     = 0;
+          in_valid  = 0;
+          in_number = 0;
+          mode      = 0;
 
+  #(2.0);
+  if(out_valid !== 0 || out_result !== 0) begin
+    fail;
+    $display ("--------------------------------------------------------------------------------------------------------------------------------------------");
+    $display ("                                                                        SPEC1!                                                              ");
+    $display ("                                                                        Reset                                                               ");
+    $display ("--------------------------------------------------------------------------------------------------------------------------------------------");
+    #(100);
+    $finish;
+  end
 
+  #(1.0) rst_n = 1 ;
+	#(3.0) release clk;
+end endtask
 
-/*
-$display ("--------------------------------------------------------------------------------------------------------------------------------------------");
-$display ("                                                                        SPEC1!                                                              ");
-$display ("                                                                        Reset                                                               ");
-$display ("--------------------------------------------------------------------------------------------------------------------------------------------");
+task input_task; begin
+  in_valid = 1;
+  mode = $urandom_range(0, 4);
+  for(i = 0; i < 4; i = i + 1) begin
+    in_number = $urandom_range(-8, 7);
+    sort_data[i] = in_number;
+    @(negedge clk);
+  end
 
-$display ("--------------------------------------------------------------------------------------------------------------------------------------------");
-$display ("                                                                        SPEC2!                                                              ");
-$display ("                                                           Outvalid should be zero after check                                              ");
-$display ("--------------------------------------------------------------------------------------------------------------------------------------------");
+  in_valid  = 0;
+  in_number = 'bx;
+end; endtask
 
-$display ("--------------------------------------------------------------------------------------------------------------------------------------------");
-$display ("                                                                        SPEC3!                                                              ");
-$display ("                                                  Outvalid should not be overlapped with invalid                                            ");
-$display ("--------------------------------------------------------------------------------------------------------------------------------------------");
+task wait_outvalid; begin
+  latency = 0;
+  while(out_valid != 1) begin
+    latency = latency + 1;
+    if(latency > 100) begin
+      fail;
+      $display ("--------------------------------------------------------------------------------------------------------------------------------------------");
+      $display ("                                                                        SPEC4!                                                              ");
+      $display ("                                                     The execution latency are over 100  cycles                                             ");
+      $display ("--------------------------------------------------------------------------------------------------------------------------------------------");
+    
+      repeat(2) @(negedge clk);
+      $finish;
+    end
+    @(negedge clk);
+  end
+end; endtask
 
-$display ("--------------------------------------------------------------------------------------------------------------------------------------------");
-$display ("                                                                        SPEC4!                                                              ");
-$display ("                                                     The execution latency are over 100  cycles                                             ");
-$display ("--------------------------------------------------------------------------------------------------------------------------------------------");
+task check_ans; begin
+  for(i = 0; i < 4; i = i + 1) begin
+    for(j = i; j < 4; j = j + 1) begin
+      if(sort_data[i] > sort_data[j]) begin
+        temp = sort_data[i];
+        sort_data[i] = sort_data[j];
+        sort_data[j] = temp;
+      end
+    end
+  end
 
-$display ("--------------------------------------------------------------------------------------------------------------------------------------------");
-$display ("                                                                        SPEC5!                                                              ");
-$display ("                                                                       YOUR:  %d                                                 ",out_result);
-$display ("                                                                       GOLDEN: %d                                                    ",golden);
-$display ("--------------------------------------------------------------------------------------------------------------------------------------------");
+  wait_outvalid;
 
-$display ("--------------------------------------------------------------------------------------------------------------------------------------------");
-$display ("                                                                        SPEC6!                                                              ");
-$display ("                                                       Output should be zero when outvalid is zero                                          ");
-$display ("--------------------------------------------------------------------------------------------------------------------------------------------");
-*/
+  count = 0;
+  while(out_valid === 1) begin
+    if(count > 3) begin
+      fail;
+      $display ("--------------------------------------------------------------------------------------------------------------------------------------------");
+      $display ("                                                                        SPEC2!                                                              ");
+      $display ("                                                           Outvalid should be zero after check                                              ");
+      $display ("--------------------------------------------------------------------------------------------------------------------------------------------");
+      repeat(2) @(negedge clk);
+      $finish;
+    end
+
+    case (mode)
+      default: begin end
+      0 : golden = sort_data[count];
+      1 : golden = sort_data[3 - count]; 
+      2 : golden = sort_data[count] + sort_data[(count + 1) % 4];
+      3 : begin
+        if(count < 2) begin
+          golden = sort_data[count] - sort_data[(count + 1) % 4];
+        end
+        else if(count == 2) begin
+          golden = sort_data[3] - sort_data[2];
+        end
+        else if(count == 3) begin
+          golden = sort_data[3] - sort_data[0];
+        end
+      end 
+    endcase
+
+    if(out_result !== golden) begin
+      fail;
+      $display ("--------------------------------------------------------------------------------------------------------------------------------------------");
+      $display ("                                                                        SPEC5!                                                              ");
+      $display ("                                                                       YOUR:  %d                                                 ",out_result);
+      $display ("                                                                       GOLDEN: %d                                                    ",golden);
+      $display ("--------------------------------------------------------------------------------------------------------------------------------------------");
+      #(100); $finish;
+    end
+
+    count = count + 1;
+    @(negedge clk);
+  end
+  @(negedge clk);
+end; endtask
+
+always_comb begin
+  if(in_valid === 1 && out_valid === 1) begin
+    fail;
+    $display ("--------------------------------------------------------------------------------------------------------------------------------------------");
+    $display ("                                                                        SPEC3!                                                              ");
+    $display ("                                                  Outvalid should not be overlapped with invalid                                            ");
+    $display ("--------------------------------------------------------------------------------------------------------------------------------------------");
+    $finish;
+  end
+end
+
+always_comb begin
+  if(out_valid === 0 && out_result !== 0) begin
+    fail;
+    $display ("--------------------------------------------------------------------------------------------------------------------------------------------");
+    $display ("                                                                        SPEC6!                                                              ");
+    $display ("                                                       Output should be zero when outvalid is zero                                          ");
+    $display ("--------------------------------------------------------------------------------------------------------------------------------------------");
+    $finish;
+  end
+end
 
 task YOU_PASS_task;begin
 $display("\033[37m                                                                                                                                          ");        
@@ -124,9 +250,6 @@ $display ("                                                               Congra
 $display ("                                                        You have passed all patterns!          						             ");
 $display ("                                                               time: %8t ns                                                        ",$time);
 $display ("--------------------------------------------------------------------------------------------------------------------------------------------");
-
-
-
 $finish;	
 end endtask
 
@@ -181,11 +304,6 @@ $display("\033[38;2;252;238;238m                            vI \033[38;2;252;172
 $display("\033[38;2;252;238;238m                             71vi\033[38;2;252;172;172m:::irrr::....\033[38;2;252;238;238m    ...:..::::irrr7777777777777rrii::....  ..::irvrr7sUJYv7777v7ii..                         ");
 $display("\033[38;2;252;238;238m                               .i777i. ..:rrri77rriiiiiii:::::::...............:::iiirr7vrrr:.                                             ");
 $display("\033[38;2;252;238;238m                                                      .::::::::::::::::::::::::::::::                                                      \033[m");
-
-
-
 end endtask
 
 endmodule
-
-
