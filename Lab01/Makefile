@@ -130,4 +130,3 @@ clean:
 	${clean_irun}
 	${clean_verdi}
 	${clean_syn}
-	${clean_power}
