@@ -3,27 +3,27 @@ This repository contained my designs (System Verilog) and patterns (System Veril
 
 ## Outline
 ### Homeworks
-| HW#  | Topic                                              | Design                  | Area        | Data Required Time | Slack (MET) |
-| ---- | -------------------------------------------------- | ----------------------- | ----------- | ------------------ | ----------- |
-| HW01 | [Simplified Mahjong Judgment](./HW01/DCS_HW01.pdf) | [SMJ.sv](./HW01/SMJ.sv) | 6180.451257 | 30                 | 13.76       |
-| HW02 | [Simplified I2C](./HW02/DCS_HW02.pdf)              | [I2S.sv](./HW02/I2S.sv) | 4081.49287  | 2                  | 0.05        |
-| HW03 | [Traffic Light Controller](./HW03/DCS_HW03.pdf)    |                         |             |                    |             |
-| HW04 | [Histogram Equalizer](./HW04/DCS_HW04.pdf)         |                         |             |                    |             |
-| HW05 | [MIPS CPU](./HW05/DCS_HW05.pdf)                    |                         |             |                    |             |
+| HW#  | Topic                                              | Design                  | Custom Pattern | Area        | Data Required Time | Slack (MET) |
+| ---- | -------------------------------------------------- | ----------------------- | -------------- | ----------- | ------------------ | ----------- |
+| HW01 | [Simplified Mahjong Judgment](./HW01/DCS_HW01.pdf) | [SMJ.sv](./HW01/SMJ.sv) | ✅              | 6180.451257 | 30                 | 13.76       |
+| HW02 | [Simplified I2C](./HW02/DCS_HW02.pdf)              | [I2S.sv](./HW02/I2S.sv) |                | 4081.49287  | 2                  | 0.05        |
+| HW03 | [Traffic Light Controller](./HW03/DCS_HW03.pdf)    |                         |                |             |                    |             |
+| HW04 | [Histogram Equalizer](./HW04/DCS_HW04.pdf)         |                         |                |             |                    |             |
+| HW05 | [MIPS CPU](./HW05/DCS_HW05.pdf)                    |                         |                |             |                    |             |
 
 ### Labs
-| Lab#  | Topic                                               | Design                              | Area        | Data Required Time | Slack (MET) |
-| ----- | --------------------------------------------------- | ----------------------------------- | ----------- | ------------------ | ----------- |
-| Lab01 | [Binary-Coded Decimal](./Lab01/DCS_Lab01.pdf)       | [BCD.sv](./Lab01/BCD.sv)            | 1114.344017 | 12                 | 6.77        |
-| Lab02 | [Merge Sort](./Lab02/DCS_Lab02.pdf)                 | [Sort.sv](./Lab02/Sort.sv)          | 4420.785636 | 10                 | 0.22        |
-| Lab03 | [Frequency Divider](./Lab03/DCS_Lab03.pdf)          | [Counter.sv](./Lab03/Counter.sv)    | 172.972801  | 5                  | 3.75        |
-| Lab04 | [Sequential Circuit](./Lab04/DCS_Lab04.pdf)         | [Seq.sv](./Lab04/Seq.sv)            | 1237.420825 | 9.83               | 3.42        |
-| Lab05 | [AHB Interconnect](./Lab05/DCS_Lab05.pdf)           | [inter.sv](./Lab05/inter.sv)        | 3073.593637 | 2.5                | 1.14        |
-| Lab06 | [Pattern](./Lab06/DCS_Lab06.pdf)                    | [pattern.sv](./Lab06/pattern.sv) | none        | none               | none        |
-| Lab07 | [Matrix Multiplication](./Lab07/DCS_Lab07.pdf)      | [DCT.sv](./Lab07/DCT.sv)            | 81200.75156 | 7.68               | 2.19        |
-| Lab08 | [Floating Point Computation](./Lab08/DCS_Lab08.pdf) |                                     |             |                    |             |
-| Lab09 | [Pipeline](./Lab09/DCS_Lab09.pdf)                   |                                     |             |                    |             |
-| Lab10 | [Clock Domain Crossing](./Lab10/DCS_Lab10.pdf)      |                                     |             |                    |             |
+| Lab#  | Topic                                               | Design                           | Custom Pattern | Area        | Data Required Time | Slack (MET) |
+| ----- | --------------------------------------------------- | -------------------------------- | -------------- | ----------- | ------------------ | ----------- |
+| Lab01 | [Binary-Coded Decimal](./Lab01/DCS_Lab01.pdf)       | [BCD.sv](./Lab01/BCD.sv)         | ✅              | 1114.344017 | 12                 | 6.77        |
+| Lab02 | [Merge Sort](./Lab02/DCS_Lab02.pdf)                 | [Sort.sv](./Lab02/Sort.sv)       | ✅              | 4420.785636 | 10                 | 0.22        |
+| Lab03 | [Frequency Divider](./Lab03/DCS_Lab03.pdf)          | [Counter.sv](./Lab03/Counter.sv) | ✅              | 172.972801  | 5                  | 3.75        |
+| Lab04 | [Sequential Circuit](./Lab04/DCS_Lab04.pdf)         | [Seq.sv](./Lab04/Seq.sv)         | ✅              | 1237.420825 | 9.83               | 3.42        |
+| Lab05 | [AHB Interconnect](./Lab05/DCS_Lab05.pdf)           | [inter.sv](./Lab05/inter.sv)     | ✅              | 3073.593637 | 2.5                | 1.14        |
+| Lab06 | [Pattern](./Lab06/DCS_Lab06.pdf)                    | [pattern.sv](./Lab06/pattern.sv) |                | none        | none               | none        |
+| Lab07 | [Matrix Multiplication](./Lab07/DCS_Lab07.pdf)      | [DCT.sv](./Lab07/DCT.sv)         | ✅              | 81200.75156 | 7.68               | 2.19        |
+| Lab08 | [Floating Point Computation](./Lab08/DCS_Lab08.pdf) |                                  |                |             |                    |             |
+| Lab09 | [Pipeline](./Lab09/DCS_Lab09.pdf)                   |                                  |                |             |                    |             |
+| Lab10 | [Clock Domain Crossing](./Lab10/DCS_Lab10.pdf)      |                                  |                |             |                    |             |
 
 ### Online Test
 | Topic                         | Design | Area | Data Required Time | Slack (MET) |
