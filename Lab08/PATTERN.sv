@@ -210,7 +210,7 @@ task check_ans; begin
         // $display ("                                                      S E        F       ");
         // $display ("                                          your output:%1b %8b %7b", out[15], out[14:7], out[6:0]);
         // $display ("                                        golden answer:%1b %8b %7b", golden_feature[8][15], golden_feature[8][14:7], golden_feature[8][6:0]);
-		  if(altb) begin
+      if(altb) begin
         fail;
         $display ("--------------------------------------------------------------------------------------------------------------------------------------------");
         $display ("                                                          WRONG ANSWER FAIL!                                                                ");
