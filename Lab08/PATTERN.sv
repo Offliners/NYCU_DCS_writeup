@@ -53,6 +53,7 @@ always	#(CYCLE/2.0) clk = ~clk;
 //================================================================
 // parameters & integer
 //================================================================
+integer input_file, output_file;
 integer PATNUM = 500;
 integer position = 120;
 integer i,j,k,cnt;
@@ -61,6 +62,7 @@ integer gap;
 integer lat, total_latency;
 integer int_ratio = 10; // 10
 
+`ifndef CUSTOM  
 // DW_fp_mac #(7, 8, 0) smac0(.a(golden_data[0]), .b(golden_filter[0]), .c({16'b0}), .z(golden_feature[7]), .rnd(3'b000), .status(st[0])); // a*b + 0
 // DW_fp_mac #(7, 8, 0) smac1(.a(golden_data[0]), .b(16'b0011_1111_1000_0000), .c(golden_filter[0]), .z(golden_feature[6]), .rnd(3'b000), .status(st[1])); // a*1 + c
 DW_fp_mult #(7, 8, 0) smac0(.a(golden_data[0]), .b(golden_filter[0]), .z(golden_feature[7]), .rnd(3'b000), .status(st[0])); // a * b
@@ -71,7 +73,7 @@ DW_fp_sub #(7, 8, 0) ssub1(.a(out), .b(golden_feature[8]), .z(diff), .rnd(3'b000
 DW_fp_div #(7, 8, 0) sdiv1(.a({1'b0, golden_feature[8][14:0]}), .b({1'b0, diff[14:0]}), .z(ratio), .rnd(3'b000), .status(st[10]));
 DW_fp_i2flt #(7, 8, 32, 1) si2flt1(.a(int_ratio), .z(out_z), .rnd(3'b000), .status(st[11]));
 DW_fp_cmp #(7, 8, 0) scmp1(.a(ratio), .b(out_z), .zctr(zctr), .altb(altb), .agtb(agtb), .aeqb(aeqb), .unordered(unordered), .z0(z0), .z1(z1), .status0(st[12]), .status1(st[13]));
-
+`endif
 
 //================================================================
 // initial
@@ -84,6 +86,12 @@ initial begin
   mode = 'bx;
   total_latency = 0;
 
+  `ifdef CUSTOM
+		input_file  = $fopen("input.txt", "r");
+		output_file = $fopen("output.txt", "r");
+		k = $fscanf(input_file, "%d", PATNUM);
+	`endif
+
 	force clk = 0;
 	reset_task;
 	
@@ -92,7 +100,7 @@ initial begin
 		input_task;
     WAIT_OUT_VALID;
 		check_ans;
-		// $display("\033[0;32mPASS PATTERN NO.%3d \033[m", patcount);
+		$display("\033[0;32mPASS PATTERN NO.%3d \033[m", patcount);
     @(negedge clk);
 		delay_gen;	
 	end
@@ -146,20 +154,29 @@ end endtask
 
 task input_task; begin
 	in_valid = 1;
-  mode = $urandom_range(1,0); // 0+ 1* $urandom_range(1,0);
-  golden_mode = mode;
+  `ifdef CUSTOM
+    k = $fscanf(input_file, "%b %b %b", mode, in_a, in_b);
+    golden_data[0] = in_a;
+    golden_filter[0] = in_b;
 
-  golden_s = $urandom_range(1,0);
-  golden_exponent = $urandom_range(135,120);
-  golden_significand = $urandom_range(127,0);
-  golden_data[0] = {golden_s, golden_exponent, golden_significand};
-  in_a = golden_data[0];
+    k = $fscanf(output_file, "%b", golden_feature[8]);
+    altb = 1;
+  `else
+    mode = $urandom_range(1,0); // 0+ 1* $urandom_range(1,0);
+    golden_mode = mode;
 
-  golden_s = $urandom_range(1,0);
-  golden_exponent = $urandom_range((golden_exponent+3),(golden_exponent-3)); // $urandom_range(135,120);
-  golden_significand = $urandom_range(127,0);
-  golden_filter[0] = {golden_s, golden_exponent, golden_significand};
-  in_b = golden_filter[0];
+    golden_s = $urandom_range(1,0);
+    golden_exponent = $urandom_range(135,120);
+    golden_significand = $urandom_range(127,0);
+    golden_data[0] = {golden_s, golden_exponent, golden_significand};
+    in_a = golden_data[0];
+
+    golden_s = $urandom_range(1,0);
+    golden_exponent = $urandom_range((golden_exponent+3),(golden_exponent-3)); // $urandom_range(135,120);
+    golden_significand = $urandom_range(127,0);
+    golden_filter[0] = {golden_s, golden_exponent, golden_significand};
+    in_b = golden_filter[0];
+  `endif
 
   @(negedge clk);
 
