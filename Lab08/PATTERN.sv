@@ -1,15 +1,15 @@
 `define CYCLE_TIME 20.0
-////synopsys translate_off
-//`include "/usr/synthesis/dw/sim_ver/DW_fp_dp2.v"
-//`include "/usr/synthesis/dw/sim_ver/DW_fp_mac.v"
-//`include "/usr/synthesis/dw/sim_ver/DW_fp_add.v"
-//`include "/usr/synthesis/dw/sim_ver/DW_fp_mult.v"
-//`include "/usr/synthesis/dw/sim_ver/DW_fp_sub.v"
-//`include "/usr/synthesis/dw/sim_ver/DW_fp_div.v"
-//`include "/usr/synthesis/dw/sim_ver/DW_fp_cmp.v"
-//`include "/usr/synthesis/dw/sim_ver/DW_fp_i2flt.v"
-//`include "/usr/synthesis/dw/sim_ver/DW_fp_addsub.v"
-////synopsys translate_on
+//synopsys translate_off
+`include "/usr/cad/synopsys/synthesis/cur/dw/sim_ver/DW_fp_dp2.v"
+`include "/usr/cad/synopsys/synthesis/cur/dw/sim_ver/DW_fp_mac.v"
+`include "/usr/cad/synopsys/synthesis/cur/dw/sim_ver/DW_fp_add.v"
+`include "/usr/cad/synopsys/synthesis/cur/dw/sim_ver/DW_fp_mult.v"
+`include "/usr/cad/synopsys/synthesis/cur/dw/sim_ver/DW_fp_sub.v"
+`include "/usr/cad/synopsys/synthesis/cur/dw/sim_ver/DW_fp_div.v"
+`include "/usr/cad/synopsys/synthesis/cur/dw/sim_ver/DW_fp_cmp.v"
+`include "/usr/cad/synopsys/synthesis/cur/dw/sim_ver/DW_fp_i2flt.v"
+`include "/usr/cad/synopsys/synthesis/cur/dw/sim_ver/DW_fp_addsub.v"
+//synopsys translate_on
 
 module PATTERN(
   // output signals
@@ -141,7 +141,7 @@ task reset_task ; begin
 	end
 	
 	#(1.0); rst_n = 1 ;
-	#(30.0); release clk;
+	#(3.0); release clk;
 end endtask
 
 task input_task; begin
@@ -193,7 +193,7 @@ task check_ans; begin
         // $display ("                                                      S E        F       ");
         // $display ("                                          your output:%1b %8b %7b", out[15], out[14:7], out[6:0]);
         // $display ("                                        golden answer:%1b %8b %7b", golden_feature[8][15], golden_feature[8][14:7], golden_feature[8][6:0]);
-		  if(altb !== 0) begin
+		  if(altb) begin
         fail;
         $display ("--------------------------------------------------------------------------------------------------------------------------------------------");
         $display ("                                                          WRONG ANSWER FAIL!                                                                ");

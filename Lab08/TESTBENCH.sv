@@ -4,7 +4,7 @@
 `ifdef RTL
 `include "Fpc.sv"
 `elsif GATE
-`include "Fpc_SYN.v"
+`include "./Netlist/Fpc_SYN.v"
 `endif
 
 module TESTBED();
@@ -18,18 +18,14 @@ logic [15:0] out;
 
 initial begin
   `ifdef RTL
-    $fsdbDumpfile("Fpc.fsdb");
-	  $fsdbDumpvars();
-	  $fsdbDumpvars("+mda");
+    $dumpfile("Fpc.vcd");
+	  $dumpvars;
   `elsif GATE
-    $fsdbDumpfile("Fpc_SYN.fsdb");
-	  $sdf_annotate("Fpc_SYN.sdf",I_design);
-	  $fsdbDumpvars();
+    $dumpfile("Fpc_SYN.vcd");
+	  $sdf_annotate("./Netlist/Fpc_SYN.sdf", I_design);
+	  $dumpvars;
   `endif 
 end
-
-	
-
 
 Fpc I_design
 (
@@ -43,7 +39,6 @@ Fpc I_design
   .out(out)
 );
 
-
 PATTERN I_PATTERN
 (
   .clk(clk),
@@ -55,5 +50,6 @@ PATTERN I_PATTERN
   .out_valid(out_valid),
   .out(out)
 );
+
 endmodule
 
