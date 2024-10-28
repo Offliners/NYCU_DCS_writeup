@@ -68,12 +68,12 @@ integer int_ratio = 10; // 10
 DW_fp_mult #(7, 8, 0) smac0(.a(golden_data[0]), .b(golden_filter[0]), .z(golden_feature[7]), .rnd(3'b000), .status(st[0])); // a * b
 DW_fp_add #(7, 8, 0) smac1(.a(golden_data[0]), .b(golden_filter[0]), .z(golden_feature[6]), .rnd(3'b000), .status(st[1])); // a + c
 assign golden_feature[8] = (golden_mode) ? golden_feature[7] : golden_feature[6];
+`endif
 
 DW_fp_sub #(7, 8, 0) ssub1(.a(out), .b(golden_feature[8]), .z(diff), .rnd(3'b000), .status(st[9]));
 DW_fp_div #(7, 8, 0) sdiv1(.a({1'b0, golden_feature[8][14:0]}), .b({1'b0, diff[14:0]}), .z(ratio), .rnd(3'b000), .status(st[10]));
 DW_fp_i2flt #(7, 8, 32, 1) si2flt1(.a(int_ratio), .z(out_z), .rnd(3'b000), .status(st[11]));
 DW_fp_cmp #(7, 8, 0) scmp1(.a(ratio), .b(out_z), .zctr(zctr), .altb(altb), .agtb(agtb), .aeqb(aeqb), .unordered(unordered), .z0(z0), .z1(z1), .status0(st[12]), .status1(st[13]));
-`endif
 
 //================================================================
 // initial
@@ -160,7 +160,6 @@ task input_task; begin
     golden_filter[0] = in_b;
 
     k = $fscanf(output_file, "%b", golden_feature[8]);
-    altb = 1;
   `else
     mode = $urandom_range(1,0); // 0+ 1* $urandom_range(1,0);
     golden_mode = mode;
@@ -210,7 +209,7 @@ task check_ans; begin
         // $display ("                                                      S E        F       ");
         // $display ("                                          your output:%1b %8b %7b", out[15], out[14:7], out[6:0]);
         // $display ("                                        golden answer:%1b %8b %7b", golden_feature[8][15], golden_feature[8][14:7], golden_feature[8][6:0]);
-      if(altb) begin
+		  if(altb) begin
         fail;
         $display ("--------------------------------------------------------------------------------------------------------------------------------------------");
         $display ("                                                          WRONG ANSWER FAIL!                                                                ");
