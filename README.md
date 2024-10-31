@@ -26,14 +26,14 @@ This repository contained my designs (System Verilog) and patterns (System Veril
 | Lab10 | [Clock Domain Crossing](./Lab10/DCS_Lab10.pdf)      |                                  |                |             |                    |             |
 
 ### Online Test
-| Topic                         | Design | Area | Data Required Time | Slack (MET) |
-| ----------------------------- | ------ | ---- | ------------------ | ----------- |
-| [Systolic Array](./OT/OT.pdf) |        |      |                    |             |
+| Topic                         | Design | Custom Pattern | Area | Data Required Time | Slack (MET) |
+| ----------------------------- | ------ | -------------- | ---- | ------------------ | ----------- |
+| [Systolic Array](./OT/OT.pdf) |        |                |      |                    |             |
 
 ### Final Project
-| Topic                                       | Design | Area | Data Required Time | Slack (MET) |
-| ------------------------------------------- | ------ | ---- | ------------------ | ----------- |
-| [Simple CNN](./Final/DCS_Final_Project.pdf) |        |      |                    |             |
+| Topic                                       | Design | Custom Pattern | Area | Data Required Time | Slack (MET) |
+| ------------------------------------------- | ------ | -------------- | ---- | ------------------ | ----------- |
+| [Simple CNN](./Final/DCS_Final_Project.pdf) |        |                |      |                    |             |
 
 ## Design Flow
 ```mermaid
