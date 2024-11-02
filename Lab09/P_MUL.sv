@@ -79,7 +79,7 @@ always_ff @(posedge clk or negedge rst_n) begin
         mul_G        <= 32'd0;
         mul_H        <= 32'd0;
         mul_I        <= 32'd0;
-        stage2_valid <= next_stage2_valid;
+        stage2_valid <= 1'b0;
     end
     else begin
         mul_A        <= next_mul_A;
