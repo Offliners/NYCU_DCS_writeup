@@ -1,5 +1,5 @@
 module P_MUL(
-  // Input signals
+    // Input signals
 	clk,
     rst_n,
     in_1,
@@ -7,145 +7,162 @@ module P_MUL(
     in_3,
     in_4,
     in_valid,
-  // Output signals
+    
+    // Output signals
 	out_valid,
 	out
 );
+
 //---------------------------------------------------------------------
 //   INPUT AND OUTPUT DECLARATION                         
+//---------------------------------------------------------------------
 input clk, rst_n, in_valid;
 input [46:0] in_1, in_2, in_3, in_4;
 
 output logic out_valid;
 output logic [95:0] out;
+
 //---------------------------------------------------------------------
 //   LOGIC DECLARATION
 //---------------------------------------------------------------------
-logic [47:0] sum_A, sum_A_nxt;
-logic [47:0] sum_B, sum_B_nxt;
-logic st1_valid, st1_valid_nxt; 
+logic [95:0] next_out;
+logic next_out_valid;
 
-logic [31:0] mul_A, mul_A_nxt;
-logic [31:0] mul_B, mul_B_nxt;
-logic [31:0] mul_C, mul_C_nxt;
-logic [31:0] mul_D, mul_D_nxt;
-logic [31:0] mul_E, mul_E_nxt;
-logic [31:0] mul_F, mul_F_nxt;
-logic [31:0] mul_G, mul_G_nxt;
-logic [31:0] mul_H, mul_H_nxt;
-logic [31:0] mul_I, mul_I_nxt;
-logic st2_valid, st2_valid_nxt; 
+logic [47:0] sum_A, sum_B;
+logic [47:0] next_sum_A, next_sum_B;
+logic stage1_valid, next_stage1_valid; 
 
-logic [95:0] sum_C, sum_C_nxt;
-logic [95:0] sum_D, sum_D_nxt;
-logic [95:0] sum_E, sum_E_nxt;
-logic st3_valid, st3_valid_nxt; 
+logic [31:0] mul_A, mul_B, mul_C, mul_D, mul_E, mul_F, mul_G, mul_H, mul_I;
+logic [31:0] next_mul_A, next_mul_B, next_mul_C, next_mul_D, next_mul_E, next_mul_F, next_mul_G, next_mul_H, next_mul_I;
+logic stage2_valid, next_stage2_valid;
 
-logic [95:0] out_nxt;
-logic out_valid_nxt;
+logic [95:0] sum_C, next_sum_C;
+logic stage3_valid, next_stage3_valid;
 
 //---------------------------------------------------------------------
 //   Your DESIGN                        
 //---------------------------------------------------------------------
-
-always_comb begin
-    sum_A_nxt = 'h0;
-    sum_B_nxt = 'h0;
-    sum_C_nxt = 'h0;
-    sum_D_nxt = 'h0;
-    sum_E_nxt = 'h0;
-    st1_valid_nxt = 'h0;
-    mul_A_nxt = 'h0;
-    mul_B_nxt = 'h0;
-    mul_C_nxt = 'h0;
-    mul_D_nxt = 'h0;
-    mul_E_nxt = 'h0;
-    mul_F_nxt = 'h0;
-    mul_G_nxt = 'h0;
-    mul_H_nxt = 'h0;
-    mul_I_nxt = 'h0;
-    st2_valid_nxt = 'h0;
-    st3_valid_nxt = 'h0;
-    out_nxt = 'h0;
-    out_valid_nxt = 'h0;
-    
-    if (in_valid) begin 
-        sum_A_nxt = in_1 + in_2;
-        sum_B_nxt = in_3 + in_4;
-        st1_valid_nxt = 1;
-    end 
-
-    if (st1_valid) begin
-        mul_A_nxt = sum_A[15:0] * sum_B[15:0];
-        mul_B_nxt = sum_A[31:16] * sum_B[15:0];
-        mul_C_nxt = sum_A[47:32] * sum_B[15:0];
-
-        mul_D_nxt = sum_A[15:0] * sum_B[31:16];
-        mul_E_nxt = sum_A[31:16] * sum_B[31:16];
-        mul_F_nxt = sum_A[47:32] * sum_B[31:16];      
-
-        mul_G_nxt = sum_A[15:0] * sum_B[47:32];
-        mul_H_nxt = sum_A[31:16] * sum_B[47:32];
-        mul_I_nxt = sum_A[47:32] * sum_B[47:32];
-
-        st2_valid_nxt = 1;
+always_ff @(posedge clk or negedge rst_n) begin
+    if(!rst_n) begin
+        sum_A        <= 48'd0;
+        sum_B        <= 48'd0;
+        stage1_valid <= 1'b0;
     end
-
-    if (st2_valid) begin
-        sum_C_nxt = {mul_B, 16'b0} + {mul_D, 16'b0} + mul_A;
-        sum_D_nxt = {mul_G, 32'b0} + {mul_E, 32'b0} + {mul_C, 32'b0};
-        sum_E_nxt = {mul_I, 64'b0} + {mul_H, 48'b0} + {mul_F, 48'b0};
-        st3_valid_nxt = 1;
-    end
-
-    if (st3_valid) begin
-        out_nxt = sum_C + sum_D + sum_E;
-        out_valid_nxt = 1;
+    else begin
+        sum_A        <= next_sum_A;
+        sum_B        <= next_sum_B;
+        stage1_valid <= next_stage1_valid;
     end
 end
 
-always_ff @(posedge clk, negedge rst_n) begin
-    if (!rst_n) begin
-        sum_A <= 'h0;
-        sum_B <= 'h0;
-        sum_C <= 'h0;
-        sum_D <= 'h0;
-        sum_E <= 'h0;
-        st1_valid <= 'h0;
-        mul_A <= 'h0;
-        mul_B <= 'h0;
-        mul_C <= 'h0;
-        mul_D <= 'h0;
-        mul_E <= 'h0;
-        mul_F <= 'h0;
-        mul_G <= 'h0;
-        mul_H <= 'h0;
-        mul_I <= 'h0;
-        st2_valid <= 'h0;
-        st3_valid <= 'h0;
-        out <= 'h0;
-        out_valid <= 'h0;
+always_comb begin
+    if(in_valid) begin
+        next_sum_A        = in_1 + in_2;
+        next_sum_B        = in_3 + in_4;
+        next_stage1_valid = 1'b1;
     end
     else begin
-        sum_A <= sum_A_nxt;
-        sum_B <= sum_B_nxt;
-        sum_C <= sum_C_nxt;
-        sum_D <= sum_D_nxt;
-        sum_E <= sum_E_nxt;
-        st1_valid <= st1_valid_nxt;
-        mul_A <= mul_A_nxt;
-        mul_B <= mul_B_nxt;
-        mul_C <= mul_C_nxt;
-        mul_D <= mul_D_nxt;
-        mul_E <= mul_E_nxt;
-        mul_F <= mul_F_nxt;
-        mul_G <= mul_G_nxt;
-        mul_H <= mul_H_nxt;
-        mul_I <= mul_I_nxt;
-        st2_valid <= st2_valid_nxt;
-        st3_valid <= st3_valid_nxt;
-        out <= out_nxt;
-        out_valid <= out_valid_nxt;
+        next_sum_A        = 48'd0;
+        next_sum_B        = 48'd0;
+        next_stage1_valid = 1'b0;
+    end
+end
+
+always_ff @(posedge clk or negedge rst_n) begin
+    if(!rst_n) begin
+        mul_A        <= 32'd0;
+        mul_B        <= 32'd0;
+        mul_C        <= 32'd0;
+        mul_D        <= 32'd0;
+        mul_E        <= 32'd0;
+        mul_F        <= 32'd0;
+        mul_G        <= 32'd0;
+        mul_H        <= 32'd0;
+        mul_I        <= 32'd0;
+        stage2_valid <= next_stage2_valid;
+    end
+    else begin
+        mul_A        <= next_mul_A;
+        mul_B        <= next_mul_B;
+        mul_C        <= next_mul_C;
+        mul_D        <= next_mul_D;
+        mul_E        <= next_mul_E;
+        mul_F        <= next_mul_F;
+        mul_G        <= next_mul_G;
+        mul_H        <= next_mul_H;
+        mul_I        <= next_mul_I;
+        stage2_valid <= next_stage2_valid;
+    end
+end
+
+always_comb begin
+    if(stage1_valid) begin
+        next_mul_A = sum_A[15:0]  * sum_B[15:0];
+        next_mul_B = sum_A[31:16] * sum_B[15:0];
+        next_mul_C = sum_A[47:32] * sum_B[15:0];
+        next_mul_D = sum_A[15:0]  * sum_B[31:16];
+        next_mul_E = sum_A[31:16] * sum_B[31:16];
+        next_mul_F = sum_A[47:32] * sum_B[31:16];      
+        next_mul_G = sum_A[15:0]  * sum_B[47:32];
+        next_mul_H = sum_A[31:16] * sum_B[47:32];
+        next_mul_I = sum_A[47:32] * sum_B[47:32];
+        next_stage2_valid = 1'b1;
+    end
+    else begin
+        next_mul_A = 32'd0;
+        next_mul_B = 32'd0;
+        next_mul_C = 32'd0;
+        next_mul_D = 32'd0;
+        next_mul_E = 32'd0;
+        next_mul_F = 32'd0;      
+        next_mul_G = 32'd0;
+        next_mul_H = 32'd0;
+        next_mul_I = 32'd0;
+        next_stage2_valid = 1'b0;
+    end
+end
+
+always_ff @(posedge clk or negedge rst_n) begin
+    if(!rst_n) begin
+        sum_C        <= 96'd0;
+        stage3_valid <= 1'b0;
+    end
+    else begin
+        sum_C        <= next_sum_C;
+        stage3_valid <= next_stage3_valid;
+    end
+end
+
+always_comb begin
+    if(stage2_valid) begin
+        next_sum_C        = {mul_C, 32'b0} + {mul_B, 16'b0} + mul_A + {mul_F, 48'b0} + {mul_E, 32'b0} + {mul_D, 16'b0} + {mul_I, 64'b0} + {mul_H, 48'b0} + {mul_G, 32'b0};
+        next_stage3_valid = 1'b1;
+    end
+    else begin
+        next_sum_C        = 96'd0;
+        next_stage3_valid = 1'b0;
+    end
+end
+
+always_ff @(posedge clk or negedge rst_n) begin
+    if(!rst_n) begin
+        out       <= 96'd0;
+        out_valid <= 1'b0;
+    end
+    else begin
+        out       <= next_out;
+        out_valid <= next_out_valid;
+    end
+end
+
+always_comb begin
+    if(stage3_valid) begin
+        next_out       = sum_C;
+        next_out_valid = 1'b1;
+    end
+    else begin
+        next_out       = 96'd0;
+        next_out_valid = 1'b0;
     end
 end
 
