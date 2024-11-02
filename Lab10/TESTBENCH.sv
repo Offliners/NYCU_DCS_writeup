@@ -4,7 +4,7 @@
 `ifdef RTL
 `include "CDC.sv"
 `elsif GATE
-`include "CDC_SYN.v"
+`include "./Netlist/CDC_SYN.v"
 `endif
 
 module TESTBED();
@@ -18,13 +18,13 @@ wire 	[7:0]out;
 
 initial begin
   `ifdef RTL
-    $fsdbDumpfile("CDC.fsdb");
-	  $fsdbDumpvars(0,"+mda");
+    $dumpfile("CDC.vcd");
+	$dumpvars;
   `elsif GATE
-    $fsdbDumpfile("CDC_SYN.fsdb");
+    $dumpfile("CDC_SYN.vcd");
 	//$sdf_annotate("CDC_SYN.sdf",I_CDC);  
-	$sdf_annotate("CDC_SYN_pt.sdf",I_CDC,,,"maximum"); 
-	  $fsdbDumpvars(0,"+mda");
+	$sdf_annotate("./Netlist/CDC_SYN_pt.sdf",I_CDC,,,"maximum"); 
+	$dumpvars;
   `endif
 end
 
