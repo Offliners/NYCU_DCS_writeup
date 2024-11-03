@@ -19,7 +19,7 @@ initial begin
 	$dumpvars;
   `elsif GATE
     $dumpfile("DCT_SYN.vcd");
-	$sdf_annotate("DCT_SYN.sdf", I_DCT);
+	$sdf_annotate("./Netlist/DCT_SYN.sdf", I_DCT);
 	$dumpvars;
   `endif
 end
