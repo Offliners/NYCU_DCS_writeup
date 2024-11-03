@@ -143,7 +143,7 @@ task input_task; begin
 	for(i=0;i<4;i=i+1)begin
 		for(j=0;j<4;j=j+1)begin
 			in_valid = 1;
-			in_data = $urandom_range(127,-128);
+			in_data = $urandom_range(127, -128);
 			golden_in[i][j] = in_data;
 			@(negedge clk);
 		end
