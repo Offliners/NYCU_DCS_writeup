@@ -118,7 +118,7 @@ task input_cal_task; begin
 		in_2[31:0] = $random;
 		in_2[46:32] = $random;
 		in_3[31:0] = $random;
-		in_3[47:32] = $random;
+		in_3[46:32] = $random;
 		in_4[31:0] = $random;
 		in_4[46:32] = $random;
 		golden_out[patcount] = (in_1+in_2) * (in_3+in_4);
