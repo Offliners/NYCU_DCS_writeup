@@ -1,16 +1,19 @@
 `include "synchronizer.v"
-module CDC(// Input signals
-			clk_1,
-			clk_2,
-			in_valid,
-			rst_n,
-			in_a,
-			mode,
-			in_b,
-		  //  Output signals
-			out_valid,
-			out
-			);		
+module CDC(
+	// Input signals
+	clk_1,
+	clk_2,
+	in_valid,
+	rst_n,
+	in_a,
+	mode,
+	in_b,
+
+	//  Output signals
+	out_valid,
+	out
+);
+		
 input clk_1; 
 input clk_2;			
 input rst_n;
