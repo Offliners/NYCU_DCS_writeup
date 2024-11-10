@@ -23,7 +23,7 @@ initial begin
   `elsif GATE
     $dumpfile("CDC_SYN.vcd");
 	//$sdf_annotate("CDC_SYN.sdf",I_CDC);  
-	$sdf_annotate("./Netlist/CDC_SYN_pt.sdf",I_CDC,,,"maximum"); 
+	$sdf_annotate("./Netlist/CDC_SYN.sdf",I_CDC,,,"maximum"); 
 	$dumpvars;
   `endif
 end
