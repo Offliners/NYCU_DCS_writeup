@@ -34,9 +34,10 @@ always	#(CYCLE/2.0) clk = ~clk;
 //================================================================
 // parameters & integer
 //================================================================
+integer input_file, output_file;
 integer PATNUM = 1000;
 integer seed = 87;
-integer cnt;
+integer cnt,k;
 integer patcount;
 integer gap;
 integer delay;
@@ -60,6 +61,13 @@ initial begin
 	in_4 = 'b0;
 
 	cnt = 0;
+
+	`ifdef CUSTOM
+		input_file  = $fopen("input.txt", "r");
+		output_file = $fopen("output.txt", "r");
+		k = $fscanf(input_file, "%d", PATNUM);
+	`endif
+
 	force clk = 0;
 	reset_task;
 	
@@ -113,15 +121,20 @@ task input_cal_task; begin
 
 	for(patcount=0; patcount<PATNUM; patcount=patcount+1)
 	begin	
-		in_1[31:0] = $random;
-		in_1[46:32] = $random;
-		in_2[31:0] = $random;
-		in_2[46:32] = $random;
-		in_3[31:0] = $random;
-		in_3[46:32] = $random;
-		in_4[31:0] = $random;
-		in_4[46:32] = $random;
-		golden_out[patcount] = (in_1+in_2) * (in_3+in_4);
+		`ifdef CUSTOM
+			k = $fscanf(input_file, "%b %b %b %b", in_1, in_2, in_3, in_4);
+			k = $fscanf(output_file, "%b", golden_out[patcount]);
+		`else
+			in_1[31:0] = $random;
+			in_1[46:32] = $random;
+			in_2[31:0] = $random;
+			in_2[46:32] = $random;
+			in_3[31:0] = $random;
+			in_3[46:32] = $random;
+			in_4[31:0] = $random;
+			in_4[46:32] = $random;
+			golden_out[patcount] = (in_1+in_2) * (in_3+in_4);
+		`endif
 		@(negedge clk);
 	end
 
