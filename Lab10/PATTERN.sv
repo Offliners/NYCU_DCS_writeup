@@ -27,13 +27,15 @@ input[7:0] out;
 //================================================================
 //   DECLARATION
 //================================================================
+integer input_file, output_file;
+
 real CYCLE_clk1 = `CYCLE_TIME_clk1;
 real CYCLE_clk2 = `CYCLE_TIME_clk2;
 
-parameter PATNUM = 1000;                 
+integer PATNUM = 1000;                 
 integer SEED = 100;
 integer patcount;
-integer x,y,i,j,lat,total_latency;
+integer x,y,i,j,k,lat,total_latency;
 //integer num;
 integer len_m;
 integer len_c;
@@ -75,6 +77,12 @@ initial begin
 	mode = 'bx;
 	in_b = 'bx;
 
+	`ifdef CUSTOM
+		input_file  = $fopen("input.txt", "r");
+		output_file = $fopen("output.txt", "r");
+		k = $fscanf(input_file, "%d", PATNUM);
+	`endif
+
 	force clk_1 = 0;
 	force clk_2 = 0;
 	
@@ -112,13 +120,16 @@ task input_task; begin
 	//input
 	in_valid = 1'b1;
 	
-	mode = $urandom_range(0,1);
-	golden_mode = mode;
-	
-	in_a = $urandom_range(0,15);
-	golden_in_a = in_a;
+	`ifdef CUSTOM
+		k = $fscanf(input_file, "%b %b %b", mode, in_a, in_b);
+	`else
+		mode = $urandom_range(0,1);	
+		in_a = $urandom_range(0,15);
+		in_b = $urandom_range(0,15);
+	`endif
 
-	in_b = $urandom_range(0,15);
+	golden_mode = mode;
+	golden_in_a = in_a;
 	golden_in_b = in_b;
 	
 	golden_out = (golden_mode)? in_a * in_b : in_a + in_b; 
