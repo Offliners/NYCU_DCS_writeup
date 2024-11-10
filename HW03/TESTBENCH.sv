@@ -3,7 +3,7 @@
 `ifdef RTL
 `include "TL.sv"
 `elsif GATE
-`include "TL_SYN.v"
+`include "./Netlist/TL_SYN.v"
 `endif
 
 
@@ -19,14 +19,12 @@ logic [1:0]light_main, light_side;
 
 initial begin 
   `ifdef RTL
-      $fsdbDumpfile("TL.fsdb");
-	    $fsdbDumpvars(0,"+mda");
-      $fsdbDumpvars();
+      $dumpfile("TL.vcd");
+      $dumpvars;
   `elsif GATE
-      $fsdbDumpfile("TL_SYN.fsdb");
-	    $sdf_annotate("TL_SYN.sdf",I_TL);
-	    $fsdbDumpvars(0,"+mda");
-      $fsdbDumpvars();
+      $dumpfile("TL_SYN.vcd");
+	    $sdf_annotate("./Netlist/TL_SYN.sdf",I_TL);
+	    $dumpvars;
   `endif 
 end
 //================================================================
