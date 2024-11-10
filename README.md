@@ -23,7 +23,7 @@ This repository contained my designs (System Verilog) and patterns (System Veril
 | Lab07 | [Matrix Multiplication](./Lab07/DCS_Lab07.pdf)      | [DCT.sv](./Lab07/DCT.sv)         | ✅              | 75945.03934 |
 | Lab08 | [Floating Point Computation](./Lab08/DCS_Lab08.pdf) | [Fpc.sv](./Lab08/Fpc.sv)         | ✅              | 14972.12673 |
 | Lab09 | [Pipeline](./Lab09/DCS_Lab09.pdf)                   | [P_MUL.sv](./Lab09/P_MUL.sv)     | ✅              | 295543.9876 |
-| Lab10 | [Clock Domain Crossing](./Lab10/DCS_Lab10.pdf)      | [CDC.sv](./Lab10/CDC.sv)         |                | 3502.699259 |
+| Lab10 | [Clock Domain Crossing](./Lab10/DCS_Lab10.pdf)      | [CDC.sv](./Lab10/CDC.sv)         | ✅              | 3502.699259 |
 
 ### Online Test
 | Topic                         | Design | Custom Pattern | Area |
