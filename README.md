@@ -122,7 +122,7 @@ $ make clean
 * Python3
 * Cadence irun
 * Synopsys Design Compiler
-    * cell : `UMC 0.18µm`
+    * cell : `UMC 0.18µm` (Not provide in this repository)
 * Synopsys Verdi
 
 ## References
