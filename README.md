@@ -87,7 +87,7 @@ flowchart LR
 ## Usage
 ```shell
 # RTL & Verification
-$ make irun_rtl
+$ make vcs_rtl
 
 # Install Python3 thirdparty library (Optional)
 $ pip3 install -r requirements.txt
@@ -96,16 +96,16 @@ $ pip3 install -r requirements.txt
 $ python3 testdata_gen.py
 
 # RTL & Verification with custom testcase
-$ make irun_rtl_cust
+$ make vcs_rtl_cust
 
 # Synthesis & STA report
 $ make syn
 
 # Gate level simulation
-$ make irun_gate
+$ make vcs_gate
 
 # Gate level simulation with custom testcase
-$ make irun_gate_cust
+$ make vcs_gate_cust
 
 # View waveform
 $ make nWave
@@ -120,10 +120,7 @@ $ make clean
 
 ## Tool Chain
 * Python3
-* Cadence irun
+* Synopsys VCS
 * Synopsys Design Compiler
-    * cell : `UMC 0.18µm` (Not provide in this repository)
 * Synopsys Verdi
-
-## References
-* Course video playlist (2023): [Link](https://www.youtube.com/playlist?list=PLCUEmRsKEgZ4p8HK5IXMrohliNuRttqpt)
+* Process : `UMC 0.18µm` (Not provide in this repository)

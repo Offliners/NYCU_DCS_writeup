@@ -1,4 +1,4 @@
-.PHONY:syn vcs_rtl vcs_gate nWave verdi_rtl verdi_gate clean
+.PHONY:syn vcs_rtl vcs_rtl_cust vcs_gate vcs_gate_cust nWave verdi_rtl verdi_gate clean
 
 ######################################
 # Set your desired file names
@@ -43,6 +43,25 @@ VCS_RTL_SIM = vcs ${TIMESCALE} \
     -P ${VERDI}/share/PLI/VCS/linux64/novas.tab \
        ${VERDI}/share/PLI/VCS/linux64/pli.a \
     +define+RTL \
+    +define+CUSTOM \
+    +notimingchecks 
+    
+VCS_RTL_SIM_CUST = vcs ${TIMESCALE} \
+    -j${num_CPU_cores} \
+    -sverilog \
+    +v2k \
+    -full64 \
+    -Mupdate \
+    -R \
+    -debug_access+all \
+    -y ${DW_SIM} \
+    +libext+.v \
+    -f ${source_file} \
+    -o ${output_file} \
+    -l ${log_file} \
+    -P ${VERDI}/share/PLI/VCS/linux64/novas.tab \
+       ${VERDI}/share/PLI/VCS/linux64/pli.a \
+    +define+RTL \
     +notimingchecks 
 
 
@@ -61,6 +80,25 @@ VCS_GATE_SIM = vcs ${TIMESCALE} \
        ${VERDI}/share/PLI/VCS/linux64/pli.a \
 	  -v ${UMC018_SIM} \
     +define+GATE \
+	  +neg_tchk 
+     
+     
+VCS_GATE_SIM_CUST = vcs ${TIMESCALE} \
+    -j${num_CPU_cores} \
+    -sverilog \
+    +v2k \
+    -full64 \
+    -Mupdate \
+    -R \
+    -debug_access+all \
+    -f ${source_file} \
+    -o ${output_file} \
+    -l ${log_file} \
+    -P ${VERDI}/share/PLI/VCS/linux64/novas.tab \
+       ${VERDI}/share/PLI/VCS/linux64/pli.a \
+	  -v ${UMC018_SIM} \
+    +define+GATE \
+    +define+CUSTOM \
 	  +neg_tchk 
 
 
@@ -104,9 +142,15 @@ clean_syn = rm -rf ./Netlist/*.* ./Report/*.* *.log alib* *.svf dwsvf* *.ddc *.p
 
 vcs_rtl:
 	${VCS_RTL_SIM}
+ 
+vcs_rtl_cust:
+	${VCS_RTL_SIM_CUST}
 
 vcs_gate:
 	${VCS_GATE_SIM}
+ 
+vcs_gate_cust:
+	${VCS_GATE_SIM_CUST}
 
 syn:
 	mkdir -p ./Report/
