@@ -4,7 +4,7 @@
 `ifdef RTL
 `include "BCD.sv"
 `elsif GATE
-`include "./Netlist/BCD_SYN.v"
+`include "BCD_SYN.v"
 `endif
 
 module TESTBED();
@@ -17,12 +17,12 @@ logic [3:0] out_unit;
 
 initial begin
   `ifdef RTL
-    $dumpfile("BCD.vcd");
-	  $dumpvars;
+    $fsdbDumpfile("BCD.vcd");
+	  $fsdbDumpvars(0,"+mda");
   `elsif GATE
-    $dumpfile("BCD_SYN.vcd");
-	  $sdf_annotate("./Netlist/BCD_SYN.sdf",I_BCD);
-	  $dumpvars;
+    $fsdbDumpfile("BCD_SYN.vcd");
+	  $sdf_annotate("BCD_SYN.sdf",I_BCD);
+	  $fsdbDumpvars(0,"+mda");
   `endif
 end
 

@@ -82,8 +82,8 @@ change_names -hierarchy -rules name_rule
 #======================================================
 
 set verilogout_higher_designs_first true
-write -format verilog -output Netlist/$DESIGN\_SYN.v -hierarchy
-write_sdf -version 2.1 -context verilog -load_delay cell Netlist/$DESIGN\_SYN.sdf
+write -format verilog -output $DESIGN\_SYN.v -hierarchy
+write_sdf -version 2.1 -context verilog -load_delay cell $DESIGN\_SYN.sdf
 
 #======================================================
 #  Finish and Quit
