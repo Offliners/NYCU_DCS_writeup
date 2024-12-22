@@ -4,7 +4,7 @@
 `ifdef RTL
 	`include "SMJ.sv"
 `elsif GATE
-	`include "./Netlist/SMJ_SYN.v"
+	`include "SMJ_SYN.v"
 `endif
 
 module TESTBENCH();
@@ -14,12 +14,12 @@ logic [1:0] out_data;
 
 initial begin
 	`ifdef RTL
-		$dumpfile("SMJ.vcd");
-		$dumpvars;
+        $fsdbDumpfile("SMJ.fsdb");
+	    $fsdbDumpvars(0,"+mda");
 	`elsif GATE
-		$dumpfile("SMJ_SYN.vcd");
-		$sdf_annotate("./Netlist/SMJ_SYN.sdf", I_SMJ);
-		$dumpvars;
+        $fsdbDumpfile("SMJ_SYN.fsdb");
+		$sdf_annotate("SMJ_SYN.sdf", I_SMJ);
+		$fsdbDumpvars(0,"+mda");
 	`endif
 end
 
