@@ -17,10 +17,10 @@ logic [3:0] out_unit;
 
 initial begin
   `ifdef RTL
-    $fsdbDumpfile("BCD.vcd");
+    $fsdbDumpfile("BCD.fsdb");
 	  $fsdbDumpvars(0,"+mda");
   `elsif GATE
-    $fsdbDumpfile("BCD_SYN.vcd");
+    $fsdbDumpfile("BCD_SYN.fsdb");
 	  $sdf_annotate("BCD_SYN.sdf",I_BCD);
 	  $fsdbDumpvars(0,"+mda");
   `endif
