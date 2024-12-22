@@ -84,9 +84,9 @@ change_names -hierarchy -rules name_rule
 
 set verilogout_higher_designs_first true
 
-write -format verilog -output Netlist/Counter\_SYN.v -hierarchy
+write -format verilog -output Counter\_SYN.v -hierarchy
 
-write_sdf -version 3.0 -context verilog -load_delay cell Netlist/Counter\_SYN.sdf -significant_digits 6
+write_sdf -version 3.0 -context verilog -load_delay cell Counter\_SYN.sdf -significant_digits 6
 
 #======================================================
 #  Finish and Quit
