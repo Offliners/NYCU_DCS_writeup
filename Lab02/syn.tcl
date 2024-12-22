@@ -79,8 +79,8 @@ change_names -hierarchy -rules name_rule
 #  Output Results
 #======================================================
 set verilogout_higher_designs_first true
-write -format verilog -output Netlist/Sort\_SYN.v -hierarchy
-write_sdf -version 3.0 -context verilog -load_delay cell Netlist/Sort\_SYN.sdf -significant_digits 6
+write -format verilog -output $current_design\_SYN.v -hierarchy
+write_sdf -version 3.0 -context verilog -load_delay cell $current_design\_SYN.sdf -significant_digits 6
 
 #======================================================
 #  Finish and Quit

@@ -4,7 +4,7 @@
 `ifdef RTL
 `include "Sort.sv"
 `elsif GATE
-`include "./Netlist/Sort_SYN.v"
+`include "Sort_SYN.v"
 `endif
 
 
@@ -16,12 +16,12 @@ logic [5:0] out_num;
 
 initial begin
   `ifdef RTL
-    $dumpfile("Sort.vcd");
-	$dumpvars;
+	$fsdbDumpfile("Sort.fsdb");
+	$fsdbDumpvars(0,"+mda");
   `elsif GATE
-	$dumpfile("Sort_SYN.vcd");
-	$sdf_annotate("./Netlist/Sort_SYN.sdf", I_Sort);
-	$dumpvars;
+	$fsdbDumpfile("Sort_SYN.fsdb");
+	$sdf_annotate("Sort_SYN.sdf", I_Sort);
+	$fsdbDumpvars(0,"+mda");
   `endif
 end
 
