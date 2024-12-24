@@ -4,7 +4,7 @@
 `ifdef RTL
 `include "Seq.sv"
 `elsif GATE
-`include "./Netlist/Seq_SYN.v"
+`include "Seq_SYN.v"
 `endif
 
 module TESTBED();
@@ -14,12 +14,12 @@ logic [3:0]in_data;
 
 initial begin
   `ifdef RTL
-	$dumpfile("Seq.vcd");		
-	$dumpvars;
+	$fsdbDumpfile("Seq.fsdb");
+	$fsdbDumpvars(0,"+mda");
   `elsif GATE
-    $dumpfile("Seq_SYN.vcd");
-	$sdf_annotate("./Netlist/Seq_SYN.sdf", I_Seq);	
-	$dumpvars;
+    $fsdbDumpfile("Seq_SYN.fsdb");
+	$sdf_annotate("Seq_SYN.sdf", I_Seq);	
+	$fsdbDumpvars(0,"+mda");
   `endif
 end
 
