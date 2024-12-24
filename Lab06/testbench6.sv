@@ -14,11 +14,11 @@ logic out_valid;
 logic signed [5:0] out_result;
 
 initial begin
-  $dumpfile("lab06_6.vcd");
-	$dumpvars;
+  $fsdbDumpfile("lab06_6.fsdb");
+	$fsdbDumpvars(0,"+mda");
 end
 
-lab08_6 I_lab06_6
+lab06_6 I_lab06_6
 (
   .clk(clk),
   .rst_n(rst_n),

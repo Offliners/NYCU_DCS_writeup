@@ -1,134 +1,243 @@
-//pragma protect begin_protected
-//pragma protect key_keyowner=Cadence Design Systems.
-//pragma protect key_keyname=CDS_KEY
-//pragma protect key_method=RC5
-//pragma protect key_block
-ixzQ0/uP5ngXtY/cxF4Ayu8aLBNJWCCWa2LA4P1OO9IEn3Vlju1+wKdXjhjcYyCB
-34wYX3AaRCse4ZccMPnaRZJ+RwGRlAyPiNEKmywzKJdVolBkXE59rC7SzO7rqTyk
-IQJo0YQvFWL4zgAM2NNUN1RcWsR9kULExmagSZZtNseNWq0JvCpjWA==
-//pragma protect end_key_block
-//pragma protect digest_block
-funzizl7bUmbWRol9ct75gQrTm0=
-//pragma protect end_digest_block
-//pragma protect data_block
-ekX8B4+qIUYj59kv0M3hNOCEOhKefH3xFMNDY0yO2O68Sxh7cL+jiZzeNgP9ynW1
-PYFFed7btMGQ6JrvzoJ5yFWkiVrxKdDIxnNwcPyoyKHh/aaD7yuA/pIh25XjDKb3
-tTaBa1bbcG9bgVaYxTCk+G11c4YpfamehB54KckThwB8/ZrRgQgfQQ5BbfocgVRr
-KqfOu7XTqAEDqaXw+B8H6fNvJx3UX2HcurGOJKgEvUoGVZPqkJzuUK/QqWlSX57y
-FcW9XMguWyk8x8Cpy2OisMlDozoPFXKJcwZlHrYul6WF+P+ExNv6zekQT82MwQxR
-r4C+vHWN5E09dtQ1WwWQsrPAVLSwvcwTNoDrBcmx+HO28zVDvH0ZVwJ0V5UeE9QR
-dgCXfCNKjrqeWLokh66jFPPXT2HW9V+EVhuPhmSqr2N3cKsybscImISdKD2IOA1t
-chPqf9fe0gRa/q3bYXQe1cm5zPDzUYhI4VXeqrrR9dPOBCCV3oOgNWm0+NjDh1ox
-0JHhcnrwnEYStJZq+GF+c796L18lX6nzOnoZx+t0v4LRlBsRKiZJAwvYqe38KpO4
-1j+DaspeJHwE5yPus0es4sVwDFT8jHvlpT6uOWmih73Ie1hlLLHIeDKlRBA8KVvs
-/9nvotL5YVa123JxXOZHya+5bzQc0pCB+qhofMvXYgcvOLEpW2r8Iuu/f46b6vrv
-LmEhR0sx4MpL6P2mooXrCpy6KR1iqohfnY04DhIPJcA/tSjVGZk4g11xdfGTw0XG
-9M+TE2Dxbzikzz/eD+w3GkjxAUhvYWttuIYUyif45X2YWVK9pF9sKInphOMBTjSQ
-w1+9AwuSfG4bBOGijRmeO4KQESiJ5NvG8BZknmunj61zLZ7AFHYZmDulf4wA63tW
-E+UN+oAzzVjkv0u4knqbTljmA0NlCXzLWfkTxmfeDe+fV1PftaIST2jAp1pQOkym
-oxzFziueoKvlMM//akyP+Zuhz+HkFjVlsa85zGGLqgbMxeznGcMhmzLVkH1mjvsu
-s7GS2oFtd34YjfT3VJH+CvznKr/NfUSwLbdi5PmAl2esQx4Q8eXZ+2QOFfdrDnxe
-C8cfuh9cjdjLQ97KMrqhrnXbfo366B3RlZdpatk7G29bxaquW4O5ej/7VahKU6Pw
-ElVHGKap1hYSeDn9Du/2Xf6ypZBNFpWLnw6/BQo+TW7gucHhYORSwTiCARWknTfN
-9mZhii0rpeyjN6rK0aWkXN+TMKzkS645r97yn6OpHkVAjVlkX5DUJM2+coRL/4Vj
-7y9v1KbXZ93rSa5L50PfLXjC5W2eAhdygMzhwL9V0VUOon8IJ0Hz8KPxozDVKRfp
-QeSvNyO5S1lWPHgZQhU5m8C0KrCFjPjMK5MpE6ZSS9uVnapH1QiYoqngQ+BN8Jse
-EFT5kD1j4esTsWyaShymXO85/8TnFqBsj1mq0lbfxhw0ZC005Q7/ANmznVS2v8zl
-EYfQC3689Xz4HCFEm9QWKLEXpQcApaCthGAdMw+W4p+6ftCxCgWthiwgk45b8+T+
-w+kWGmhP1EIaViITV0CMXa5erUvyGArDvYOXF+iNfiEPTFAcxLT8lnQgQzDXPCll
-3aTltYMeBJDUpsA1LavQyGtpxzv34UaaX+LBRawWWvavD3CLVSsSEndB4bPI4L/P
-mh7f1kKV13oZPRcdn7ABiDFejG4MKcZ5+l692JXxondvc0Of9bAiNmWqMewBPZwD
-twokSQrQsXqVACsdTXor8RpUt3PVLwfsdCuAIDWc9Fv6ypp3T7Rx7GYSra5VnQ2/
-qPOPQWz6fIlg+TQUvsFVLirKvuq//uSWWJJQ17EFjOiZxe9qyGaOxHIydfOcLNCc
-Yb9i2Ru2uRGow5YyU7PXw/z28t2TDW8TnK31HQfKJUtaWdQyDpw+fPjCIbtH+sfH
-sQSgRe9v+qzTbhPh5iTxX9T9+62XC+H8a4YDRWD0dR+iEx9z8H9hntBR9JlOOpxS
-adkZmk7sLCMFZy52zH5GQSA65bzOt8Ra2Ah6K9Dw0JH9eP7W1sbgiRPeDuVsNij8
-xLS8MUXptnXTqhF6Rqb3Njkl2R0IKXOhYf9wE8r/Lzs1Db8ny/mev7kxGcUQGb9v
-3uQVgS7EZJIUxz0fOWOyTQgpzG7++xOa4h8QvEyxauR0cXhP6yllyMiroKHWvXh1
-ndV4Kx5B3gSM5/o5zfKqwBBAVIbbRGowcLoGRC+TZpbC1ipY8QkV7o9N0uiVzzFw
-H+M4e7OkRvqg9On7cNIGnP/VQ+IhJpGxHyfaQyxFKujeXI2e7yqkUPJ+As48zFV+
-JKFAEIQTo+b/zMSaxIkxKDvjhBph4VjjyUiHndPxilHpUbDNh1jJa8IROfAIN9uL
-BfRpgeiwAAQWrTC9garhCJVxYodOrABBPBpse+2N5DnW4D/Y+s17TOwJ6Dh3JNWD
-D1jlgYR5hwhxqYs5Oa2CxBmjb471KDQHJSX5Mbutw+VSknl9V3R+kirCLyeJIBHI
-mpa+4cHpuhrVlCzXJ3vK4fWMJGEEYR0PaJVtuP4bTVCsYE+C7Z/4cy7L6StnHa/L
-f3Iwd1xWCAXgrfXHn2Zk6yGEB3ypQHPC4GKmjD5FtnaPGCLsTMWKuQTHIzVHHeJd
-uM7S3fUaun7T889r65L8XPrSEPf3E+9lNdWxykq8/VkKOuvWOZbByaSqe8qq0oIA
-qr1VNwFQReSCG9AF4LbVcuqjXnwWBDOPYycg5pUKZe1WkBm20/xteeLoinkZ9u5i
-4Gxx8ultVa+w6D+ytK9+G8MSo3Cp5lmcP2hMXsfB0I9d6j0y/5I8BqD3k1jvfndi
-jqACtHDRRifkBh0M9vvCbHl64ibj4YZyeTiK/mLGpICzKbPV5EQ9TmMZTimfZC4J
-yunz64qr4v/E+OIzYedKSYw5AwHWQX2oKTONUD/Xr6eWEKs3lWChLKrfhjlHv3rz
-xlD9zywb3lwQfNf+8m4w5NnJlSw7RBmWy9UgCnfelImaLSX8X1yq85B8lz6bQIdj
-RtJ2/gwI46jBbeopR5c7W5Squ6DgOg9SK6auavhm+6tqA29SCbgA3pGTQ5kzN8f0
-gF2hvQV4p+sB4gavASWyxPz3e/eSBg3oMMrg4dt8FHsKVMpWgDBzRTLIcP0L9JEF
-NQIKgkK8MHSmujBdzeQXn39RuiKGLPRv76p3DUAUyti2axiexKenuyTfh0xz8vsc
-9li3xqAWhpNu3uxIfKvMV4CR+oRTXaKAVD8L5fKanvzJVRGzFQ7DFMcR8hrCKbrm
-9HYLkEO/fT50ez4f7YQ7XWdmPWJBj9BEW8ZicXvDkE01VOokuvDrZZcs7ryUrsXu
-F4b+uuEawQkCdK2Xgjpf3pi0Qdh0c7+q/+5BBn7ZLdKkH6RVKTc7N7OJDPBBbpA5
-Tb/Vd8p1l/ONhH3i8NEn33/6VE3eP9J8xFWrre3oUZ4BW7NgoxEBuz8vxA4NqiQb
-w3qbJQSwspW6Z2xvpAWPh+GI/EwFD4pvbbbGr3YaRfpjw50vczQopF2qasKh+XY8
-7YZM9daEvUHqUERZvK5vGQM3a9fVHrrYl4G7mdfp+jzClW0mNBsmQzJ/wsv5N3Vi
-/JhffZ61TN8wTCvsgiR70yVanFsil6lUAKcF65BSFiJwCy4MoDGTNNlSlYpr+rgg
-D/9XyuPfCGte4Euhg5Q4hyKODTbWSJvQZa9UeiKI952BTxEOfM7LZKE4Bt7h6Yb6
-DmYOHEg3TBrOz3RNKLiGy2p0ii+4+/LeDJXkzhd3+PwqFWPTyGbJ7H+mz6zUVp4P
-4TVgyhbPnwrV2maDLa5VbO8Dd/5udDQ1mPamo9fuca4JxBw20IrnP6zxqsF9poPh
-sOubNQXyyWBKrXIdUjD248agTgL+7QHIVTBZmQFY+WFUEhFhFne5mDq1xtP6+/Vi
-yRiFASIl9tJKFeov3vNRYiJ9rAGO8zz7BH6plflpZSWgBo3Vgy1JxblAQPz7thoh
-fKO+iYfiu9sS7vuopehtKpCOquGPF/6JR5nCtYIKAs5XWJvr3x2+amcAgC3+SFqX
-efvf3cKfYbaOP+jq1FyAgATmYhuDf1OWUhvT+8q8EvwoZLOXjoyZkGJ1UTCYGRuZ
-N8/Fyq0jiKjvRGoXvH02jGgI1ZnOlTIDmKN9cpy2kcTHL16kaEnHUYZlXW7SFpnb
-FenhaYhaibQAHOMF+t/dUxJFPtG7TP2S2a3qvVdwpJ5551qUatIHtLy59A363O+Q
-043vM1CsCoz+SPWZI9VhKlHP7ynmbU+23skLHHVZ3EB+v8Pqq6Bsts0ZHu7OZ4xG
-OAZbPtVtGd8X1YjCWVTjt2+f6nsmVq9oo781d0AoniYrxSbDGudiMXoH6gLbeKVu
-Rg+h3+kdjlBSuTJ//HkMuedynjXNEWUQLEL/NXG2cI7nLLyQGXq2PIKQx6opJIF1
-Ijkc+yKS9gw9pyAVeZeUFRxb4k7pPhKMYYOceItZHoQJqLVIV2pD3S2V8oCr5QEy
-40kAJI9A7Qv8IRQ3FY9ZSLqzOuWNIc2yyij3ZG2oFWpHEw3bzIpTf2IiZRYjQv/N
-g/PBnsQRCKqlFR3jjg4XCWVA2je1po8ifx1AmE3GEECW2R4XvRlAEoolLm0DQ3CX
-Anu0AhJzqIHa/H/h0qIa4/2kJvmY8QAJBJaXh5squ8pTUv9/VPdaNpmgTf/p0aJZ
-1bPfGXNOscdtNQPp+UYcnfAQ1Oo6RydFsu0uNPJcGS/u53srB/DSyxeKbv1qM0/k
-2fwuaz+4K8gn14g0jodpMJGEtCn4mhmM/1b5VkfVq+aY5UmLgfKa46EWmdVJ+mQG
-OSVh5kTkaSb57hslU2SfNfddhaa7VQXjVcQjjAwL30arb6bf7y1nsmvjo5nmhqba
-btDRg3GmiuiwRPhoPXoXGfKXG+kVuLpn95yMhylvvU02wSkRi1BXraff9W9tTqqG
-qAmWZGlCvvJc62wWdKO0rKk2xPHaAJXeDq5nBnVFM9LGLCU6XUMaYxZRDfcBn+At
-0ltchCu9PGR/N6Og5JgQQysVLOlluqykxODdVSA/Twx/MWAsFutUVQWVlM0VhP74
-7VOq9Bdm2CC6qdZ7bXPbt1W8VdJFxIw52MjyW4eoG5SErKVvVJxNQDknDMshj0f2
-Jws2wQcMEgaheD1cKk5MebaB9esrCFEqsQixAfH9WADV3IW6JAbntfvIiKVJrdix
-m6CxljhYb8UrKNDF4FdRp2JFbH3FZ91pzuemsACu85YejR0kSsqTziqpNNo4pOBv
-hDT3rUOMtACuPsuC52mZLSrGB1ptdgE0XiwOZqJzCZUhU+LDUA6U2DSRGCKLK1z7
-rx6bcXCQLErHidvpQIKln6hE9HFFmwZOP/jsGZqywToEmJyIAyBj9Kx8OJYLS+XK
-xPqhqJGsvyQAZe4g+YbAIInND+bul91yT2UzCG0m7pSaohV6uBDtd2k2GDa/5mvm
-b+ufdJKYfmvxlm0Y8QT4U3Wo+On73zvWBkR2OVJaV1Y8tbMdR7lXvQpMjYaKdDid
-hPYD5Oo4TB5cvEv9wK4VM1TM+5qVpQeSKd2CIWVIMrq7G8acnmH0b/4zrIil/vv1
-M1zb/2P1RZGYaeHqX6hALOF3WEOXcXbOyJD4NNlvgtErg1TSD+LDS7bPEKCi9RN0
-mrde+juuCmL/kvoFX7kcF9GBCB4I4DwjjGq+8/YV0gDBy+P/0UDBjPooXzxZA2JL
-XYaz/MFqam0OVAQECzcua7JJpB8mzqSfZTSkL2H8H+uvx7azj0OR06c/5dzyhVY9
-JLKLlddXxO63UtOU1qshdQc4osk6C8V3rFj/i6JrWfrQkSvbWNLCGBHlJT5RfmFA
-+olcOfm8Joe3tpAKVaGoVhKChemcQHnZt+94Tgpsf8YTTBE8u7scducvivHH8jz7
-O+FplhXqQlqXNOTGKUK8fwi3iSZKgxuAWF8bAM9UHWGAH0Cnh9mMyDdKymEW8Rs3
-bjmxJmtMmvhmVWJhOXqkzVJNq2EnRUVBeplCNI2PE3Fq1MydW63p6Lj79em2WLv0
-IbzJiFFvmb9x7+/203cmgxzj8nzRjiXdmwAxfrwvoPoEE3LTHeA4eWJVjxFquPf1
-diG7IYYqNDHgKanIlDm7OBwAhuOaAgO9qlj5FK0og2bsmqxyD+IE3YP/z78pS/7U
-Yzein3t56QmOkgtQD3Czh8/UfzjiyPMxjT4JBtdvAUKD+R4te3mmTjMdgGrcjaHD
-YdmRPlrxNRbGAG0VL05/boSsPTlhZVPIs4H7omo6WQGBWyQidbtCvN5pv+1eXEwy
-LEvs28zJbduKRfc4heWxxgEpovmROjY3hqbooafCGyIWAtyMpBlKU+x6W0koGfp2
-nt9Cm263RLLEIcKPnk/QcwqRpdg2ONd79nLXx2r2DovInIsDiPyga/FoQ9VhNwD5
-Tir7U7fOYSG0wNIc9AsXkxW20h1FJmvriUdLSE29mcW4514Z3P8K/ppA+XIFg1Cf
-ZA95VxhW/8JCHv5lTHpikjJ1IyGrUgHsNaGBg/xWoRalhjqCVJfhF/p3hMwS2HCf
-RglGK3aMcYj2RZTDVbHvVvHy1B68L+1s6QYzt1lH8YTZLvOFQVYy8eyxWlLNReI3
-zcBvEKTaqfTc/AypQ392wuhyqJLnLWlMsBFD381etBX3lT5uK2cZQH9KxpA3sTHb
-PdHs4QMZxx0mGuWDE+5vQcO96NUJ2pvr4GeoCPJU8s5XbPMYDykL9ic5w9HmOXrM
-wWMDvGSv1eDM+SyBg0ypw5NrL8bE5sBw5KHNCO8t5ZVAvUhWhiO0f8JHLPbw85q5
-TAXYgzrIBgGqO0SHp4o1cH+5ceCj1iNvCVZwFoT+ImBK6SSm+PiCBl2TZQwt7dxz
-nh9uthYbKzxDLqq1nKq5oQehmF/snRwu/NpfrW43wbHDWImI14zXCdAEVXnNYvBu
-ISllUo/X9hIsAngZ3DDWapClkiI1fD+pa98VjGKWIWu1jniphza64caWG0+St52o
-PqgXSOco9n9M8A7KjDwVCwvwxKnRmknPXcMFdKxnecqt8lzhL0t5tAdb5CO4aXbp
-Yb3JE7AHYm9I3jcPdcenpE3U2e+w+7WHihIvVJEpS5F4iZ8bq9g6munKO49KXo0B
-rndIw+4XoV0VVHQFIzgdm72Qflexs3FCJM9vq+RaqPhnygz/xm/oKkx88Jjcncsr
-MOiQDh5lCIR7SRloxOAw3KtKmFWNjfrmLk48cRDV7PAFr2F2FqroBs8AQ7EwN2au
-dCnt4S4mc4NIiYk9YSJi1kvgStYzLNdQplNRwBz2BiQbi2Se/mIwH6FycrKR0iF+
-Jd7A7CW7FU8P+RNcUOxmJGovk6SQ508Q/0XPaZUaMM8U5Eer7btgJ/OsXdW8EibC
-cuB2xaRHfa0/75cesBERT4C2UevgYUFdadnh5R1eiQk=
-//pragma protect end_data_block
-//pragma protect digest_block
-j1U3OKbMLOGD7B+ktpp24CYSpKo=
-//pragma protect end_digest_block
-//pragma protect end_protected
+module lab06_6(
+  // Input signals
+	clk,
+	rst_n,
+    in_number,
+    mode,
+    in_valid,
+  // Output signals
+	out_valid,
+	out_result
+);
+
+//---------------------------------------------------------------------
+//   INPUT AND OUTPUT DECLARATION                         
+//---------------------------------------------------------------------
+input clk,rst_n,in_valid;
+input [3:0] in_number;
+input [1:0] mode;
+output logic signed [5:0] out_result;
+output logic out_valid;
+//---------------------------------------------------------------------
+//   LOGIC DECLARATION                         
+//---------------------------------------------------------------------
+logic signed [3:0] in_1, in_2, in_3, in_4;
+logic signed [3:0] sort_1, sort_2, sort_3, sort_4;
+logic [1:0] mode_ff;
+logic signed [6:0] cal_result;
+logic go_cal,go_cal1,go_cal2,go_cal3,go_idle,go_out;
+logic [2:0]current_state,next_state;
+logic [2:0] count;
+//---------------------------------------------------------------------
+//   State DECLARATION                         
+//---------------------------------------------------------------------
+parameter IDLE = 3'd0,
+         CAL = 3'd1,
+         OUT = 3'd2;
+//---------------------------------------------------------------------
+//   Finite State Machine                        
+//---------------------------------------------------------------------
+//cnt
+always_ff @(posedge clk or negedge rst_n) begin
+    if(!rst_n)
+        count <= 0;
+    else if(next_state == OUT)
+        count <= count + 1;
+    else 
+        count <= 0;
+end
+//State Register
+always_ff @(posedge clk or negedge rst_n) begin
+    if(!rst_n)
+        current_state <= IDLE;
+    else
+        current_state <= next_state;
+end
+//Next state logic
+always_comb begin
+        case(current_state)
+        IDLE: if (go_cal) next_state = CAL;
+            else next_state = IDLE;
+        CAL: if (go_out) next_state = OUT;
+            else next_state = CAL;
+        OUT: if(count == 4)  next_state = IDLE;
+        else next_state = current_state;
+             
+    endcase
+end
+
+always_ff @(posedge clk or negedge rst_n) begin
+    if(!rst_n) begin
+        in_4<=0;
+        in_3<=0;
+        in_2<=0;
+        in_1<=0;
+ 
+        mode_ff<=0;
+    end
+    else begin
+        if (current_state == IDLE) begin
+            if (in_valid) begin
+                in_4<=in_number;
+                in_3<=in_4;
+                in_2<=in_3;
+                in_1<=in_2;
+                mode_ff<=mode;
+                
+                go_cal1<=1;
+      
+                go_cal2<=go_cal1;
+                go_cal3<=go_cal2;
+                go_cal<=go_cal3;
+                
+            end
+        end
+        else begin
+            go_cal1<=0;
+            go_cal2<=0;
+            go_cal3<=0;
+            go_cal<=0;
+        end
+    end
+end
+
+always_ff@(posedge clk or negedge rst_n) begin
+    if(!rst_n) begin
+        out_valid<=0;
+        out_result<=0;
+    end
+    else begin
+        if (next_state==OUT)begin
+            out_valid<=1;
+            out_result<=cal_result;
+
+        end
+        else begin
+            out_valid<=0;
+            out_result<=cal_result;
+        end
+    end
+end
+
+always_ff@(posedge clk or negedge rst_n) begin
+    if(!rst_n) begin
+        go_out<=0;
+    end
+    else begin
+        if (current_state==CAL)begin
+            go_out <= 1;
+
+        end
+        else begin
+            go_out<=0;
+
+        end
+    end
+end
+
+ 
+
+
+Sort sort(.in_num0(in_1),.in_num1(in_2),.in_num2(in_3),.in_num3(in_4),.out_num0(sort_1),.out_num1(sort_2),.out_num2(sort_3),.out_num3(sort_4));
+
+
+
+always_comb begin
+    
+    case(mode_ff)
+        'd0: 
+        case (count)
+            0: cal_result = sort_1;
+            1: cal_result = sort_2;
+            2: cal_result = sort_3;
+            3: cal_result = sort_4;
+            default: cal_result = sort_1;
+        endcase 
+        'd1: 
+        case (count)
+            0: cal_result = sort_4;
+            1: cal_result = sort_3;
+            2: cal_result = sort_2;
+            3: cal_result = sort_1;
+            default: cal_result = sort_1;
+        endcase
+        'd2: case (count)
+            0: cal_result = sort_1 + sort_2;
+            1: cal_result = sort_2 + sort_3;
+            2: cal_result = sort_3 + sort_4;
+            3: cal_result = sort_4 + sort_1;
+            default: cal_result = sort_1;
+        endcase
+        'd3: case (count)
+            0: cal_result = sort_1 - sort_2;
+            1: cal_result = sort_2 - sort_3;
+            2: cal_result = sort_4 - sort_3;
+            3: cal_result = sort_4 - sort_1;
+            default: cal_result = sort_1;
+        endcase
+       
+    endcase
+
+end
+
+
+
+endmodule
+
+
+
+
+
+
+
+module Sort(
+    // Input signals
+	in_num0,
+	in_num1,
+	in_num2,
+	in_num3,
+    // Output signals
+	out_num0,
+	out_num1,
+	out_num2,
+	out_num3
+);
+
+//---------------------------------------------------------------------
+//   INPUT AND OUTPUT DECLARATION                         
+//---------------------------------------------------------------------
+input signed [3:0] in_num0, in_num1, in_num2, in_num3;
+output logic signed[3:0] out_num0, out_num1, out_num2, out_num3;
+
+//---------------------------------------------------------------------
+//   LOGIC DECLARATION
+//---------------------------------------------------------------------
+logic signed[3:0] lv0_n0, lv0_n1, lv0_n2, lv0_n3;
+logic signed[3:0] lv1_n0, lv1_n1, lv1_n2, lv1_n3;
+logic signed[3:0] lv2_n0, lv2_n1, lv2_n2, lv2_n3;
+
+//---------------------------------------------------------------------
+//   Your design                        
+//---------------------------------------------------------------------
+comparator 	comp_lv0_0(.in_0(in_num0), .in_1(in_num1), .out_0(lv0_n0),   .out_1(lv0_n1)),
+			comp_lv0_1(.in_0(in_num2), .in_1(in_num3), .out_0(lv0_n2),   .out_1(lv0_n3)),
+			comp_lv1_0(.in_0(lv0_n1),  .in_1(lv0_n2),  .out_0(lv1_n1),   .out_1(lv1_n2)),
+			comp_lv2_0(.in_0(lv0_n0),  .in_1(lv1_n1),  .out_0(out_num0), .out_1(lv2_n1)),
+			comp_lv2_1(.in_0(lv1_n2),  .in_1(lv0_n3),  .out_0(lv2_n2),   .out_1(out_num3)),
+			comp_lv3_0(.in_0(lv2_n1),  .in_1(lv2_n2),  .out_0(out_num1), .out_1(out_num2));
+endmodule
+
+module comparator(
+	in_0,
+	in_1,
+	out_0,
+	out_1
+);
+
+input  signed[3:0] in_0, in_1;
+output logic signed[3:0] out_0, out_1;
+
+assign out_0 = (in_0 <= in_1) ? in_0 : in_1;
+assign out_1 = (in_0 <= in_1) ? in_1 : in_0;
+
+endmodule

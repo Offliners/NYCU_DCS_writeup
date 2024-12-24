@@ -14,8 +14,8 @@ logic out_valid;
 logic signed [5:0] out_result;
 
 initial begin
-  $dumpfile("lab06_2.vcd");
-  $dumpvars;
+  $fsdbDumpfile("lab06_2.fsdb");
+	$fsdbDumpvars(0,"+mda");
 end
 
 lab06_2 I_lab06_2
