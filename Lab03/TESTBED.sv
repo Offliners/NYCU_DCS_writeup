@@ -4,7 +4,7 @@
 `ifdef RTL
 `include "Counter.sv"
 `elsif GATE
-`include "./Netlist/Counter_SYN.v"
+`include "Counter_SYN.v"
 `endif
 
 module TESTBED();
@@ -14,12 +14,12 @@ logic clk2;
 
 initial begin
   `ifdef RTL
-    $dumpfile("Counter.vcd");	
-	  $dumpvars;
+    $fsdbDumpfile("Counter.fsdb");	
+	  $fsdbDumpvars(0,"+mda");
   `elsif GATE
-    $dumpfile("Counter_SYN.vcd");
-	  $sdf_annotate("./Netlist/Counter_SYN.sdf", I_Counter);
-	  $dumpvars;
+    $fsdbDumpfile("Counter_SYN.fsdb");
+	  $sdf_annotate("Counter_SYN.sdf", I_Counter);
+	  $fsdbDumpvars(0,"+mda");
   `endif
 end
 
