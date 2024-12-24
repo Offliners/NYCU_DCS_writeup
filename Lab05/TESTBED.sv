@@ -6,7 +6,7 @@
 `include "inter.sv"
 `include "mem_slave.sv"
 `elsif GATE
-`include "./Netlist/inter_SYN.v"
+`include "inter_SYN.v"
 `include "mem_slave.sv"
 `endif
 
@@ -25,12 +25,12 @@ logic interconnect2master_ready1, interconnect2master_ready2;
 
 initial begin 
   `ifdef RTL
-    $dumpfile("inter.vcd");
-	  $dumpvars;
+    $fsdbDumpfile("inter.fsdb");
+	  $fsdbDumpvars(0,"+mda");
   `elsif GATE
-    $dumpfile("inter_SYN.vcd");
-	  $sdf_annotate("./Netlist/inter_SYN.sdf", I_interconnect);
-    $dumpvars;
+    $fsdbDumpfile("inter_SYN.fsdb");
+	  $sdf_annotate("inter_SYN.sdf", I_interconnect);
+    $fsdbDumpvars(0,"+mda");
   `endif 
 end
 
