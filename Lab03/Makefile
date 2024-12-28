@@ -137,7 +137,7 @@ DC_shell = dcnxt_shell -f ${syn_tcl} \
 # =====================================
 clean_vcs = rm -rf *.fsdb ./csrc *.log simv* *.sdf.X *.key
 clean_verdi = rm -rf ./nWaveLog ./verdiLog *.conf *.rc *.log
-clean_syn = rm -rf ./Netlist/*.* ./Report/*.* *.log alib* *.svf dwsvf* *.ddc *.pvl *.syn *.mr *_SYN.v *.sdf
+clean_syn = rm -rf ./Report *.log alib* *.svf dwsvf* *.ddc *.pvl *.syn *.mr *_SYN.v *.sdf
 # =====================================
 
 vcs_rtl:
