@@ -79,8 +79,8 @@ change_names -hierarchy -rules name_rule
 #  Output Results
 #======================================================
 set verilogout_higher_designs_first true
-write -format verilog -output Netlist/P_MUL\_SYN.v -hierarchy
-write_sdf -version 3.0 -context verilog -load_delay cell Netlist/P_MUL\_SYN.sdf -significant_digits 6
+write -format verilog -output P_MUL\_SYN.v -hierarchy
+write_sdf -version 3.0 -context verilog -load_delay cell P_MUL\_SYN.sdf -significant_digits 6
 write_sdc Netlist/P_MUL\_SYN.sdc
 
 #======================================================

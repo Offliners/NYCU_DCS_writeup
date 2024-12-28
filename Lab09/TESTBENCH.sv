@@ -3,7 +3,7 @@
 `ifdef RTL
 	`include "P_MUL.sv"
 `elsif GATE
-	`include "./Netlist/P_MUL_SYN.v"
+	`include "P_MUL_SYN.v"
 `endif
 
 module TESTBENCH();
@@ -17,12 +17,12 @@ logic out_valid;
 
 initial begin
 	`ifdef RTL
-		$dumpfile("P_MUL.vcd");
-		$dumpvars;
+		$fsdbDumpfile("P_MUL.fsdb");
+		$fsdbDumpvars(0,"+mda");
 	`elsif GATE
-		$dumpfile("P_MUL_SYN.vcd");
-		$sdf_annotate("./Netlist/P_MUL_SYN.sdf", I_P_MUL);
-		$dumpvars;
+		$fsdbDumpfile("P_MUL_SYN.fsdb");
+		$sdf_annotate("P_MUL_SYN.sdf", I_P_MUL);
+		$fsdbDumpvars(0,"+mda");
 	`endif
 end
 
