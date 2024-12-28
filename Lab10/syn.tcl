@@ -100,7 +100,7 @@ change_names -hierarchy -rules name_rule
 
 set verilogout_higher_designs_first true
 write -format verilog -output Netlist/$DESIGN\_SYN.v -hierarchy
-write_sdc Netlist/$DESIGN\_pt.sdc
+write_sdc $DESIGN\_pt.sdc
 write_sdf -version 3.0 -context verilog -load_delay cell Netlist/$DESIGN\_SYN.sdf -significant_digits 6
 
 report_area

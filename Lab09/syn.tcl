@@ -81,7 +81,7 @@ change_names -hierarchy -rules name_rule
 set verilogout_higher_designs_first true
 write -format verilog -output P_MUL\_SYN.v -hierarchy
 write_sdf -version 3.0 -context verilog -load_delay cell P_MUL\_SYN.sdf -significant_digits 6
-write_sdc Netlist/P_MUL\_SYN.sdc
+write_sdc P_MUL\_SYN.sdc
 
 #======================================================
 #  Finish and Quit
