@@ -46,7 +46,6 @@ VCS_RTL_SIM = vcs ${TIMESCALE} \
     -P ${VERDI}/share/PLI/VCS/linux64/novas.tab \
        ${VERDI}/share/PLI/VCS/linux64/pli.a \
     +define+RTL \
-    +define+CUSTOM \
     +notimingchecks 
  
 VCS_RTL_SIM1 = vcs ${TIMESCALE} \
