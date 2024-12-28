@@ -23,7 +23,7 @@ pt_log="pt.log"       	# Name of your synthesis log file
 ######################################
 num_CPU_cores=4               # Maximum Number of CPU that used for simulation/synthesis
 TIMESCALE=-timescale=1ns/1fs
-TIMESCALE1=-timescale 1ns/1fs
+
 VERDI=/usr/cad/synopsys/verdi/2022.06/
 DW_SIM=/usr/cad/synopsys/synthesis/cur/dw/sim_ver/
 
