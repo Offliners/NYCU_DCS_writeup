@@ -1,11 +1,13 @@
 `timescale 1ns/1ps
-`include "PATTERN.sv"
+
 
 `ifdef RTL
 `include "CDC.sv"
 `elsif GATE
-`include "./Netlist/CDC_SYN.v"
+`include "CDC_SYN.v"
 `endif
+
+`include "PATTERN.sv"
 
 module TESTBED();
 
@@ -18,13 +20,13 @@ wire 	[7:0]out;
 
 initial begin
   `ifdef RTL
-    $dumpfile("CDC.vcd");
-	$dumpvars;
+    $fsdbDumpfile("CDC.fsdb");
+	$fsdbDumpvars(0,"+mda");
   `elsif GATE
-    $dumpfile("CDC_SYN.vcd");
+    $fsdbDumpfile("CDC_SYN.fsdb");
 	//$sdf_annotate("CDC_SYN.sdf",I_CDC);  
-	$sdf_annotate("./Netlist/CDC_SYN.sdf",I_CDC,,,"maximum"); 
-	$dumpvars;
+	$sdf_annotate("CDC_SYN.sdf",I_CDC,,,"maximum"); 
+	$fsdbDumpvars(0,"+mda");
   `endif
 end
 

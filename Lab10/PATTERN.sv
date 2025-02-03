@@ -7,7 +7,7 @@
 `endif
 `ifdef GATE
 	`timescale 1ns/1ps
-	`include "./Netlist/CDC_SYN.v"
+	`include "CDC_SYN.v"
 	`define CYCLE_TIME_clk1 14.1
 	`define CYCLE_TIME_clk2 2.5
 `endif
