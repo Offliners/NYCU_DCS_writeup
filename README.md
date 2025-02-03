@@ -20,7 +20,7 @@ This repository contained my designs (System Verilog) and patterns (System Veril
 | Lab04 | [Sequential Circuit](./Lab04/DCS_Lab04.pdf)         | [Seq.sv](./Lab04/Seq.sv)         | ✅                                     | 1297.296021 |
 | Lab05 | [AHB Interconnect](./Lab05/DCS_Lab05.pdf)           | [inter.sv](./Lab05/inter.sv)     | ✅                                     | 3080.246438 |
 | Lab06 | [Pattern](./Lab06/DCS_Lab06.pdf)                    | [pattern.sv](./Lab06/pattern.sv) |                                       | none        |
-| Lab07 | [Matrix Multiplication](./Lab07/DCS_Lab07.pdf)      | [DCT.sv](./Lab07/DCT.sv)         | ✅                                     | 75945.03934 |
+| Lab07 | [Matrix Multiplication](./Lab07/DCS_Lab07.pdf)      | [DCT.sv](./Lab07/DCT.sv)         | ✅                                     | 75991.60894 |
 | Lab08 | [Floating Point Computation](./Lab08/DCS_Lab08.pdf) | [Fpc.sv](./Lab08/Fpc.sv)         | ✅                                     | 14799.15395 |
 | Lab09 | [Pipeline](./Lab09/DCS_Lab09.pdf)                   | [P_MUL.sv](./Lab09/P_MUL.sv)     | ✅                                     | 296498.6644 |
 | Lab10 | [Clock Domain Crossing](./Lab10/DCS_Lab10.pdf)      | [CDC.sv](./Lab10/CDC.sv)         | ✅                                     | 3502.699259 |

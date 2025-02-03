@@ -15,12 +15,12 @@ logic [9:0]out_data;
 
 initial begin
   `ifdef RTL
-	$dumpfile("DCT.vcd");	
-	$dumpvars;
+	$fsdbDumpfile("DCT.fsdb");	
+	 $fsdbDumpvars(0,"+mda");
   `elsif GATE
-    $dumpfile("DCT_SYN.vcd");
+    $fsdbDumpfile("DCT_SYN.fsdb");
 	$sdf_annotate("DCT_SYN.sdf", I_DCT);
-	$dumpvars;
+	 $fsdbDumpvars(0,"+mda");
   `endif
 end
 

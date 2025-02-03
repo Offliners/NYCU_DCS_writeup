@@ -19,8 +19,8 @@ pt_log="pt.log"       	# Name of your synthesis log file
 num_CPU_cores=4               # Maximum Number of CPU that used for simulation/synthesis
 TIMESCALE=-timescale=1ns/1fs
 
-VERDI=/usr/synopsys/vc_static-O-2018.09-SP2-2/verdi
-DW_SIM=/usr/synopsys/dc-L-2016.03-SP1/dw/sim_ver/
+VERDI=/usr/cad/synopsys/verdi/
+DW_SIM=/usr/cad/synopsys/synthesis/cur/dw/sim_ver/
 UMC018_SIM=~/iclabTA01/umc018/Verilog/umc18_neg.v
 
 
