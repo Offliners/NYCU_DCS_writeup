@@ -4,7 +4,7 @@
 `ifdef RTL
 `include "DCT.sv"
 `elsif GATE
-`include "./Netlist/DCT_SYN.v"
+`include "DCT_SYN.v"
 `endif
 
 module TESTBED();
@@ -19,7 +19,7 @@ initial begin
 	$dumpvars;
   `elsif GATE
     $dumpfile("DCT_SYN.vcd");
-	$sdf_annotate("./Netlist/DCT_SYN.sdf", I_DCT);
+	$sdf_annotate("DCT_SYN.sdf", I_DCT);
 	$dumpvars;
   `endif
 end
