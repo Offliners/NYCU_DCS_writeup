@@ -82,9 +82,9 @@ change_names -hierarchy -rules name_rule
 
 set verilogout_higher_designs_first true
 
-write -format verilog -output Netlist/I2S\_SYN.v -hierarchy
+write -format verilog -output I2S\_SYN.v -hierarchy
 
-write_sdf -version 3.0 -context verilog -load_delay cell Netlist/I2S\_SYN.sdf -significant_digits 6
+write_sdf -version 3.0 -context verilog -load_delay cell I2S\_SYN.sdf -significant_digits 6
 
 #======================================================
 #  Finish and Quit

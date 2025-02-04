@@ -7,10 +7,11 @@
 #======================================================
 #  Set Libraries
 #======================================================
-set search_path {	./								 \
-					~/iclabTA01/umc018/Synthesis/ 	 \
-					/usr/synthesis/libraries/syn/    \
-					/usr/synthesis/dw/ }
+
+set search_path {  ./../01_RTL \
+                   ~iclabta01/umc018/Synthesis/ \
+                   /usr/synthesis/libraries/syn/ \ 
+                   /usr/synthesis/dw/ }
 
 set synthetic_library {dw_foundation.sldb}
 set link_library {* dw_foundation.sldb standard.sldb slow.db }
@@ -20,7 +21,8 @@ set target_library {slow.db}
 #======================================================
 #  Global Parameters
 #======================================================
-set CYCLE 10.0
+set DESIGN "Conv"
+set CYCLE 6.0
 
 #======================================================
 #  Read RTL Code
@@ -28,8 +30,8 @@ set CYCLE 10.0
 #set hdlin_auto_save_templates TRUE
 
 
-read_sverilog {TL\.sv}
-current_design TL
+read_sverilog {Conv.sv}
+current_design Conv
 
 #======================================================
 #  Global Setting
@@ -54,16 +56,15 @@ set_dont_use slow/JKFF*
 #======================================================
 
 set_wire_load_mode top
-check_design > Report/TL\.check
+check_design > Report/Conv\.check
 set_fix_multiple_port_nets -all -buffer_constants
-set_fix_hold [all_clocks]
 compile_ultra
 #======================================================
 #  Output Reports 
 #======================================================
-report_timing >  Report/TL\.timing
-report_area >  Report/TL\.area
-report_resource >  Report/TL\.resource
+report_timing >  Report/Conv\.timing
+report_area >  Report/Conv\.area
+report_resource >  Report/Conv\.resource
 
 #======================================================
 #  Change Naming Rule
@@ -83,9 +84,9 @@ change_names -hierarchy -rules name_rule
 
 set verilogout_higher_designs_first true
 
-write -format verilog -output TL\_SYN.v -hierarchy
+write -format verilog -output Conv\_SYN.v -hierarchy
 
-write_sdf -version 3.0 -context verilog -load_delay cell TL\_SYN.sdf -significant_digits 6
+write_sdf -version 3.0 -context verilog -load_delay cell Conv\_SYN.sdf -significant_digits 6
 
 #======================================================
 #  Finish and Quit

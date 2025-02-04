@@ -7,10 +7,11 @@
 #======================================================
 #  Set Libraries
 #======================================================
-set search_path {	./								 \
-					~/iclabTA01/umc018/Synthesis/ 	 \
-					/usr/synthesis/libraries/syn/    \
-					/usr/synthesis/dw/ }
+
+set search_path {  ./../01_RTL \
+                   ~iclabta01/umc018/Synthesis/ \
+                   /usr/synthesis/libraries/syn/ \ 
+                   /usr/synthesis/dw/ }
 
 set synthetic_library {dw_foundation.sldb}
 set link_library {* dw_foundation.sldb standard.sldb slow.db }
@@ -20,7 +21,10 @@ set target_library {slow.db}
 #======================================================
 #  Global Parameters
 #======================================================
-set CYCLE 10.0
+#set DESIGN "MIPS"
+set clk_period 10.0
+set IN_DLY  [expr 0.5*$clk_period]
+set OUT_DLY [expr 0.5*$clk_period]
 
 #======================================================
 #  Read RTL Code
@@ -28,8 +32,8 @@ set CYCLE 10.0
 #set hdlin_auto_save_templates TRUE
 
 
-read_sverilog {TL\.sv}
-current_design TL
+read_sverilog {MIPS.sv}
+current_design MIPS
 
 #======================================================
 #  Global Setting
@@ -39,31 +43,32 @@ current_design TL
 #  Set Design Constraints
 #======================================================
 
-create_clock -name "clk" -period $CYCLE clk
-set_input_delay  [ expr $CYCLE*0.5 ] -clock clk [all_inputs]
-set_output_delay [ expr $CYCLE*0.5 ] -clock clk [all_outputs]
+set_load 0.05 [all_outputs]
+#set_dont_use slow/JKFF*
+create_clock -name "clk" -period $clk_period clk
+set_ideal_network -no_propagate clk
+set_input_delay  $IN_DLY -clock clk [all_inputs]
+set_output_delay $OUT_DLY  -clock clk [all_outputs]
 set_input_delay 0 -clock clk clk
 set_input_delay 0 -clock clk rst_n
-
-set_load 0.05 [all_outputs]
-
-set_dont_use slow/JKFF*
 
 #======================================================
 #  Optimization
 #======================================================
-
+uniquify
 set_wire_load_mode top
-check_design > Report/TL\.check
 set_fix_multiple_port_nets -all -buffer_constants
-set_fix_hold [all_clocks]
 compile_ultra
+
 #======================================================
 #  Output Reports 
 #======================================================
-report_timing >  Report/TL\.timing
-report_area >  Report/TL\.area
-report_resource >  Report/TL\.resource
+report_timing >  Report/MIPS\.timing
+report_area >  Report/MIPS\.area
+report_cell >  Report/MIPS\.cell
+report_resource >  Report/MIPS\.resource
+check_design > Report/MIPS\.check
+
 
 #======================================================
 #  Change Naming Rule
@@ -80,12 +85,10 @@ change_names -hierarchy -rules name_rule
 #======================================================
 #  Output Results
 #======================================================
-
 set verilogout_higher_designs_first true
-
-write -format verilog -output TL\_SYN.v -hierarchy
-
-write_sdf -version 3.0 -context verilog -load_delay cell TL\_SYN.sdf -significant_digits 6
+write -format verilog -output MIPS\_SYN.v -hierarchy
+write_sdf -version 3.0 -context verilog -load_delay cell MIPS\_SYN.sdf -significant_digits 6
+write_sdc MIPS\_SYN.sdc
 
 #======================================================
 #  Finish and Quit

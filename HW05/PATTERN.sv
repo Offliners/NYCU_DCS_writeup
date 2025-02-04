@@ -60,8 +60,8 @@ integer count;
 // initial
 //================================================================
 initial begin
-	input_file=$fopen("../00_TESTBED/input.txt","r");
-    output_file=$fopen("../00_TESTBED/output.txt","r");
+	input_file=$fopen("./input.txt","r");
+    output_file=$fopen("./output.txt","r");
 	
 	k = $fscanf(input_file,"%d\n",PATNUM);
     rst_n = 1'b1;
