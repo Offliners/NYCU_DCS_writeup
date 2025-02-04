@@ -92,9 +92,9 @@ change_names -hierarchy -rules name_rule
 
 set verilogout_higher_designs_first true
 
-write -format verilog -output Netlist/SS\_SYN.sv -hierarchy
+write -format verilog -output SS\_SYN.sv -hierarchy
 
-write_sdf -version 3.0 -context verilog -load_delay cell Netlist/SS\_SYN.sdf -significant_digits 6
+write_sdf -version 3.0 -context verilog -load_delay cell SS\_SYN.sdf -significant_digits 6
 
 #======================================================
 #  Finish and Quit
