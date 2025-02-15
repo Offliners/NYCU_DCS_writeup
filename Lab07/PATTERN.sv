@@ -1,4 +1,4 @@
-`timescale 1ns/1ps
+`timescale 1ns/10ps
 
 module PATTERN(
 	// output signals
@@ -24,11 +24,7 @@ input signed [9:0]out_data;
 //================================================================
 // parameters & integer
 //================================================================
-`ifdef RTL
 integer CYCLE = 8;
-`elsif GATE
-integer CYCLE = 50;
-`endif
 
 `ifdef CUSTOM 
 integer PATNUM=1000;
