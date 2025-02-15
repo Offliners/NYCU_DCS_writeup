@@ -1,5 +1,3 @@
-.PHONY:syn syn_dv read_dv_rtl read_ddc vcs_rtl vcs_gate irun_rtl irun_gate xrun_rtl xrun_gate nWave verdi_rtl verdi_gate clean
-
 ######################################
 # Set your desired file names
 ######################################
