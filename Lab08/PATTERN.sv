@@ -9,6 +9,10 @@
 `include "/usr/cad/synopsys/synthesis/cur/dw/sim_ver/DW_fp_cmp.v"
 `include "/usr/cad/synopsys/synthesis/cur/dw/sim_ver/DW_fp_i2flt.v"
 `include "/usr/cad/synopsys/synthesis/cur/dw/sim_ver/DW_fp_addsub.v"
+`include "/usr/cad/synopsys/synthesis/cur/dw/sim_ver/DW_fp_ifp_conv.v"
+`include "/usr/cad/synopsys/synthesis/cur/dw/sim_ver/DW_ifp_fp_conv.v"
+`include "/usr/cad/synopsys/synthesis/cur/dw/sim_ver/DW_ifp_mult.v"
+`include "/usr/cad/synopsys/synthesis/cur/dw/sim_ver/DW_ifp_addsub.v"
 //synopsys translate_on
 
 module PATTERN(

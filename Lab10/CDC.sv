@@ -1,4 +1,5 @@
 `include "synchronizer.v"
+
 module CDC(
 	// Input signals
 	clk_1,
@@ -42,7 +43,9 @@ logic [7:0] next_out;
 // Example :
 //logic P,Q,Y;
 //synchronizer x5(.D(P),.Q(Y),.clk(clk_2),.rst_n(rst_n));           
-//---------------------------------------------------------------------		
+//---------------------------------------------------------------------	
+synchronizer syn(.D(P), .Q(next_Q), .clk(clk_2), .rst_n(rst_n));
+
 always_ff @(posedge clk_1 or negedge rst_n) begin
 	if(!rst_n)
 		P <= 1'b0;
@@ -72,8 +75,6 @@ always_comb begin
 	next_in_a = (in_valid) ? in_a : in_a_buf;
 	next_in_b = (in_valid) ? in_b : in_b_buf;
 end
-
-synchronizer syn(.D(P), .Q(next_Q), .clk(clk_2), .rst_n(rst_n));
 
 always_comb begin
 	CDC_res = next_Q ^ Q;

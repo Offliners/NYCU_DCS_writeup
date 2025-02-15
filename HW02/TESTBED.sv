@@ -5,7 +5,7 @@
 `ifdef RTL
 `include "I2S.sv"
 `elsif GATE
-`include "./Netlist/I2S_SYN.v"
+`include "I2S_SYN.v"
 `endif
 
 module TESTBENCH();
@@ -17,12 +17,12 @@ logic [31:0] out_left, out_right;
 
 initial begin 
 	`ifdef RTL
-		$dumpfile("I2S.vcd");
-		$dumpvars;
+		$fsdbDumpfile("I2S.fsdb");
+		$fsdbDumpvars(0,"+mda");
 	`elsif GATE
-		$sdf_annotate("./Netlist/I2S_SYN.sdf",I_I2S);
-		$dumpfile("I2S_SYN.vcd");
-		$dumpvars;
+		$sdf_annotate("I2S_SYN.sdf",I_I2S);
+		$fsdbDumpfile("I2S_SYN.fsdb");
+		$fsdbDumpvars(0,"+mda");
 	`endif
 end
 

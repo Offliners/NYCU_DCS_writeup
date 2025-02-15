@@ -19,7 +19,7 @@ pt_log="pt.log"       	# Name of your synthesis log file
 num_CPU_cores=4               # Maximum Number of CPU that used for simulation/synthesis
 TIMESCALE=-timescale=1ns/1fs
 
-VERDI=/usr/cad/synopsys/verdi/2022.06/
+VERDI=/usr/cad/synopsys/verdi/
 DW_SIM=/usr/cad/synopsys/synthesis/cur/dw/sim_ver/
 UMC018_SIM=~/iclabTA01/umc018/Verilog/umc18_neg.v
 
@@ -127,7 +127,7 @@ VERDI_GATE_ON = verdi -ssf *.vcd \
 # =====================================
 # ========== Design Compiler ==========
 # =====================================
-DC_shell = dcnxt_shell -f ${syn_tcl} \
+DC_shell = dc_shell -f ${syn_tcl} \
 	-x "set_host_options -max_cores ${num_CPU_cores}" \
     -output_log_file ${syn_log}
 
@@ -137,7 +137,7 @@ DC_shell = dcnxt_shell -f ${syn_tcl} \
 # =====================================
 clean_vcs = rm -rf *.fsdb ./csrc *.log simv* *.sdf.X *.key
 clean_verdi = rm -rf ./nWaveLog ./verdiLog *.conf *.rc *.log
-clean_syn = rm -rf ./Report *.log alib* *.svf dwsvf* *.ddc *.pvl *.syn *.mr *_SYN.v *.sdf
+clean_syn = rm -rf ./Report *.log alib* *.svf dwsvf* *.ddc *.pvl *.syn *.mr *_SYN.v *.sdf *.sdc
 # =====================================
 
 vcs_rtl:

@@ -4,7 +4,7 @@
 `ifdef RTL
 `include "DCT.sv"
 `elsif GATE
-`include "./Netlist/DCT_SYN.v"
+`include "DCT_SYN.v"
 `endif
 
 module TESTBED();
@@ -15,12 +15,12 @@ logic [9:0]out_data;
 
 initial begin
   `ifdef RTL
-	$dumpfile("DCT.vcd");	
-	$dumpvars;
+	$fsdbDumpfile("DCT.fsdb");	
+	 $fsdbDumpvars(0,"+mda");
   `elsif GATE
-    $dumpfile("DCT_SYN.vcd");
-	$sdf_annotate("./Netlist/DCT_SYN.sdf", I_DCT);
-	$dumpvars;
+    $fsdbDumpfile("DCT_SYN.fsdb");
+	$sdf_annotate("DCT_SYN.sdf", I_DCT);
+	 $fsdbDumpvars(0,"+mda");
   `endif
 end
 
