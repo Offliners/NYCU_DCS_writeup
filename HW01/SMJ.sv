@@ -31,6 +31,7 @@ logic [5:0] lv2_n0, lv2_n1, lv2_n2, lv2_n3, lv2_n4;
 logic [5:0] lv3_n0, lv3_n1, lv3_n2, lv3_n3, lv3_n4;
 logic [5:0] lv4_n0, lv4_n1, lv4_n2, lv4_n3, lv4_n4;
 
+logic same_5_err;
 logic front_pair, end_pair;
 logic front_seq, end_seq;
 logic front_tri, end_tri;
