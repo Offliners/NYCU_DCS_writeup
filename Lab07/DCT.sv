@@ -24,22 +24,20 @@ output logic signed[9:0]out_data;
 //---------------------------------------------------------------------
 //finish your declaration
 integer i, j, m, n;
-parameter [1:0] IDLE   = 3'd0, 
+parameter [2:0] IDLE   = 3'd0, 
 				INPUT  = 3'd1, 
-				MUL    = 3'd2, 
-				OUTPUT = 3'd3;
+				MUL1   = 3'd2, 
+				MUL2   = 3'd3, 
+				OUTPUT = 3'd4;
 logic signed [7:0] dctmtx    [0:3][0:3];
 logic signed [7:0] inbuffer  [0:3][0:3];
 logic signed [9:0] tmpbuffer [0:3][0:3];
 logic signed [9:0] outbuffer [0:3][0:3];
-logic signed [9:0] tmpbuffer_next;
-logic signed [9:0] outbuffer_next;
-logic signed [9:0] mac1[0:3];
-logic signed [9:0] mac2[0:3];
-logic signed [16:0] mac [3:0];
+logic signed [9:0] buffer_next;
+logic signed [31:0] mac [0:3];
 logic [3:0] input_cnt, output_cnt;
-logic [4:0] mul_cnt;
-logic [1:0] state, next_state;
+logic [3:0] mul_cnt;
+logic [2:0] state, next_state;
 
 
 //---------------------------------------------------------------------
@@ -71,32 +69,18 @@ end
 
 always_comb begin
 	case(state)
-		default : 
-			next_state <= IDLE;
-		IDLE : begin
-			if(in_valid)		
-				next_state <= INPUT;
-			else				
-				next_state <= IDLE;
-		end
-		INPUT : begin
-			if(input_cnt == 4'd15)
-				next_state <= MUL;
-			else
-				next_state <= INPUT;
-		end
-		MUL : begin
-			if(mul_cnt == 5'd31)
-				next_state <= OUTPUT;
-			else
-				next_state <= MUL;
-		end
-		OUTPUT : begin
-			if(output_cnt == 4'd15)
-				next_state <= IDLE;
-			else
-				next_state <= OUTPUT;
-		end
+		default: 
+			next_state = IDLE;
+		IDLE: 
+			next_state = (in_valid) ? INPUT : IDLE;
+		INPUT:
+			next_state = (input_cnt == 4'd15) ?  MUL1 : INPUT;
+		MUL1:
+			next_state = (mul_cnt == 4'd15) ? MUL2 : MUL1;
+		MUL2:
+			next_state = (mul_cnt == 4'd15) ? OUTPUT : MUL2;
+		OUTPUT: 
+			next_state = (output_cnt == 4'd15) ? IDLE : OUTPUT;
 	endcase
 end
 
@@ -155,53 +139,39 @@ always_ff @(posedge clk or negedge rst_n) begin
 		end
 	end
 	else begin
-		if(mul_cnt[4] == 1'b0)
-			tmpbuffer[mul_cnt[3:2]][mul_cnt[1:0]] <= tmpbuffer_next;
-		else
-			outbuffer[mul_cnt[3:2]][mul_cnt[1:0]] <= outbuffer_next;
+		if(state == MUL1)
+			tmpbuffer[mul_cnt[3:2]][mul_cnt[1:0]] <= buffer_next;
+		else if(state == MUL2)
+			outbuffer[mul_cnt[3:2]][mul_cnt[1:0]] <= buffer_next;
 	end
 end
 
 always_ff @(posedge clk or negedge rst_n) begin
 	if(!rst_n)
-		mul_cnt <= 5'd0;
-	else if(state == MUL)
-		mul_cnt <= mul_cnt + 5'd1;
+		mul_cnt <= 4'd0;
+	else if(state == MUL1 || state == MUL2)
+		mul_cnt <= mul_cnt + 4'd1;
 	else
-		mul_cnt <= 5'd0;
+		mul_cnt <= 4'd0;
 end
 
 always_comb begin
-	if(mul_cnt[4] == 1'b0) begin
-		mac1[0] = dctmtx[mul_cnt[3:2]][0];
-		mac1[1] = dctmtx[mul_cnt[3:2]][1];
-		mac1[2] = dctmtx[mul_cnt[3:2]][2];
-		mac1[3] = dctmtx[mul_cnt[3:2]][3];
-		mac2[0] = inbuffer[0][mul_cnt[1:0]];
-		mac2[1] = inbuffer[1][mul_cnt[1:0]];
-		mac2[2] = inbuffer[2][mul_cnt[1:0]];
-		mac2[3] = inbuffer[3][mul_cnt[1:0]];	
+	if(state == MUL1) begin
+		mac[0] = dctmtx[mul_cnt[3:2]][0] * inbuffer[0][mul_cnt[1:0]];
+		mac[1] = dctmtx[mul_cnt[3:2]][1] * inbuffer[1][mul_cnt[1:0]];
+		mac[2] = dctmtx[mul_cnt[3:2]][2] * inbuffer[2][mul_cnt[1:0]];
+		mac[3] = dctmtx[mul_cnt[3:2]][3] * inbuffer[3][mul_cnt[1:0]];
+		buffer_next = (mac[0] + mac[1] + mac[2] + mac[3]) / 128;
 	end
-	else begin
-		mac1[0] = tmpbuffer[mul_cnt[3:2]][0];
-		mac1[1] = tmpbuffer[mul_cnt[3:2]][1];
-		mac1[2] = tmpbuffer[mul_cnt[3:2]][2];
-		mac1[3] = tmpbuffer[mul_cnt[3:2]][3];
-		mac2[0] = dctmtx[mul_cnt[1:0]][0];
-		mac2[1] = dctmtx[mul_cnt[1:0]][1];
-		mac2[2] = dctmtx[mul_cnt[1:0]][2];
-		mac2[3] = dctmtx[mul_cnt[1:0]][3];
+	else if(state == MUL2) begin
+		mac[0] = tmpbuffer[mul_cnt[3:2]][0] * dctmtx[mul_cnt[1:0]][0];
+		mac[1] = tmpbuffer[mul_cnt[3:2]][1] * dctmtx[mul_cnt[1:0]][1];
+		mac[2] = tmpbuffer[mul_cnt[3:2]][2] * dctmtx[mul_cnt[1:0]][2];
+		mac[3] = tmpbuffer[mul_cnt[3:2]][3] * dctmtx[mul_cnt[1:0]][3];
+		buffer_next = (mac[0] + mac[1] + mac[2] + mac[3]) / 128;
 	end
-
-	mac[0] = mac1[0] * mac2[0];
-	mac[1] = mac1[1] * mac2[1];
-	mac[2] = mac1[2] * mac2[2];
-	mac[3] = mac1[3] * mac2[3];
-
-	if(mul_cnt[4] == 1'b0)
-		tmpbuffer_next = (mac[0] + mac[1] + mac[2] + mac[3]) / 128;
 	else
-		outbuffer_next = (mac[0] + mac[1] + mac[2] + mac[3]) / 128;
+		buffer_next = 0;
 end
 
 endmodule
