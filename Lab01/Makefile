@@ -124,7 +124,7 @@ verdi_gate:
 	${VERDI_GATE_ON}
 
 clean:
+	${clean_vcs}
 	${clean_irun}
 	${clean_verdi}
 	${clean_syn}
-	${clean_power}
