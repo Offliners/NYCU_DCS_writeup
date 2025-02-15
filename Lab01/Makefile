@@ -96,7 +96,7 @@ DC_shell = dcnxt_shell -f ${syn_tcl} \
 clean_vcs = rm -rf *.fsdb ./csrc *.log simv* *.sdf.X *.key
 clean_irun = rm -rf *.vcd *.fsdb *.sdf.X ./INCA_libs *.history *.log
 clean_verdi = rm -rf ./nWaveLog ./verdiLog *.conf *.rc *.log *.sdf
-clean_syn = rm -rf ./Netlist/*.* *.log alib* *.svf dwsvf* *.ddc *.pvl *.syn *.mr
+clean_syn = rm -rf ./Report *.log alib* *.svf dwsvf* *.ddc *.pvl *.syn *.mr
 # =====================================
 
 irun_rtl:
