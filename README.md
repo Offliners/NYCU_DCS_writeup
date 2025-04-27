@@ -113,7 +113,6 @@ $ make clean
 ```
 
 ## Tool Chain
-* Python3
 * Cadence irun
 * Synopsys VCS
 * Synopsys Design Compiler
