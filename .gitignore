@@ -1,0 +1,34 @@
+# vcs
+*.fsdb 
+csrc/
+*.log simv* 
+*.sdf.X 
+*.key
+
+# irun
+*.vcd 
+*.fsdb 
+*.sdf.X 
+INCA_libs/ 
+*.history 
+*.log
+
+# verdi
+nWaveLog/ 
+verdiLog/ 
+*.conf 
+*.rc 
+*.log 
+*.sdf
+
+# syn
+Report/ 
+*.log 
+alib* 
+*.svf 
+dwsvf* 
+*.ddc 
+*.pvl 
+*.syn 
+*.mr 
+*_SYN.v

@@ -3,6 +3,16 @@ This repository contained my designs (System Verilog) and patterns (System Veril
 
 ## Outline
 
+### 2022
+<details open>
+<summary>More</summary>
+
+| #     | Topic                                       | 01_RTL | 02_SYN | 03_GATE |
+| ----- | ------------------------------------------- | ------ | ------ | ------- |
+| Lab01 | [Combinational](./2022/Lab01/DCS_Lab01.pdf) | ✅      | ✅      | ✅       |
+
+</details>
+
 ### 2023
 <details open>
 <summary>More</summary>
@@ -26,6 +36,17 @@ This repository contained my designs (System Verilog) and patterns (System Veril
 | HW05  | [MIPS CPU](./2023/HW05/DCS_HW05.pdf)                     |        |        |         |
 | OT    | [Systolic Array](./2023/OT/OT.pdf)                       |        |        |         |
 | FP    | [Simple CNN](./2023/Final/DCS_Final_Project.pdf)         |        |        |         |
+
+</details>
+
+### 2024
+<details open>
+<summary>More</summary>
+
+| #     | Topic                                       | 01_RTL | 02_SYN | 03_GATE |
+| ----- | ------------------------------------------- | ------ | ------ | ------- |
+| Lab01 | [Combinational](./2024/Lab01/DCS_Lab01.pdf) | ✅      | ✅      | ✅       |
+| Lab02 | [Merge Sort](./2024/Lab02/DCS_Lab02.pdf)    | ✅      | ✅      | ✅       |
 
 </details>
 
