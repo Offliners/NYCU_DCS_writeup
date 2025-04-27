@@ -5,11 +5,9 @@ This repository contained my designs (System Verilog) and patterns (System Veril
 
 ### 2023
 <details open>
-<summary>Detail</summary>
+<summary>More</summary>
 
-#### Labs 
-
-| Lab#  | Topic                                               | 01_RTL | 02_SYN | 03_GATE |
+| #     | Topic                                               | 01_RTL | 02_SYN | 03_GATE |
 | ----- | --------------------------------------------------- | ------ | ------ | ------- |
 | Lab01 | [Binary-Coded Decimal](./Lab01/DCS_Lab01.pdf)       | ✅      | ✅      | ✅       |
 | Lab02 | [Merge Sort](./Lab02/DCS_Lab02.pdf)                 | ✅      | ✅      | ✅       |
@@ -21,28 +19,13 @@ This repository contained my designs (System Verilog) and patterns (System Veril
 | Lab08 | [Floating Point Computation](./Lab08/DCS_Lab08.pdf) | ✅      | ✅      | ✅       |
 | Lab09 | [Pipeline](./Lab09/DCS_Lab09.pdf)                   | ✅      | ✅      | ✅       |
 | Lab10 | [Clock Domain Crossing](./Lab10/DCS_Lab10.pdf)      | ✅      | ✅      | ✅       |
-
-#### Homeworks
-
-| HW#  | Topic                                              | 01_RTL | 02_SYN | 03_GATE |
-| ---- | -------------------------------------------------- | ------ | ------ | ------- |
-| HW01 | [Simplified Mahjong Judgment](./HW01/DCS_HW01.pdf) | ✅      | ✅      | ✅       |
-| HW02 | [Simplified I2C](./HW02/DCS_HW02.pdf)              | ✅      | ✅      | ✅       |
-| HW03 | [Traffic Light Controller](./HW03/DCS_HW03.pdf)    |        |        |         |
-| HW04 | [Histogram Equalizer](./HW04/DCS_HW04.pdf)         |        |        |         |
-| HW05 | [MIPS CPU](./HW05/DCS_HW05.pdf)                    |        |        |         |
-
-#### Online Test
-
-| Topic                         | 01_RTL | 02_SYN | 03_GATE |
-| ----------------------------- | ------ | ------ | ------- |
-| [Systolic Array](./OT/OT.pdf) |        |        |         |
-
-#### Final Project
-
-| Topic                                       | 01_RTL | 02_SYN | 03_GATE |
-| ------------------------------------------- | ------ | ------ | ------- |
-| [Simple CNN](./Final/DCS_Final_Project.pdf) |        |        |         |
+| HW01  | [Simplified Mahjong Judgment](./HW01/DCS_HW01.pdf)  | ✅      | ✅      | ✅       |
+| HW02  | [Simplified I2C](./HW02/DCS_HW02.pdf)               | ✅      | ✅      | ✅       |
+| HW03  | [Traffic Light Controller](./HW03/DCS_HW03.pdf)     |        |        |         |
+| HW04  | [Histogram Equalizer](./HW04/DCS_HW04.pdf)          |        |        |         |
+| HW05  | [MIPS CPU](./HW05/DCS_HW05.pdf)                     |        |        |         |
+| OT    | [Systolic Array](./OT/OT.pdf)                       |        |        |         |
+| FP    | [Simple CNN](./Final/DCS_Final_Project.pdf)         |        |        |         |
 
 </details>
 
