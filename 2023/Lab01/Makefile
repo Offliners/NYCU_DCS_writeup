@@ -83,7 +83,7 @@ VERDI_GATE_ON = verdi -ssf *.vcd \
 # =====================================
 # ========== Design Compiler ==========
 # =====================================
-DC_shell = dcnxt_shell -f ${syn_tcl} \
+DC_shell = dc_shell -f ${syn_tcl} \
 	-x "set_host_options -max_cores ${num_CPU_cores}" \
     -output_log_file ${syn_log}
 

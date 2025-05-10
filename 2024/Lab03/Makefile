@@ -1,7 +1,7 @@
 ######################################
 # Set your desired file names
 ######################################
-top_design=DCT
+top_design=SIPO
 source_file="filelist.f"	# Name of your source file
 output_file="simv"      	# Desired output simulation file name
 log_file="vcs.log"      	# Desired log file name
@@ -61,9 +61,9 @@ IRUN_GATE_SIM_CUST = irun -f ${source_file} \
 # =====================================
 # ============= verdi =================
 # =====================================
-nWave_ON = nWave -ssf *.vcd
+nWave_ON = nWave -ssf *.fsdb
 
-VERDI_RTL_ON = verdi -ssf *.vcd \
+VERDI_RTL_ON = verdi -ssf *.fsdb \
 	-sv \
 	-f ${source_file} \
     	-nologo           \
