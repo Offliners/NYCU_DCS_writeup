@@ -31,6 +31,11 @@ This repository contained my designs (System Verilog) and patterns (System Veril
 | Lab10 | [Clock Domain Crossing](./2023/Lab10/DCS_Lab10.pdf)      | ✅         | ✅      | ✅      | ✅       |
 | HW01  | [Simplified Mahjong Judgment](./2023/HW01/DCS_HW01.pdf)  | ✅         | ✅      | ✅      | ✅       |
 | HW02  | [Simplified I2C](./2023/HW02/DCS_HW02.pdf)               | ✅         | ✅      | ✅      | ✅       |
+| HW03  | [Traffic Light Controller](./2023/HW03/DCS_HW03.pdf)     |           |        |        |         |
+| HW04  | [Histogram Equalizer](./2023/HW04/DCS_HW04.pdf)          |           |        |        |         |
+| HW05  | [MIPS CPU](./2023/HW05/DCS_HW05.pdf)                     |           |        |        |         |
+| OT    | [Systolic Array](./2023/OT/OT.pdf)                       |           |        |        |         |
+| FP    | [Simple CNN](./2023/Final/DCS_Final_Project.pdf)         |           |        |        |         |
 
 </details>
 
