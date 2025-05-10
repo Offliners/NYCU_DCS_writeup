@@ -47,7 +47,7 @@ This repository contained my designs (System Verilog) and patterns (System Veril
 | ----- | ------------------------------------------------- | --------- | ------ | ------ | ------- |
 | Lab01 | [Combinational](./2024/Lab01/DCS_Lab01.pdf)       | ✅         | ✅      | ✅      | ✅       |
 | Lab02 | [Merge Sort](./2024/Lab02/DCS_Lab02.pdf)          | ✅         | ✅      | ✅      | ✅       |
-| Lab03 | [SIPO Shift Register](./2024/Lab03/DCS_Lab03.pdf) |           |        |        |         |
+| Lab03 | [SIPO Shift Register](./2024/Lab03/DCS_Lab03.pdf) | ✅         | ✅      | ✅      | ✅       |
 
 </details>
 
