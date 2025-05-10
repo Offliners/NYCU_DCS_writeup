@@ -7,9 +7,9 @@ This repository contained my designs (System Verilog) and patterns (System Veril
 <details open>
 <summary>More</summary>
 
-| #     | Topic                                       | 01_RTL | 02_SYN | 03_GATE |
-| ----- | ------------------------------------------- | ------ | ------ | ------- |
-| Lab01 | [Combinational](./2022/Lab01/DCS_Lab01.pdf) | ✅      | ✅      | ✅       |
+| #     | Topic                                       | 00_TESTED | 01_RTL | 02_SYN | 03_GATE |
+| ----- | ------------------------------------------- | --------- | ------ | ------ | ------- |
+| Lab01 | [Combinational](./2022/Lab01/DCS_Lab01.pdf) | ✅         | ✅      | ✅      | ✅       |
 
 </details>
 
@@ -17,25 +17,20 @@ This repository contained my designs (System Verilog) and patterns (System Veril
 <details open>
 <summary>More</summary>
 
-| #     | Topic                                                    | 01_RTL | 02_SYN | 03_GATE |
-| ----- | -------------------------------------------------------- | ------ | ------ | ------- |
-| Lab01 | [Binary-Coded Decimal](./2023/Lab01/DCS_Lab01.pdf)       | ✅      | ✅      | ✅       |
-| Lab02 | [Merge Sort](./2023/Lab02/DCS_Lab02.pdf)                 | ✅      | ✅      | ✅       |
-| Lab03 | [Frequency Divider](./2023/Lab03/DCS_Lab03.pdf)          | ✅      | ✅      | ✅       |
-| Lab04 | [Sequential Circuit](./2023/Lab04/DCS_Lab04.pdf)         | ✅      | ✅      | ✅       |
-| Lab05 | [AHB Interconnect](./2023/Lab05/DCS_Lab05.pdf)           | ✅      | ✅      | ✅       |
-| Lab06 | [Pattern](./2023/Lab06/DCS_Lab06.pdf)                    | ✅      | ❌      | ❌       |
-| Lab07 | [Matrix Multiplication](./2023/Lab07/DCS_Lab07.pdf)      | ✅      | ✅      | ✅       |
-| Lab08 | [Floating Point Computation](./2023/Lab08/DCS_Lab08.pdf) | ✅      | ✅      | ✅       |
-| Lab09 | [Pipeline](./2023/Lab09/DCS_Lab09.pdf)                   | ✅      | ✅      | ✅       |
-| Lab10 | [Clock Domain Crossing](./2023/Lab10/DCS_Lab10.pdf)      | ✅      | ✅      | ✅       |
-| HW01  | [Simplified Mahjong Judgment](./2023/HW01/DCS_HW01.pdf)  | ✅      | ✅      | ✅       |
-| HW02  | [Simplified I2C](./2023/HW02/DCS_HW02.pdf)               | ✅      | ✅      | ✅       |
-| HW03  | [Traffic Light Controller](./2023/HW03/DCS_HW03.pdf)     |        |        |         |
-| HW04  | [Histogram Equalizer](./2023/HW04/DCS_HW04.pdf)          |        |        |         |
-| HW05  | [MIPS CPU](./2023/HW05/DCS_HW05.pdf)                     |        |        |         |
-| OT    | [Systolic Array](./2023/OT/OT.pdf)                       |        |        |         |
-| FP    | [Simple CNN](./2023/Final/DCS_Final_Project.pdf)         |        |        |         |
+| #     | Topic                                                    | 00_TESTED | 01_RTL | 02_SYN | 03_GATE |
+| ----- | -------------------------------------------------------- | --------- | ------ | ------ | ------- |
+| Lab01 | [Binary-Coded Decimal](./2023/Lab01/DCS_Lab01.pdf)       | ✅         | ✅      | ✅      | ✅       |
+| Lab02 | [Merge Sort](./2023/Lab02/DCS_Lab02.pdf)                 | ✅         | ✅      | ✅      | ✅       |
+| Lab03 | [Frequency Divider](./2023/Lab03/DCS_Lab03.pdf)          | ✅         | ✅      | ✅      | ✅       |
+| Lab04 | [Sequential Circuit](./2023/Lab04/DCS_Lab04.pdf)         | ✅         | ✅      | ✅      | ✅       |
+| Lab05 | [AHB Interconnect](./2023/Lab05/DCS_Lab05.pdf)           | ✅         | ✅      | ✅      | ✅       |
+| Lab06 | [Pattern](./2023/Lab06/DCS_Lab06.pdf)                    | ✅         | ✅      | ❌      | ❌       |
+| Lab07 | [Matrix Multiplication](./2023/Lab07/DCS_Lab07.pdf)      | ✅         | ✅      | ✅      | ✅       |
+| Lab08 | [Floating Point Computation](./2023/Lab08/DCS_Lab08.pdf) | ✅         | ✅      | ✅      | ✅       |
+| Lab09 | [Pipeline](./2023/Lab09/DCS_Lab09.pdf)                   | ✅         | ✅      | ✅      | ✅       |
+| Lab10 | [Clock Domain Crossing](./2023/Lab10/DCS_Lab10.pdf)      | ✅         | ✅      | ✅      | ✅       |
+| HW01  | [Simplified Mahjong Judgment](./2023/HW01/DCS_HW01.pdf)  | ✅         | ✅      | ✅      | ✅       |
+| HW02  | [Simplified I2C](./2023/HW02/DCS_HW02.pdf)               | ✅         | ✅      | ✅      | ✅       |
 
 </details>
 
@@ -43,10 +38,10 @@ This repository contained my designs (System Verilog) and patterns (System Veril
 <details open>
 <summary>More</summary>
 
-| #     | Topic                                       | 01_RTL | 02_SYN | 03_GATE |
-| ----- | ------------------------------------------- | ------ | ------ | ------- |
-| Lab01 | [Combinational](./2024/Lab01/DCS_Lab01.pdf) | ✅      | ✅      | ✅       |
-| Lab02 | [Merge Sort](./2024/Lab02/DCS_Lab02.pdf)    | ✅      | ✅      | ✅       |
+| #     | Topic                                       | 00_TESTED | 01_RTL | 02_SYN | 03_GATE |
+| ----- | ------------------------------------------- | --------- | ------ | ------ | ------- |
+| Lab01 | [Combinational](./2024/Lab01/DCS_Lab01.pdf) | ✅         | ✅      | ✅      | ✅       |
+| Lab02 | [Merge Sort](./2024/Lab02/DCS_Lab02.pdf)    | ✅         | ✅      | ✅      | ✅       |
 
 </details>
 
