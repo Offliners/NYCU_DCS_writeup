@@ -43,10 +43,11 @@ This repository contained my designs (System Verilog) and patterns (System Veril
 <details open>
 <summary>More</summary>
 
-| #     | Topic                                       | 00_TESTED | 01_RTL | 02_SYN | 03_GATE |
-| ----- | ------------------------------------------- | --------- | ------ | ------ | ------- |
-| Lab01 | [Combinational](./2024/Lab01/DCS_Lab01.pdf) | ✅         | ✅      | ✅      | ✅       |
-| Lab02 | [Merge Sort](./2024/Lab02/DCS_Lab02.pdf)    | ✅         | ✅      | ✅      | ✅       |
+| #     | Topic                                             | 00_TESTED | 01_RTL | 02_SYN | 03_GATE |
+| ----- | ------------------------------------------------- | --------- | ------ | ------ | ------- |
+| Lab01 | [Combinational](./2024/Lab01/DCS_Lab01.pdf)       | ✅         | ✅      | ✅      | ✅       |
+| Lab02 | [Merge Sort](./2024/Lab02/DCS_Lab02.pdf)          | ✅         | ✅      | ✅      | ✅       |
+| Lab03 | [SIPO Shift Register](./2024/Lab03/DCS_Lab03.pdf) |           |        |        |         |
 
 </details>
 
