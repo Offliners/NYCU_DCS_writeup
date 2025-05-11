@@ -10,6 +10,8 @@ This repository contained my designs (System Verilog) and patterns (System Veril
 | #     | Topic                                       | 00_TESTED | 01_RTL | 02_SYN | 03_GATE |
 | ----- | ------------------------------------------- | --------- | ------ | ------ | ------- |
 | Lab01 | [Combinational](./2022/Lab01/DCS_Lab01.pdf) | ✅         | ✅      | ✅      | ✅       |
+| Lab02 | [Timer](./2022/Lab02/DCS_Lab02.pdf)         |           |        |        |         |
+| Lab03 | [Maxmin](./2022/Lab03/DCS_Lab03.pdf)        | ✅         | ✅      | ✅      | ✅       |
 
 </details>
 
