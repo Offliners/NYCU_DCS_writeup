@@ -12,7 +12,7 @@ This repository contained my designs (System Verilog) and patterns (System Veril
 | Lab01 | [Combinational](./2022/Lab01/DCS_Lab01.pdf)                  | ✅         | ✅      | ✅      | ✅       |
 | Lab02 | [Timer](./2022/Lab02/DCS_Lab02.pdf)                          | ✅         | ✅      | ✅      | ✅       |
 | Lab03 | [Maxmin](./2022/Lab03/DCS_Lab03.pdf)                         | ✅         | ✅      | ✅      | ✅       |
-| Lab04 | [Sequence](./2022/Lab04/DCS_Lab04.pdf)                       |           |        |        |         |
+| Lab04 | [Sequence](./2022/Lab04/DCS_Lab04.pdf)                       | ✅         | ✅      | ✅      | ✅       |
 | Lab05 | [AHB interconnect](./2022/Lab05/DCS_Lab05.pdf)               |           |        |        |         |
 | Lab06 | [Floating Point Computation](./2022/Lab06/DCS_Lab06.pdf)     |           |        |        |         |
 | Lab07 | [Pattern](./2022/Lab07/DCS_Lab07.pdf)                        |           |        |        |         |
@@ -24,7 +24,7 @@ This repository contained my designs (System Verilog) and patterns (System Veril
 | HW04  | [MIPS CPU with Pipeline](./2022/HW04/DCS_HW04.pdf)           |           |        |        |         |
 | HW05  | [Convolution](./2022/HW05/DCS_HW05.pdf)                      |           |        |        |         |
 | OT    | [Divider](./2022/OT/OT.pdf)                                  |           |        |        |         |
-| FP    | [Job Assignment Machine](./2022/Final/DCS_Final_Project.pdf) |           |        |        |         |
+| FP    | [Job Assignment Machine](./2022/Final/DCS_Final_Project.pdf) |           |        |        |
 
 </details>
 
