@@ -29,7 +29,7 @@ parameter S0 = 3'd0,
           S6 = 3'd6,
           S7 = 3'd7;
 
-reg [2:0] state, next_state;
+logic [2:0] state, next_state;
 
 //---------------------------------------------------------------------
 //   Your design                       
