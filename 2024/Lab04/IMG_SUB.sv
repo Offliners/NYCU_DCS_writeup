@@ -22,14 +22,13 @@ output logic [3:0] out_diff;
 //---------------------------------------------------------------------
 //   LOGIC DECLARATION
 //---------------------------------------------------------------------
-logic [3:0] image [3:0];
+logic [3:0] image [17:0];
 parameter IDLE        = 2'd0,
-          INPUT_IMG1  = 2'd1,
-          INPUT_IMG2  = 2'd2,
-          OUTPUT_DIFF = 2'd3;
+          INPUT_IMG   = 2'd1,
+          OUTPUT_DIFF = 2'd2;
 
 logic [1:0] state, next_state;
-logic [3:0] counter, next_counter;
+logic [4:0] counter;
 logic next_out_valid;
 logic [3:0] next_out_diff;
 
@@ -46,44 +45,27 @@ end
 always_comb begin
     case(state)
         default:     next_state = IDLE;
-        IDLE:        next_state = in_valid ? INPUT_IMG1 : IDLE;
-        INPUT_IMG1:  next_state = (counter == 4'd8) ? INPUT_IMG2 : INPUT_IMG1;
-        INPUT_IMG2:  next_state = (counter == 4'd8) ? OUTPUT_DIFF : INPUT_IMG2;
-        OUTPUT_DIFF: next_state = (counter == 4'd8) ? IDLE : OUTPUT_DIFF;
+        IDLE:        next_state = in_valid ? INPUT_IMG : IDLE;
+        INPUT_IMG:   next_state = (counter == 5'd17) ? OUTPUT_DIFF : INPUT_IMG;
+        OUTPUT_DIFF: next_state = (counter == 5'd26) ? IDLE : OUTPUT_DIFF;
     endcase
 end
 
 always_ff @(posedge clk or negedge rst_n) begin
     if(!rst_n)
-        counter <= 4'd0;
-    else
-        counter <= (state == IDLE || counter == 4'd8) ? 4'd0 : counter + 4'd1;
+        image[counter] <= 4'd0;
+    else 
+        image[counter] <= in_valid ? in_image : 4'd0; 
 end
 
 always_ff @(posedge clk or negedge rst_n) begin
-    if(!rst_n) begin
-        out_valid <= 1'd0;
-        out_diff <= 4'd0;
-    end
-    else begin
-        out_valid <= next_out_valid;
-        out_diff <= next_out_diff;
-    end
+    if(!rst_n)
+        counter <= 5'd0;
+    else
+        counter <= (in_valid || out_valid) ? counter + 5'd1 : 5'd0;
 end
 
-always_comb begin
-    if(state == INPUT_IMG1)
-        image[counter] = in_image;
-    else if(state == INPUT_IMG2)
-        image[counter] = image[counter] - in_image;
-    else if(state == OUTPUT_DIFF) begin
-        next_out_valid = 1'd1;
-        next_out_diff = image[counter];
-    end
-    else begin
-        next_out_valid = 1'd0;
-        next_out_diff = 4'd0;
-    end
-end
+assign out_valid = (state == OUTPUT_DIFF) ? 1'b1 : 1'd0;
+assign out_diff  = (state == OUTPUT_DIFF) ? (image[counter - 5'd18] - image[counter - 5'd9]) : 4'd0;
 
 endmodule
