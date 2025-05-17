@@ -1,7 +1,6 @@
 ######################################
 # Set your desired file names
 ######################################
-top_design=DCT
 source_file="filelist.f"	# Name of your source file
 output_file="simv"      	# Desired output simulation file name
 log_file="vcs.log"      	# Desired log file name
@@ -15,9 +14,87 @@ pt_log="pt.log"       	# Name of your synthesis log file
 # Default Setting
 ######################################
 num_CPU_cores=4               # Maximum Number of CPU that used for simulation/synthesis
-TIMESCALE=-timescale 1ns/1fs
+TIMESCALE=-timescale=1ns/1fs
+TIMESCALE1=-timescale 1ns/1fs
+VERDI=/usr/cad/synopsys/verdi/
 DW_SIM=/usr/cad/synopsys/synthesis/cur/dw/sim_ver/
 UMC018_SIM=~/iclabTA01/umc018/Verilog/umc18_neg.v
+
+
+# =====================================
+# ============== VCS ==================
+# =====================================
+VCS_RTL_SIM = vcs ${TIMESCALE} \
+    -j${num_CPU_cores} \
+    -sverilog \
+    +v2k \
+    -full64 \
+    -Mupdate \
+    -R \
+    -debug_access+all \
+    -y ${DW_SIM} \
+    +libext+.v \
+    -f ${source_file} \
+    -o ${output_file} \
+    -l ${log_file} \
+    -P ${VERDI}/share/PLI/VCS/linux64/novas.tab \
+       ${VERDI}/share/PLI/VCS/linux64/pli.a \
+    +define+RTL \
+    +notimingchecks 
+
+VCS_RTL_SIM_CUST = vcs ${TIMESCALE} \
+    -j${num_CPU_cores} \
+    -sverilog \
+    +v2k \
+    -full64 \
+    -Mupdate \
+    -R \
+    -debug_access+all \
+    -y ${DW_SIM} \
+    +libext+.v \
+    -f ${source_file} \
+    -o ${output_file} \
+    -l ${log_file} \
+    -P ${VERDI}/share/PLI/VCS/linux64/novas.tab \
+       ${VERDI}/share/PLI/VCS/linux64/pli.a \
+    +define+RTL \
+    +define+CUSTOM \
+    +notimingchecks 
+
+VCS_GATE_SIM = vcs ${TIMESCALE} \
+    -j${num_CPU_cores} \
+    -sverilog \
+    +v2k \
+    -full64 \
+    -Mupdate \
+    -R \
+    -debug_access+all \
+    -f ${source_file} \
+    -o ${output_file} \
+    -l ${log_file} \
+    -P ${VERDI}/share/PLI/VCS/linux64/novas.tab \
+       ${VERDI}/share/PLI/VCS/linux64/pli.a \
+	-v ${UMC018_SIM} \
+    +define+GATE \
+	+neg_tchk 
+
+VCS_GATE_SIM_CUST = vcs ${TIMESCALE} \
+    -j${num_CPU_cores} \
+    -sverilog \
+    +v2k \
+    -full64 \
+    -Mupdate \
+    -R \
+    -debug_access+all \
+    -f ${source_file} \
+    -o ${output_file} \
+    -l ${log_file} \
+    -P ${VERDI}/share/PLI/VCS/linux64/novas.tab \
+       ${VERDI}/share/PLI/VCS/linux64/pli.a \
+	-v ${UMC018_SIM} \
+    +define+GATE \
+    +define+CUSTOM \
+	+neg_tchk 
 
 
 # =====================================
@@ -40,7 +117,7 @@ IRUN_RTL_SIM_CUST = irun -f ${source_file} \
 
 IRUN_GATE_SIM = irun -f ${source_file} \
 	-override_precision \
-	${TIMESCALE} \
+	${TIMESCALE1} \
 	-sdf_precision 1fs \
 	-v ${UMC018_SIM} \
 	-loadpli1 debpli:novas_pli_boot \
@@ -49,7 +126,7 @@ IRUN_GATE_SIM = irun -f ${source_file} \
 
 IRUN_GATE_SIM_CUST = irun -f ${source_file} \
 	-override_precision \
-	${TIMESCALE} \
+	${TIMESCALE1} \
 	-sdf_precision 1fs \
 	-v ${UMC018_SIM} \
 	-loadpli1 debpli:novas_pli_boot \
@@ -96,6 +173,18 @@ clean_irun = rm -rf *.vcd *.fsdb *.sdf.X ./INCA_libs *.history *.log
 clean_verdi = rm -rf ./nWaveLog ./verdiLog *.conf *.rc *.log *.sdf
 clean_syn = rm -rf ./Report *.log alib* *.svf dwsvf* *.ddc *.pvl *.syn *.mr *_SYN.v
 # =====================================
+
+vcs_rtl:
+	${VCS_RTL_SIM}
+
+vcs_rtl_cust:
+	${VCS_RTL_SIM_CUST}
+
+vcs_gate:
+	${VCS_GATE_SIM}
+
+vcs_gate_cust:
+	${VCS_GATE_SIM_CUST}
 
 irun_rtl:
 	${IRUN_RTL_SIM}
