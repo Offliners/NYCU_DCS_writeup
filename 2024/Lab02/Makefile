@@ -15,6 +15,7 @@ pt_log="pt.log"       	# Name of your synthesis log file
 ######################################
 num_CPU_cores=4               # Maximum Number of CPU that used for simulation/synthesis
 TIMESCALE=-timescale=1ns/1fs
+TIMESCALE1=-timescale 1ns/1fs
 VERDI=/usr/cad/synopsys/verdi/
 DW_SIM=/usr/cad/synopsys/synthesis/cur/dw/sim_ver/
 UMC018_SIM=~/iclabTA01/umc018/Verilog/umc18_neg.v
@@ -80,7 +81,7 @@ IRUN_RTL_SIM_CUST = irun -f ${source_file} \
 
 IRUN_GATE_SIM = irun -f ${source_file} \
 	-override_precision \
-	${TIMESCALE} \
+	${TIMESCALE1} \
 	-sdf_precision 1fs \
 	-v ${UMC018_SIM} \
 	-loadpli1 debpli:novas_pli_boot \
@@ -89,7 +90,7 @@ IRUN_GATE_SIM = irun -f ${source_file} \
 
 IRUN_GATE_SIM_CUST = irun -f ${source_file} \
 	-override_precision \
-	${TIMESCALE} \
+	${TIMESCALE1} \
 	-sdf_precision 1fs \
 	-v ${UMC018_SIM} \
 	-loadpli1 debpli:novas_pli_boot \
