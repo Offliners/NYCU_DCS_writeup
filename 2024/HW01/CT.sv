@@ -31,6 +31,7 @@ logic [4:0] lv4_n0, lv4_n1, lv4_n2, lv4_n3, lv4_n4, lv4_n5;
 logic [4:0] lv5_n0, lv5_n1, lv5_n2, lv5_n3, lv5_n4, lv5_n5;
 logic [4:0] lv6_n0, lv6_n1, lv6_n2, lv6_n3, lv6_n4, lv6_n5;
 logic [4:0] lv7_n0, lv7_n1, lv7_n2, lv7_n3, lv7_n4, lv7_n5;
+logic [4:0] lv8_n0, lv8_n1, lv8_n2, lv8_n3, lv8_n4, lv8_n5;
 logic [4:0] mean;
 
 register_file reg_file0(.address(in_n0), .value(value0));
@@ -68,61 +69,64 @@ comparator cmp3_1(.smaller(lv3_n3), .bigger(lv3_n4), .a(lv2_n3), .b(lv2_n4));
 assign lv3_n5 = lv2_n5;
 
 // CMP LV4
-assign lv4_n0 = lv3_n0;
+comparator cmp4(.smaller(lv4_n0), .bigger(lv4_n3), .a(lv3_n0), .b(lv3_n3));
 assign lv4_n1 = lv3_n1;
-comparator cmp4(.smaller(lv4_n2), .bigger(lv4_n5), .a(lv3_n2), .b(lv3_n5));
-assign lv4_n3 = lv3_n3;
+assign lv4_n2 = lv3_n2;
 assign lv4_n4 = lv3_n4;
+assign lv4_n5 = lv3_n5;
+
 
 // CMP LV5
-comparator cmp5_0(.smaller(lv5_n0), .bigger(lv5_n1), .a(lv4_n0), .b(lv4_n1));
-comparator cmp5_1(.smaller(lv5_n2), .bigger(lv5_n3), .a(lv4_n2), .b(lv4_n3));
-comparator cmp5_2(.smaller(lv5_n4), .bigger(lv5_n5), .a(lv4_n4), .b(lv4_n5));
+assign lv5_n0 = lv4_n0;
+assign lv5_n1 = lv4_n1;
+comparator cmp5(.smaller(lv5_n2), .bigger(lv5_n5), .a(lv4_n2), .b(lv4_n5));
+assign lv5_n3 = lv4_n3;
+assign lv5_n4 = lv4_n4;
 
 // CMP LV6
-assign lv6_n0 = lv5_n0;
-comparator cmp6_0(.smaller(lv6_n1), .bigger(lv6_n2), .a(lv5_n1), .b(lv5_n2));
-comparator cmp6_1(.smaller(lv6_n3), .bigger(lv6_n4), .a(lv5_n3), .b(lv5_n4));
-assign lv6_n5 = lv5_n5;
+comparator cmp6_0(.smaller(lv6_n0), .bigger(lv6_n1), .a(lv5_n0), .b(lv5_n1));
+comparator cmp6_1(.smaller(lv6_n2), .bigger(lv6_n3), .a(lv5_n2), .b(lv5_n3));
+comparator cmp6_2(.smaller(lv6_n4), .bigger(lv6_n5), .a(lv5_n4), .b(lv5_n5));
+
+// CMP LV7
+assign lv7_n0 = lv6_n0;
+comparator cmp7_0(.smaller(lv7_n1), .bigger(lv7_n2), .a(lv6_n1), .b(lv6_n2));
+comparator cmp7_1(.smaller(lv7_n3), .bigger(lv7_n4), .a(lv6_n3), .b(lv6_n4));
+assign lv7_n5 = lv6_n5;
 
 always_comb begin
-    case(op[4:3])
+    case(opcode[4:3])
         2'b00:
-            {lv7_n0, lv7_n1, lv7_n2, lv7_n3, lv7_n4, lv7_n5} = {value0, value1, value2, value3, value4, value5};
+            {lv8_n0, lv8_n1, lv8_n2, lv8_n3, lv8_n4, lv8_n5} = {value0, value1, value2, value3, value4, value5};
         2'b01:
-            {lv7_n0, lv7_n1, lv7_n2, lv7_n3, lv7_n4, lv7_n5} = {value5, value4, value3, value2, value1, value0};
+            {lv8_n0, lv8_n1, lv8_n2, lv8_n3, lv8_n4, lv8_n5} = {value5, value4, value3, value2, value1, value0};
         2'b10:
-            {lv7_n0, lv7_n1, lv7_n2, lv7_n3, lv7_n4, lv7_n5} = {lv6_n5, lv6_n4, lv6_n3, lv6_n2, lv6_n1, lv6_n0};
+            {lv8_n0, lv8_n1, lv8_n2, lv8_n3, lv8_n4, lv8_n5} = {lv7_n5, lv7_n4, lv7_n3, lv7_n2, lv7_n1, lv7_n0};
         2'b11:
-            {lv7_n0, lv7_n1, lv7_n2, lv7_n3, lv7_n4, lv7_n5} = {lv6_n0, lv6_n1, lv6_n2, lv6_n3, lv6_n4, lv6_n5};
+            {lv8_n0, lv8_n1, lv8_n2, lv8_n3, lv8_n4, lv8_n5} = {lv7_n0, lv7_n1, lv7_n2, lv7_n3, lv7_n4, lv7_n5};
     endcase
 end
 
-assign mean = (lv7_n0 + lv7_n1 + lv7_n2 + lv7_n3 + lv7_n4 + lv7_n5) / 6;
+assign mean = (lv8_n0 + lv8_n1 + lv8_n2 + lv8_n3 + lv8_n4 + lv8_n5) / 6;
 
 always_comb begin
-    case(op[2:0])
+    case(opcode[2:0])
         3'b000: 
-            out_n = ((mean < lv7_n5) ? 5'd1 : 5'd0) + \
-                    ((mean < lv7_n4) ? 5'd1 : 5'd0) + \
-                    ((mean < lv7_n3) ? 5'd1 : 5'd0) + \
-                    ((mean < lv7_n2) ? 5'd1 : 5'd0) + \
-                    ((mean < lv7_n1) ? 5'd1 : 5'd0) + \
-                    ((mean < lv7_n0) ? 5'd1 : 5'd0);
+            out_n = ((mean <= lv8_n5) ? 5'd1 : 5'd0) + ((mean <= lv8_n4) ? 5'd1 : 5'd0) + ((mean <= lv8_n3) ? 5'd1 : 5'd0) + ((mean <= lv8_n2) ? 5'd1 : 5'd0) + ((mean <= lv8_n1) ? 5'd1 : 5'd0) + ((mean <= lv8_n0) ? 5'd1 : 5'd0);
         3'b001: 
-            out_n = lv7_n0 + lv7_n5;
+            out_n = lv8_n0 + lv8_n5;
         3'b010: 
-            out_n = (lv7_n3 * lv7_n4) >> 1;
+            out_n = (lv8_n3 * lv8_n4) >> 1;
         3'b011: 
-            out_n = lv7_n0 + (lv7_n2 << 1);
+            out_n = lv8_n0 + (lv8_n2 << 1);
         3'b100: 
-            out_n = lv7_n1 & lv7_n2;
+            out_n = lv8_n1 & lv8_n2;
         3'b101: 
-            out_n = ~lv7_n0;
+            out_n = ~lv8_n0;
         3'b110: 
-            out_n = lv7_n3 ^ lv7_n4;
+            out_n = lv8_n3 ^ lv8_n4;
         3'b111: 
-            out_n = lv7_n1 << 1; 
+            out_n = lv8_n1 << 1; 
     endcase
 end
 
@@ -137,7 +141,7 @@ module comparator(
     // Output signals
     smaller,
     bigger
-)
+);
 
 input [4:0] a, b;
 output [4:0] smaller, bigger;
@@ -146,6 +150,7 @@ assign smaller = (a < b) ? a : b;
 assign bigger  = (a < b) ? b : a;
 
 endmodule
+
 
 //---------------------------------------------------------------------
 //   Register design from TA (Do not modify, or demo fails)
