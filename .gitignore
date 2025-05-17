@@ -1,7 +1,8 @@
 # vcs
 *.fsdb 
-csrc/
-*.log simv* 
+csrc/ 
+*.log 
+simv* 
 *.sdf.X 
 *.key
 
