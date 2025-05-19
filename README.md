@@ -133,6 +133,7 @@ flowchart LR
 ```shell
 # RTL & Verification
 $ make irun_rtl
+$ make vcs_rtl
 
 # Install Python3 thirdparty library (Optional)
 $ pip3 install -r requirements.txt
@@ -148,6 +149,7 @@ $ make syn
 
 # Gate level simulation
 $ make irun_gate
+$ make vcs_gate
 
 # Gate level simulation with custom testcase
 $ make irun_gate_cust

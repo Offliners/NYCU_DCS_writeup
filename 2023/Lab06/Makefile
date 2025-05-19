@@ -20,8 +20,139 @@ pt_log="pt.log"       	# Name of your synthesis log file
 # Default Setting
 ######################################
 num_CPU_cores=4               # Maximum Number of CPU that used for simulation/synthesis
-TIMESCALE=-timescale=1ns/1fs
+VERDI=/usr/cad/synopsys/verdi/
+TIMESCALE1=-TIMESCALE1=1ns/1fs
+TIMESCALE11=-TIMESCALE1 1ns/1fs
 DW_SIM=/usr/cad/synopsys/synthesis/cur/dw/sim_ver/
+
+# =====================================
+# ============== VCS ==================
+# =====================================
+VCS_RTL_SIM = vcs ${TIMESCALE} \
+    -j${num_CPU_cores} \
+    -sverilog \
+    +v2k \
+    -full64 \
+    -Mupdate \
+    -R \
+    -debug_access+all \
+    -y ${DW_SIM} \
+    +libext+.v \
+    -f ${source_file} \
+    -o ${output_file} \
+    -l ${log_file} \
+    -P ${VERDI}/share/PLI/VCS/linux64/novas.tab \
+       ${VERDI}/share/PLI/VCS/linux64/pli.a \
+    +define+RTL \
+    +notimingchecks 
+
+VCS_RTL_SIM1 = vcs ${TIMESCALE} \
+    -j${num_CPU_cores} \
+    -sverilog \
+    +v2k \
+    -full64 \
+    -Mupdate \
+    -R \
+    -debug_access+all \
+    -y ${DW_SIM} \
+    +libext+.v \
+    -f ${source_file1} \
+    -o ${output_file} \
+    -l ${log_file} \
+    -P ${VERDI}/share/PLI/VCS/linux64/novas.tab \
+       ${VERDI}/share/PLI/VCS/linux64/pli.a \
+    +define+RTL \
+    +notimingchecks 
+
+VCS_RTL_SIM2 = vcs ${TIMESCALE} \
+    -j${num_CPU_cores} \
+    -sverilog \
+    +v2k \
+    -full64 \
+    -Mupdate \
+    -R \
+    -debug_access+all \
+    -y ${DW_SIM} \
+    +libext+.v \
+    -f ${source_file2} \
+    -o ${output_file} \
+    -l ${log_file} \
+    -P ${VERDI}/share/PLI/VCS/linux64/novas.tab \
+       ${VERDI}/share/PLI/VCS/linux64/pli.a \
+    +define+RTL \
+    +notimingchecks 
+
+VCS_RTL_SIM3 = vcs ${TIMESCALE} \
+    -j${num_CPU_cores} \
+    -sverilog \
+    +v2k \
+    -full64 \
+    -Mupdate \
+    -R \
+    -debug_access+all \
+    -y ${DW_SIM} \
+    +libext+.v \
+    -f ${source_file3} \
+    -o ${output_file} \
+    -l ${log_file} \
+    -P ${VERDI}/share/PLI/VCS/linux64/novas.tab \
+       ${VERDI}/share/PLI/VCS/linux64/pli.a \
+    +define+RTL \
+    +notimingchecks 
+
+VCS_RTL_SIM4 = vcs ${TIMESCALE} \
+    -j${num_CPU_cores} \
+    -sverilog \
+    +v2k \
+    -full64 \
+    -Mupdate \
+    -R \
+    -debug_access+all \
+    -y ${DW_SIM} \
+    +libext+.v \
+    -f ${source_file4} \
+    -o ${output_file} \
+    -l ${log_file} \
+    -P ${VERDI}/share/PLI/VCS/linux64/novas.tab \
+       ${VERDI}/share/PLI/VCS/linux64/pli.a \
+    +define+RTL \
+    +notimingchecks 
+
+VCS_RTL_SIM5 = vcs ${TIMESCALE} \
+    -j${num_CPU_cores} \
+    -sverilog \
+    +v2k \
+    -full64 \
+    -Mupdate \
+    -R \
+    -debug_access+all \
+    -y ${DW_SIM} \
+    +libext+.v \
+    -f ${source_file5} \
+    -o ${output_file} \
+    -l ${log_file} \
+    -P ${VERDI}/share/PLI/VCS/linux64/novas.tab \
+       ${VERDI}/share/PLI/VCS/linux64/pli.a \
+    +define+RTL \
+    +notimingchecks 
+
+VCS_RTL_SIM6 = vcs ${TIMESCALE} \
+    -j${num_CPU_cores} \
+    -sverilog \
+    +v2k \
+    -full64 \
+    -Mupdate \
+    -R \
+    -debug_access+all \
+    -y ${DW_SIM} \
+    +libext+.v \
+    -f ${source_file6} \
+    -o ${output_file} \
+    -l ${log_file} \
+    -P ${VERDI}/share/PLI/VCS/linux64/novas.tab \
+       ${VERDI}/share/PLI/VCS/linux64/pli.a \
+    +define+RTL \
+    +notimingchecks 
 
 # =====================================
 # ============== irun =================
@@ -144,6 +275,27 @@ VERDI_RTL_ON6 = verdi -ssf *.vcd \
 clean_irun = rm -rf *.vcd *.fsdb *.sdf.X ./INCA_libs *.history *.log
 clean_verdi = rm -rf ./nWaveLog ./verdiLog *.conf *.rc *.log
 # =====================================
+
+vcs_rtl:
+	${VCS_RTL_SIM}
+
+vcs_rtl_1:
+	${VCS_RTL_SIM1}
+
+vcs_rtl_2:
+	${VCS_RTL_SIM2}
+
+vcs_rtl_3:
+	${VCS_RTL_SIM3}
+
+vcs_rtl_4:
+	${VCS_RTL_SIM4}
+
+vcs_rtl_5:
+	${VCS_RTL_SIM5}
+
+vcs_rtl_6:
+	${VCS_RTL_SIM6}
 
 irun_rtl:
 	${IRUN_RTL_SIM}
