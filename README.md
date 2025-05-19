@@ -70,7 +70,7 @@ This repository contained my designs (System Verilog) and patterns (System Veril
 | Lab08 | [Pipeline](./2024/Lab08/DCS_Lab08.pdf)                  |           |        |        |         |
 | Lab09 |                                                         |           |        |        |         |
 | Lab10 | [Clock Domain Crossing](./2024/Lab10/DCS_Lab10.pdf)     |           |        |        |         |
-| HW01  | [Calculation Task](./2024/HW01/DCS_HW01.pdf)            |           |        |        |         |
+| HW01  | [Calculation Task](./2024/HW01/DCS_HW01.pdf)            | ✅         | ✅      | ✅      | ✅       |
 | HW02  | [Identification Number Check](./2024/HW02/DCS_HW02.pdf) |           |        |        |         |
 | HW03  | [DCSTCO supermarket](./2024HW03/DCS_HW03.pdf)           |           |        |        |         |
 | HW04  | [Motion Estimation](./2024/HW04/DCS_HW04.pdf)           |           |        |        |         |
