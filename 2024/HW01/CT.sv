@@ -32,6 +32,7 @@ logic [4:0] lv5_n0, lv5_n1, lv5_n2, lv5_n3, lv5_n4, lv5_n5;
 logic [4:0] lv6_n0, lv6_n1, lv6_n2, lv6_n3, lv6_n4, lv6_n5;
 logic [4:0] lv7_n0, lv7_n1, lv7_n2, lv7_n3, lv7_n4, lv7_n5;
 logic [4:0] lv8_n0, lv8_n1, lv8_n2, lv8_n3, lv8_n4, lv8_n5;
+logic [7:0] sum;
 logic [4:0] mean;
 
 register_file reg_file0(.address(in_n0), .value(value0));
@@ -107,12 +108,19 @@ always_comb begin
     endcase
 end
 
-assign mean = (lv8_n0 + lv8_n1 + lv8_n2 + lv8_n3 + lv8_n4 + lv8_n5) / 6;
+assign sum = (lv8_n0 + lv8_n1 + lv8_n2 + lv8_n3 + lv8_n4 + lv8_n5);
+divider6 div6(.num(sum), .result(mean));
 
 always_comb begin
     case(opcode[2:0])
-        3'b000: 
-            out_n = ((mean <= lv8_n5) ? 5'd1 : 5'd0) + ((mean <= lv8_n4) ? 5'd1 : 5'd0) + ((mean <= lv8_n3) ? 5'd1 : 5'd0) + ((mean <= lv8_n2) ? 5'd1 : 5'd0) + ((mean <= lv8_n1) ? 5'd1 : 5'd0) + ((mean <= lv8_n0) ? 5'd1 : 5'd0);
+        3'b000: begin 
+            if(mean <= lv7_n1) out_n = 10'd5;
+            else if(mean <= lv7_n2) out_n = 10'd4;
+            else if(mean <= lv7_n3) out_n = 10'd3;
+            else if(mean <= lv7_n4) out_n = 10'd2;
+            else if(mean <= lv7_n5) out_n = 10'd1;
+            else out_n = 10'd6;
+        end
         3'b001: 
             out_n = lv8_n0 + lv8_n5;
         3'b010: 
@@ -127,6 +135,140 @@ always_comb begin
             out_n = lv8_n3 ^ lv8_n4;
         3'b111: 
             out_n = lv8_n1 << 1; 
+    endcase
+end
+
+endmodule
+
+module divider6(
+    // Input signals
+    num,
+
+    // Output signals
+    result
+);
+
+input [7:0] num;
+output logic [4:0] result;
+
+always_comb begin
+    case(num)
+        default: result = 5'd0;
+        8'd029: result = 5'd04;
+        8'd030: result = 5'd05;
+        8'd031: result = 5'd05;
+        8'd032: result = 5'd05;
+        8'd033: result = 5'd05;
+        8'd034: result = 5'd05;
+        8'd035: result = 5'd05;
+        8'd036: result = 5'd06;
+        8'd037: result = 5'd06;
+        8'd038: result = 5'd06;
+        8'd039: result = 5'd06;
+        8'd040: result = 5'd06;
+        8'd041: result = 5'd06;
+        8'd042: result = 5'd07;
+        8'd043: result = 5'd07;
+        8'd044: result = 5'd07;
+        8'd045: result = 5'd07;
+        8'd046: result = 5'd07;
+        8'd047: result = 5'd07;
+        8'd048: result = 5'd08;
+        8'd049: result = 5'd08;
+        8'd050: result = 5'd08;
+        8'd051: result = 5'd08;
+        8'd052: result = 5'd08;
+        8'd053: result = 5'd08;
+        8'd054: result = 5'd09;
+        8'd055: result = 5'd09;
+        8'd056: result = 5'd09;
+        8'd057: result = 5'd09;
+        8'd058: result = 5'd09;
+        8'd059: result = 5'd09;
+        8'd060: result = 5'd10;
+        8'd061: result = 5'd10;
+        8'd062: result = 5'd10;
+        8'd063: result = 5'd10;
+        8'd064: result = 5'd10;
+        8'd065: result = 5'd10;
+        8'd066: result = 5'd11;
+        8'd067: result = 5'd11;
+        8'd068: result = 5'd11;
+        8'd069: result = 5'd11;
+        8'd070: result = 5'd11;
+        8'd071: result = 5'd11;
+        8'd072: result = 5'd12;
+        8'd073: result = 5'd12;
+        8'd074: result = 5'd12;
+        8'd075: result = 5'd12;
+        8'd076: result = 5'd12;
+        8'd077: result = 5'd12;
+        8'd078: result = 5'd13;
+        8'd079: result = 5'd13;
+        8'd080: result = 5'd13;
+        8'd081: result = 5'd13;
+        8'd082: result = 5'd13;
+        8'd083: result = 5'd13;
+        8'd084: result = 5'd14;
+        8'd085: result = 5'd14;
+        8'd086: result = 5'd14;
+        8'd087: result = 5'd14;
+        8'd088: result = 5'd14;
+        8'd089: result = 5'd14;
+        8'd090: result = 5'd15;
+        8'd091: result = 5'd15;
+        8'd092: result = 5'd15;
+        8'd093: result = 5'd15;
+        8'd094: result = 5'd15;
+        8'd095: result = 5'd15;
+        8'd096: result = 5'd16;
+        8'd097: result = 5'd16;
+        8'd098: result = 5'd16;
+        8'd099: result = 5'd16;
+        8'd100: result = 5'd16;
+        8'd101: result = 5'd16;
+        8'd102: result = 5'd17;
+        8'd103: result = 5'd17;
+        8'd104: result = 5'd17;
+        8'd105: result = 5'd17;
+        8'd106: result = 5'd17;
+        8'd107: result = 5'd17;
+        8'd108: result = 5'd18;
+        8'd109: result = 5'd18;
+        8'd110: result = 5'd18;
+        8'd111: result = 5'd18;
+        8'd112: result = 5'd18;
+        8'd113: result = 5'd18;
+        8'd114: result = 5'd19;
+        8'd115: result = 5'd19;
+        8'd116: result = 5'd19;
+        8'd117: result = 5'd19;
+        8'd118: result = 5'd19;
+        8'd119: result = 5'd19;
+        8'd120: result = 5'd20;
+        8'd121: result = 5'd20;
+        8'd122: result = 5'd20;
+        8'd123: result = 5'd20;
+        8'd124: result = 5'd20;
+        8'd125: result = 5'd20;
+        8'd126: result = 5'd21;
+        8'd127: result = 5'd21;
+        8'd128: result = 5'd21;
+        8'd129: result = 5'd21;
+        8'd130: result = 5'd21;
+        8'd131: result = 5'd21;
+        8'd132: result = 5'd22;
+        8'd133: result = 5'd22;
+        8'd134: result = 5'd22;
+        8'd135: result = 5'd22;
+        8'd136: result = 5'd22;
+        8'd137: result = 5'd22;
+        8'd138: result = 5'd23;
+        8'd139: result = 5'd23;
+        8'd140: result = 5'd23;
+        8'd141: result = 5'd23;
+        8'd142: result = 5'd23;
+        8'd143: result = 5'd23;
     endcase
 end
 
