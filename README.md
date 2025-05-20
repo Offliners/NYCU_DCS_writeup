@@ -66,7 +66,7 @@ This repository contained my designs (System Verilog) and patterns (System Veril
 | Lab04 | [Sequential Circuit](./2024/Lab04/DCS_Lab04.pdf)        | ✅         | ✅      | ✅      | ✅       |
 | Lab05 | [AHB interconnect](./2024/Lab05/DCS_Lab05.pdf)          |           |        |        |         |
 | Lab06 | [Pattern](./2024/Lab06/DCS_Lab06.pdf)                   |           |        |        |         |
-| Lab07 |                                                         |           |        |        |         |
+| Lab07 | [Pipeline](./2024/Lab07/DCS_Lab07.pdf)                  |           |        |        |         |
 | Lab08 | [Pipeline](./2024/Lab08/DCS_Lab08.pdf)                  |           |        |        |         |
 | Lab09 |                                                         |           |        |        |         |
 | Lab10 | [Clock Domain Crossing](./2024/Lab10/DCS_Lab10.pdf)     |           |        |        |         |
