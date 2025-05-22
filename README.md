@@ -18,13 +18,13 @@ This repository contained my designs (System Verilog) and patterns (System Veril
 | Lab07 | [Pattern](./2022/Lab07/DCS_Lab07.pdf)                        |           |        |        |         |
 | Lab08 | [Pipeline](./2022/Lab08/DCS_Lab08.pdf)                       |           |        |        |         |
 | Lab09 | [Clock Domain Crossing](./2022/Lab09/DCS_Lab09.pdf)          |           |        |        |         |
-| HW01  | [Calculate Numbers](./2022/HW01/DCS_HW01.pdf)                |           |        |        |         |
+| HW01  | [Calculate Numbers](./2022/HW01/DCS_HW01.pdf)                | ✅         | ✅      | ✅      | ✅       |
 | HW02  | [Visa Check Digit](./2022/HW02/DCS_HW02.pdf)                 |           |        |        |         |
 | HW03  | [Vending Machine](./2022/HW03/DCS_HW03.pdf)                  |           |        |        |         |
 | HW04  | [MIPS CPU with Pipeline](./2022/HW04/DCS_HW04.pdf)           |           |        |        |         |
 | HW05  | [Convolution](./2022/HW05/DCS_HW05.pdf)                      |           |        |        |         |
 | OT    | [Divider](./2022/OT/OT.pdf)                                  |           |        |        |         |
-| FP    | [Job Assignment Machine](./2022/Final/DCS_Final_Project.pdf) |           |        |        |
+| FP    | [Job Assignment Machine](./2022/Final/DCS_Final_Project.pdf) |           |        |        |         |
 
 </details>
 
