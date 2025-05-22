@@ -38,7 +38,6 @@ integer i, j, patcount;
 logic [4:0] register [15:0];
 logic [4:0] array [5:0];
 logic [4:0] temp;
-logic [8:0] mean;
 logic [8:0] golden_out_n;
 
 //================================================================
