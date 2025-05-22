@@ -137,14 +137,10 @@ task input_task; begin
     if(opcode[2:0] == 3'b000) begin
         mean = (array[0] + array[1] + array[2] + array[3] + array[4] + array[5]) / 6;
         golden_out_n = 0;
-        $display ("mean: %5d", mean);
         for(i=0; i<6; i+=1) begin
             if(array[i] >= mean) begin
-                $display ("array[%d]: %5d", i, array[i]);
-
                 golden_out_n += 1;
             end
-            $display ("golden_out_n: %d", golden_out_n);
         end
     end
     else if(opcode[2:0] == 3'b001) begin
