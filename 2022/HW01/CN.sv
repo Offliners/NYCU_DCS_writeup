@@ -112,10 +112,10 @@ end
 always_comb begin
     case(opcode[2:0])
         3'b000:
-			out_n = lv8_n2 - lv8_n1;
+			out_n = lv8_n2 + (~lv8_n1 + 1);
         3'b001: 
             out_n = lv8_n0 + lv8_n3;
-        3'b010: 
+        3'b010:
             out_n = (lv8_n3 * lv8_n4) / 2;
         3'b011: 
             out_n = lv8_n1 + (lv8_n5 << 1);
