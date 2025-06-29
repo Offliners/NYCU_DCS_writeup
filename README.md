@@ -1,5 +1,5 @@
 # NYCU Digital Circuit System - writeup
-This repository contained my designs (System Verilog) and patterns (System Verilog & Python3) is used to practice the homeworks and labs from Prof. Tien-Hsuan Chang's Digital Circuit System (DCS) course (2022 ~ 2024) at NYCU.
+This repository contained my designs (System Verilog) and patterns (System Verilog & Python3) is used to practice the homeworks and labs from Prof. Tien-Hsuan Chang's Digital Circuit System (DCS) course (2022 ~ 2025) at NYCU.
 
 ## Outline
 
@@ -77,6 +77,32 @@ This repository contained my designs (System Verilog) and patterns (System Veril
 | HW05  | [Simple MIPS CPU](./2024/HW05/DCS_HW05.pdf)             |           |        |        |         |
 | OT    | [Linear Programming](./2024/OT/OT.pdf)                  |           |        |        |         |
 | FP    | [DCSformer](./2024/Final/DCS_Final_Project.pdf)         |           |        |        |         |
+
+</details>
+
+### 2025
+<details open>
+<summary>More</summary>
+
+| #     | Topic                                                                           | 00_TESTED | 01_RTL | 02_SYN | 03_GATE |
+| ----- | ------------------------------------------------------------------------------- | --------- | ------ | ------ | ------- |
+| Lab01 | [Combinational Circuit](./2025/Lab01/DCS_Lab01.pdf)                             |           |        |        |         |
+| Lab02 | [Counter](./2025/Lab02/DCS_Lab02.pdf)                                           |           |        |        |         |
+| Lab03 | [Sequential Circuit 2](./2025/Lab03/DCS_Lab03.pdf)                              |           |        |        |         |
+| Lab04 | [Synchronous FIFO](./2025/Lab04/DCS_Lab04.pdf)                                  |           |        |        |         |
+| Lab05 | [Finite State Machine](./2025/Lab05/DCS_Lab05.pdf)                              |           |        |        |         |
+| Lab06 | [Pattern](./2025/Lab06/DCS_Lab06.pdf)                                           |           |        |        |         |
+| Lab07 |                                                                                 |           |        |        |         |
+| Lab08 | [Channel and Interface](./2025/Lab08/DCS_Lab08.pdf)                             |           |        |        |         |
+| Lab09 | [Pipeline/FIR filter](./2025/Lab09/DCS_Lab09.pdf)                               |           |        |        |         |
+| Lab10 | [Clock Domain Crossing](./2025/Lab10/DCS_Lab10.pdf)                             |           |        |        |         |
+| HW01  | [Simple Data Transfer](./2025/HW01/DCS_HW01.pdf)                                |           |        |        |         |
+| HW02  | [GCD Compression](./2025/HW02/DCS_HW02.pdf)                                     |           |        |        |         |
+| HW03  | [Sparse Matrix Calculator](./2025/HW03/DCS_HW03.pdf)                            |           |        |        |         |
+| HW04  | [MAC Array for Matrix Multiplication and Convolution](./2025/HW04/DCS_HW04.pdf) |           |        |        |         |
+| HW05  | [Simple CPU](./2025/HW05/DCS_HW05.pdf)                                          |           |        |        |         |
+| OT    | [Layer Normalization](./2025/OT/OT.pdf)                                         |           |        |        |         |
+| FP    | [Transformer-based AI Accelerator](./2025/Final/DCS_Final_Project.pdf)          |           |        |        |         |
 
 </details>
 
