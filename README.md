@@ -86,7 +86,7 @@ This repository contained my designs (System Verilog) and patterns (System Veril
 
 | #     | Topic                                                                           | 00_TESTED | 01_RTL | 02_SYN | 03_GATE |
 | ----- | ------------------------------------------------------------------------------- | --------- | ------ | ------ | ------- |
-| Lab01 | [Combinational Circuit](./2025/Lab01/DCS_Lab01.pdf)                             |           |        |        |         |
+| Lab01 | [Combinational Circuit](./2025/Lab01/DCS_Lab01.pdf)                             | ✅         | ✅      | ✅      | ✅       |
 | Lab02 | [Counter](./2025/Lab02/DCS_Lab02.pdf)                                           |           |        |        |         |
 | Lab03 | [Sequential Circuit 2](./2025/Lab03/DCS_Lab03.pdf)                              |           |        |        |         |
 | Lab04 | [Synchronous FIFO](./2025/Lab04/DCS_Lab04.pdf)                                  |           |        |        |         |
