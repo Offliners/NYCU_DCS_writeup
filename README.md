@@ -68,7 +68,7 @@ This repository contained my designs (System Verilog) and patterns (System Veril
 | Lab06 | [Pattern](./2024/Lab06/DCS_Lab06.pdf)                   |           |        |        |         |
 | Lab07 | [Pipeline](./2024/Lab07/DCS_Lab07.pdf)                  |           |        |        |         |
 | Lab08 | [Pipeline](./2024/Lab08/DCS_Lab08.pdf)                  |           |        |        |         |
-| Lab09 |                                                         |           |        |        |         |
+| Lab09 | [Low-pass FIR filter](./2024/Lab09/DCS_Lab09.pdf)       |           |        |        |         |
 | Lab10 | [Clock Domain Crossing](./2024/Lab10/DCS_Lab10.pdf)     |           |        |        |         |
 | HW01  | [Calculation Task](./2024/HW01/DCS_HW01.pdf)            | ✅         | ✅      | ✅      | ✅       |
 | HW02  | [Identification Number Check](./2024/HW02/DCS_HW02.pdf) |           |        |        |         |
