@@ -63,7 +63,7 @@ This repository contained my designs (System Verilog) and patterns (System Veril
 | Lab01 | [Combinational](./2024/Lab01/DCS_Lab01.pdf)             | ✅         | ✅      | ✅      | ✅       |
 | Lab02 | [Merge Sort](./2024/Lab02/DCS_Lab02.pdf)                | ✅         | ✅      | ✅      | ✅       |
 | Lab03 | [SIPO Shift Register](./2024/Lab03/DCS_Lab03.pdf)       | ✅         | ✅      | ✅      | ✅       |
-| Lab04 | [Sequential Circuit](./2024/Lab04/DCS_Lab04.pdf)        | ✅         | ✅      | ✅      | ✅       |
+| Lab04 | [Image Subtract](./2024/Lab04/DCS_Lab04.pdf)            | ✅         | ✅      | ✅      | ✅       |
 | Lab05 | [AHB interconnect](./2024/Lab05/DCS_Lab05.pdf)          |           |        |        |         |
 | Lab06 | [Pattern](./2024/Lab06/DCS_Lab06.pdf)                   |           |        |        |         |
 | Lab07 | [Pipeline](./2024/Lab07/DCS_Lab07.pdf)                  |           |        |        |         |

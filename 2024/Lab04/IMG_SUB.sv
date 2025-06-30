@@ -53,9 +53,20 @@ end
 
 always_ff @(posedge clk or negedge rst_n) begin
     if(!rst_n)
-        image[counter] <= 4'd0;
-    else 
-        image[counter] <= in_valid ? in_image : 4'd0; 
+        for(int i = 0; i <= 17; i++) begin
+            image[i] <= 4'd0;
+        end
+    else if(in_valid) begin
+        image[17] <= in_image;
+        for(int i = 0; i < 17; i++) begin
+            image[i] <= image[i + 1];
+        end
+    end
+    else begin
+        for(int i = 0; i <= 17; i++) begin
+            image[i] <= image[i];
+        end
+    end
 end
 
 always_ff @(posedge clk or negedge rst_n) begin
