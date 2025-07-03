@@ -8,11 +8,7 @@
 `include "mem_slave.sv"
 `endif
 
-
-
 module TESTBENCH();
-
-
 
 logic clk,rst_n,in_valid_1,in_valid_2,in_valid_3;
 logic [6:0] data_1, data_2, data_3;
@@ -21,22 +17,16 @@ logic [2:0] addr_master2slave, value_master2slave;
 logic [2:0] golden0[7:0], golden1[7:0];
 logic interconnect2master_ready1, interconnect2master_ready2;
 
-
 initial begin 
   `ifdef RTL
       $fsdbDumpfile("inter.fsdb");
 	  $fsdbDumpvars;
   `elsif GATE
-      $fsdbDumpfile("inter_SYN.fsdb");
+    $fsdbDumpfile("inter_SYN.fsdb");
 	  $sdf_annotate("inter_SYN.sdf",I_interconnect);
 	  $fsdbDumpvars();
   `endif 
 end
-//================================================================
-// parameters & integer
-//================================================================
-
-
 
 inter I_interconnect
 (
@@ -58,8 +48,6 @@ inter I_interconnect
   .handshake_slave2(interconnect2master_ready2)
 );
 
-
-
 PATTERN I_PATTERN
 (
   .clk(clk),
@@ -79,4 +67,5 @@ PATTERN I_PATTERN
   .handshake_slave1(interconnect2master_ready1),
   .handshake_slave2(interconnect2master_ready2)
 );
+
 endmodule

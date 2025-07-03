@@ -10,6 +10,7 @@ module inter(
   data_in_3,
   ready_slave1,
   ready_slave2,
+  
   // Output signals
   valid_slave1,
   valid_slave2,
